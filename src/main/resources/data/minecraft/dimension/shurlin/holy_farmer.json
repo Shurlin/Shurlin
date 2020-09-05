@@ -1,0 +1,14 @@
+{
+  "type": "shurlin:holy_farmer_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": 7830,
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "seed": 7830,
+      "type": "minecraft:fixed",
+      "biome": "shurlin:pear_forest"
+    }
+  }
+
+}

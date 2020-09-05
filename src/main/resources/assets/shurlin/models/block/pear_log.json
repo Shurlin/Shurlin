@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "shurlin:block/pear_log_top",
+    "side": "shurlin:block/pear_log"
+  }
+}

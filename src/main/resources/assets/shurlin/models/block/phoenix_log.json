@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "shurlin:block/phoenix_log_top",
+    "side": "shurlin:block/phoenix_log"
+  }
+}

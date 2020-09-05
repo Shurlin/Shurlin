@@ -1,0 +1,35 @@
+{
+  "parent": "shurlin:shurlin/pear_forest",
+  "display": {
+    "icon": {
+      "item": "shurlin:platycodon_grandiflorus"
+    },
+    "title": {
+      "translate": "advancements.shurlin.love_forever.title"
+    },
+    "description": {
+      "translate": "advancements.shurlin.love_forever.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "platycodon_grandiflorus": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "shurlin:platycodon_grandiflorus"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "platycodon_grandiflorus"
+    ]
+  ]
+}

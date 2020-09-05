@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "shurlin:block/pear_ripe_leaves"
+  }
+}

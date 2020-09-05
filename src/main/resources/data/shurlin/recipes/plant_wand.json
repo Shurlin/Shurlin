@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ig",
+    " si",
+    "s  "
+  ],
+  "key": {
+    "i": {
+      "item": "shurlin:plant_iron_ingot"
+    },
+    "g": {
+      "item": "shurlin:plant_gold_ingot"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "shurlin:plant_wand"
+  }
+}

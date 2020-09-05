@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "shurlin:plant_jade"
+    }
+  },
+  "result": {
+    "item": "shurlin:plant_jade_block"
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "variants": {
+        "times=0":    { "model": "shurlin:block/mysterious_stone_0" },
+        "times=1":    { "model": "shurlin:block/mysterious_stone_1" },
+        "times=2":    { "model": "shurlin:block/mysterious_stone_2" },
+        "times=3":    { "model": "shurlin:block/mysterious_stone_3" },
+        "times=4":    { "model": "shurlin:block/mysterious_stone_4" },
+        "times=5":    { "model": "shurlin:block/mysterious_stone_5" },
+        "times=6":    { "model": "shurlin:block/mysterious_stone_6" },
+        "times=7":    { "model": "shurlin:block/mysterious_stone_7" },
+        "times=8":    { "model": "shurlin:block/mysterious_stone_8" },
+        "times=9":    { "model": "shurlin:block/mysterious_stone_9" }
+    }
+}

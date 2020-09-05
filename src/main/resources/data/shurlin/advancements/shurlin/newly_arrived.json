@@ -1,0 +1,33 @@
+{
+  "parent": "shurlin:shurlin/root",
+  "display": {
+    "icon": {
+      "item": "shurlin:phoenix_sapling"
+    },
+    "title": {
+      "translate": "advancements.shurlin.newly_arrived.title"
+    },
+    "description": {
+      "translate": "advancements.shurlin.newly_arrived.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "shurlin:parasol_ancient_forest": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "location": {
+          "biome": "shurlin:parasol_ancient_forest"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "shurlin:parasol_ancient_forest"
+    ]
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item" : "shurlin:shurlin_ingot"
+    },
+    "title": {
+      "translate": "advancements.shurlin.root.title"
+    },
+    "description": {
+      "translate": "advancements.shurlin.root.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "shurlin:textures/gui/advancements/backgrounds/shurlin.png"
+  },
+  "rewards": {
+    "experience" : 100
+  },
+  "criteria": {
+    "plant_essence": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "shurlin:plant_essence"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "plant_essence"
+    ]
+  ]
+}

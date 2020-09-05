@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "plant_jade_ingot",
+  "ingredients": [
+    {
+      "item": "shurlin:plant_jade_block"
+    }
+  ],
+  "result": {
+    "item": "shurlin:plant_jade",
+    "count": 9
+  }
+}

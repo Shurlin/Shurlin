@@ -1,0 +1,35 @@
+{
+  "parent": "shurlin:shurlin/root",
+  "display": {
+    "icon": {
+      "item": "shurlin:mysterious_spirit_of_plant"
+    },
+    "title": {
+      "translate": "advancements.shurlin.power_of_mysterious_spirit.title"
+    },
+    "description": {
+      "translate": "advancements.shurlin.power_of_mysterious_spirit.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "mysterious_spirit_of_plant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "shurlin:mysterious_spirit_of_plant"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "mysterious_spirit_of_plant"
+    ]
+  ]
+}

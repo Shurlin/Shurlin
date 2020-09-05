@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "pear_planks",
+  "ingredients": [
+    {
+      "item": "shurlin:pear_log"
+    }
+  ],
+  "result": {
+    "item": "shurlin:pear_planks",
+    "count": 4
+  }
+}

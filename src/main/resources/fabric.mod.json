@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "shurlin",
+  "version": "${version}",
+
+  "name": "Shurlin",
+  "description": "Shurlin means the life spirit of the rare magic herbs.\nIt had 12 systems corresponding to 12 rare magic herbs, they're metal, wood, water, fire, earth, wind, light, darkness, poison, lightning, ice and space-time.",
+  "authors": [
+    "Garay Shurlin"
+  ],
+  "contact": {
+    "homepage": "https://shurlin.xyz/"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/shurlin/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "xyz.shurlin.Shurlin"
+    ],"client": [
+      "xyz.shurlin.ShurlinClient"
+    ]
+  },
+  "mixins": [
+    "shurlin.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}

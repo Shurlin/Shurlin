@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "shurlin:block/mysterious_stone_4"
+  }
+}

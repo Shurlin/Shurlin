@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "plant_gold_ingot",
+  "ingredients": [
+    {
+      "item": "shurlin:plant_gold_block"
+    }
+  ],
+  "result": {
+    "item": "shurlin:plant_gold_ingot",
+    "count": 9
+  }
+}

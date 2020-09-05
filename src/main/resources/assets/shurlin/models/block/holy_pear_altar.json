@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "shurlin:block/holy_pear_altar_top",
+    "side": "shurlin:block/holy_pear_altar_side",
+    "bottom": "shurlin:block/plant_obsidian"
+  }
+}

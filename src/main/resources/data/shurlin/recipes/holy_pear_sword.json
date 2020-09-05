@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "p",
+    "p",
+    "s"
+  ],
+  "key": {
+    "p": {
+      "item": "shurlin:holy_pear"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "shurlin:holy_pear_sword"
+  }
+}

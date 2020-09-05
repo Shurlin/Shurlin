@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "shurlin:plant_iron_ingot"
+    }
+  },
+  "result": {
+    "item": "shurlin:plant_iron_chestplate"
+  }
+}

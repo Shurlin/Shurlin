@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "plant_essence",
+  "ingredients": [
+    {
+      "item": "shurlin:plant_essence_ingot"
+    }
+  ],
+  "result": {
+    "item": "shurlin:plant_essence",
+    "count": 6
+  }
+}

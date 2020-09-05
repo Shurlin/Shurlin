@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/coral_fan",
+  "textures": {
+    "fan": "shurlin:block/leave_coral_fan"
+  }
+}
