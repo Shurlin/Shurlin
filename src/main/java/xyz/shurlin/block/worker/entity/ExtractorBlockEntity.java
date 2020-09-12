@@ -69,6 +69,7 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
 
     @Override
     public void tick() {//TODO
+        this.extractant = 33;
 //        if (this.world != null && !this.world.isClient) {
 //            ItemStack input = this.inventory.get(0);
 //            if(!input.isEmpty()){

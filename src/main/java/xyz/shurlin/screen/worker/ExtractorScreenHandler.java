@@ -40,4 +40,8 @@ public class ExtractorScreenHandler extends AbstractWorkerScreenHandler {
     public int getCraftingSlotCount() {
         return 3;
     }
+
+    public int getExtractant(){
+        return propertyDelegate.get(2);
+    }
 }

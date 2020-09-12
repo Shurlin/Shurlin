@@ -10,10 +10,12 @@ import xyz.shurlin.screen.worker.ExtractorScreenHandler;
 
 @Environment(EnvType.CLIENT)
 public class ExtractorScreen extends AbstractWorkerScreen<ExtractorScreenHandler> {
+    private final int maxExtractant;
 
-    ExtractorScreen(ExtractorScreenHandler handler, PlayerInventory inventory, Text title) {
+    public ExtractorScreen(ExtractorScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory,title, handler.getName());
         this.progressLength = 22;
+        maxExtractant = 64;
     }
 
     @Override
@@ -22,6 +24,9 @@ public class ExtractorScreen extends AbstractWorkerScreen<ExtractorScreenHandler
         int i = this.x;
         int j = this.y;
         float k = this.handler.getWorkProgress();
+        float extractant = this.handler.getExtractant();
+        int len = (int) Math.ceil(extractant / maxExtractant * 18 - 0.01);
         this.drawTexture(matrices, i + 79, j + 34, 176, 0, (int) (k * this.progressLength +1), 16);
+        this.drawTexture(matrices, i + 75, j + 45, 176, 13, len, 8);
     }
 }

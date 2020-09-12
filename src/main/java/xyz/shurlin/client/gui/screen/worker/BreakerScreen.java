@@ -10,7 +10,7 @@ import xyz.shurlin.screen.worker.BreakerScreenHandler;
 @Environment(EnvType.CLIENT)
 public class BreakerScreen extends AbstractWorkerScreen<BreakerScreenHandler> {
 
-    BreakerScreen(BreakerScreenHandler handler, PlayerInventory inventory, Text title) {
+    public BreakerScreen(BreakerScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory,title, handler.getName());
         this.progressLength = 22;
     }
