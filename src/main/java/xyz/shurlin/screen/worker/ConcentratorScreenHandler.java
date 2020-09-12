@@ -8,7 +8,7 @@ import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.world.World;
-import xyz.shurlin.inventory.BreakerInventory;
+import xyz.shurlin.inventory.WorkerInventory;
 import xyz.shurlin.screen.ScreenHandlerTypes;
 import xyz.shurlin.screen.slot.WorkerInputSlot;
 import xyz.shurlin.screen.slot.WorkerOutputSlot;
@@ -28,7 +28,7 @@ public class ConcentratorScreenHandler extends AbstractWorkerScreenHandler {
     }
 
     public ConcentratorScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, new BreakerInventory(null), playerInventory, new ArrayPropertyDelegate(2), playerInventory.player.world, null);
+        this(syncId, new WorkerInventory(5, null), playerInventory, new ArrayPropertyDelegate(2), playerInventory.player.world, null);
     }
 
     public String getName(){
