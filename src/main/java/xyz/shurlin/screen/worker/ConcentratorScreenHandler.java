@@ -18,10 +18,10 @@ public class ConcentratorScreenHandler extends AbstractWorkerScreenHandler {
     public ConcentratorScreenHandler(int syncId, Inventory inventory, PlayerInventory playerInventory, PropertyDelegate propertyDelegate, World world, ShurlinLevel shurlinLevel) {
         super(ScreenHandlerTypes.CONCENTRATOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory,propertyDelegate,world, shurlinLevel);
         this.addSlot(new Slot(inventory, 0, 15,39));
-        this.addSlot(new Slot(inventory, 0, 33,39));
-        this.addSlot(new Slot(inventory, 0, 51,39));
-        this.addSlot(new WorkerInputSlot(inventory, 0, 73,35, shurlinLevel));
-        this.addSlot(new WorkerOutputSlot(inventory,playerInventory.player,1,134,35));
+        this.addSlot(new Slot(inventory, 1, 33,39));
+        this.addSlot(new Slot(inventory, 2, 51,39));
+        this.addSlot(new WorkerInputSlot(inventory, 3, 73,35, shurlinLevel));
+        this.addSlot(new WorkerOutputSlot(inventory,playerInventory.player,4,134,35));
         this.addPlayerInventorySlots();
     }
 

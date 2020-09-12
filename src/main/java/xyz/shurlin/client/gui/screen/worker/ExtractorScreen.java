@@ -27,6 +27,6 @@ public class ExtractorScreen extends AbstractWorkerScreen<ExtractorScreenHandler
         float extractant = this.handler.getExtractant();
         int len = (int) Math.ceil(extractant / maxExtractant * 18 - 0.01);
         this.drawTexture(matrices, i + 79, j + 34, 176, 0, (int) (k * this.progressLength +1), 16);
-        this.drawTexture(matrices, i + 75, j + 45, 176, 13, len, 8);
+        this.drawTexture(matrices, i + 76, j + 46, 176, 13, len, 8);
     }
 }

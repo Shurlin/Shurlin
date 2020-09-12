@@ -19,7 +19,7 @@ public class ExtractorScreenHandler extends AbstractWorkerScreenHandler {
         super(ScreenHandlerTypes.EXTRACTOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory,propertyDelegate,world, shurlinLevel);
         this.addSlot(new WorkerInputSlot(inventory, 0, 44,42, shurlinLevel));
         this.addSlot(new ExtractantSlot(inventory, 1, 30,18));
-        this.addSlot(new WorkerOutputSlot(inventory,playerInventory.player,2,118,42));
+        this.addSlot(new WorkerOutputSlot(inventory, playerInventory.player,2,118,42));
         this.addPlayerInventorySlots();
     }
 
