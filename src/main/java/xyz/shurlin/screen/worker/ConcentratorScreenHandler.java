@@ -1,5 +1,7 @@
 package xyz.shurlin.screen.worker;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.screen.ArrayPropertyDelegate;
@@ -17,10 +19,10 @@ public class ConcentratorScreenHandler extends AbstractWorkerScreenHandler {
 
     public ConcentratorScreenHandler(int syncId, Inventory inventory, PlayerInventory playerInventory, PropertyDelegate propertyDelegate, World world, ShurlinLevel shurlinLevel) {
         super(ScreenHandlerTypes.CONCENTRATOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory,propertyDelegate,world, shurlinLevel);
-        this.addSlot(new Slot(inventory, 0, 15,39));
-        this.addSlot(new Slot(inventory, 1, 33,39));
-        this.addSlot(new Slot(inventory, 2, 51,39));
-        this.addSlot(new WorkerInputSlot(inventory, 3, 73,35, shurlinLevel));
+        this.addSlot(new Slot(inventory, 3, 15,39));
+        this.addSlot(new Slot(inventory, 2, 33,39));
+        this.addSlot(new Slot(inventory, 1, 51,39));
+        this.addSlot(new WorkerInputSlot(inventory, 0, 73,35, shurlinLevel));
         this.addSlot(new WorkerOutputSlot(inventory,playerInventory.player,4,134,35));
         this.addPlayerInventorySlots();
     }
@@ -38,6 +40,7 @@ public class ConcentratorScreenHandler extends AbstractWorkerScreenHandler {
         return 4;
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public int getCraftingSlotCount() {
         return 5;

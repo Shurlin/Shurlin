@@ -1,5 +1,7 @@
 package xyz.shurlin.screen.worker;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.screen.ArrayPropertyDelegate;
@@ -36,6 +38,7 @@ public class ExtractorScreenHandler extends AbstractWorkerScreenHandler {
         return 2;
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public int getCraftingSlotCount() {
         return 3;
