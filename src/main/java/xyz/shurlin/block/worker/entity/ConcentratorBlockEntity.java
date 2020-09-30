@@ -14,7 +14,7 @@ import xyz.shurlin.screen.worker.ConcentratorScreenHandler;
 public class ConcentratorBlockEntity extends AbstractWorkerBlockEntity {
 
     public ConcentratorBlockEntity(int level) {
-        super(BlockEntityTypes.CONCENTRATOR_BLOCK_ENTITY, "concentrator", level, RecipeTypes.BREAKING);
+        super(BlockEntityTypes.CONCENTRATOR_BLOCK_ENTITY, "concentrator", level, RecipeTypes.CONCENTRATING);
     }
 
     public ConcentratorBlockEntity(){

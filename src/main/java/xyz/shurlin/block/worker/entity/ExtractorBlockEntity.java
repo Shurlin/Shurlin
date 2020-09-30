@@ -19,7 +19,7 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
     private int cur_extractant;
 
     public ExtractorBlockEntity(int level) {
-        super(BlockEntityTypes.EXTRACTOR_BLOCK_ENTITY, "extractor", level, RecipeTypes.BREAKING);//TODO
+        super(BlockEntityTypes.EXTRACTOR_BLOCK_ENTITY, "extractor", level, RecipeTypes.EXTRACTING);//TODO
     }
 
     public ExtractorBlockEntity(){

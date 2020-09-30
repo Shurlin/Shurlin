@@ -17,7 +17,7 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
     private int consistence;
 
     public CollectorBlockEntity(int level) {
-        super(BlockEntityTypes.COLLECTOR_BLOCK_ENTITY, "collector", level, RecipeTypes.BREAKING);
+        super(BlockEntityTypes.COLLECTOR_BLOCK_ENTITY, "collector", level, RecipeTypes.COLLECTING);
     }
 
     public CollectorBlockEntity(){

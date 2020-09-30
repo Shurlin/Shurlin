@@ -151,7 +151,7 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
     }
 
     int getWorkTimeTotal() {
-//        return this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).map(AbstractWorkerRecipe::getCookTime).orElse(200);
+//        return this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).map(AbstractWorkerRecipe::getWorkTime).orElse(200);
         return 20;
     }
 
