@@ -26,7 +26,7 @@ public class ExtractorScreenHandler extends AbstractWorkerScreenHandler {
     }
 
     public ExtractorScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, new WorkerInventory(3, null), playerInventory, new ArrayPropertyDelegate(3), playerInventory.player.world, null);
+        this(syncId, new WorkerInventory(3, null), playerInventory, new ArrayPropertyDelegate(4), playerInventory.player.world, null);
     }
 
     public String getName(){
