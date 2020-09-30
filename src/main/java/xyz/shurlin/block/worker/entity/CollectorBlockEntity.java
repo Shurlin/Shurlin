@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.recipe.RecipeTypes;
 import xyz.shurlin.screen.worker.CollectorScreenHandler;
@@ -80,14 +81,17 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
                     this.consistence = collectable.getConsistence(this.world, this.pos);
                     if(!isWorking())
                         this.workTimeTotal = collectable.getTime();
-                    ++this.workTime;
-                    if(this.workTime == this.workTimeTotal){
-                        this.workTime = 0;
-                        this.craftRecipe();
+                    if(getCollected()){
+                        ++this.workTime;
+                        if(this.workTime == this.workTimeTotal){
+                            this.workTime = 0;
+                            this.craftRecipe();
+                        }
                     }
                 }
             }else{
                 this.workTime = 0;
+                this.consistence = 0;
             }
         }
     }
@@ -111,5 +115,7 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
         }
     }
 
-
+    private boolean getCollected(){
+        return Shurlin.random.nextFloat() < (consistence / 100.0f);
+    }
 }

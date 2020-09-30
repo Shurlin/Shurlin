@@ -2,12 +2,14 @@ package xyz.shurlin.block.worker.entity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import xyz.shurlin.block.entity.BlockEntityTypes;
+import xyz.shurlin.item.ExtractantItem;
 import xyz.shurlin.recipe.RecipeTypes;
 import xyz.shurlin.screen.worker.BreakerScreenHandler;
 import xyz.shurlin.screen.worker.ExtractorScreenHandler;
@@ -76,24 +78,33 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
 
     @Override
     public void tick() {//TODO
-        this.extractant = 33;
-//        if (this.world != null && !this.world.isClient) {
-//            ItemStack input = this.inventory.get(0);
-//            if(!input.isEmpty()){
-//                Recipe<?> recipe = (Recipe) this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).orElse(null);
-//                if(this.canAcceptRecipeOutput(recipe)){
-//                    if(!isWorking())
-//                        this.workTimeTotal = this.getWorkTimeTotal();
-//                    ++this.workTime;
-//                    if(this.workTime == this.workTimeTotal){
-//                        this.workTime = 0;
-//                        this.craftRecipe(recipe);
-//                    }
-//                }
-//            }else {
-//                this.workTime = 0;
-//            }
-//        }
+        if (this.world != null && !this.world.isClient) {
+            ItemStack input = this.inventory.get(0);
+            ItemStack extractantStack = this.inventory.get(1);
+            if(this.cur_extractant == 0 && !extractantStack.isEmpty()){
+                Item extractant = extractantStack.getItem();
+                if(extractant instanceof ExtractantItem){
+                    ExtractantItem extractantItem = (ExtractantItem) extractant;
+                    this.extractant = extractantItem.getExtractant();
+                    this.cur_extractant = this.extractant;
+                }
+            }
+            if(!input.isEmpty()){
+                Recipe<?> recipe = (Recipe) this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).orElse(null);
+                if(this.canAcceptRecipeOutput(recipe) && this.cur_extractant > 0){
+                    if(!isWorking())
+                        this.workTimeTotal = this.getWorkTimeTotal();
+                    ++this.workTime;
+                    if(this.workTime == this.workTimeTotal){
+                        this.workTime = 0;
+                        --this.cur_extractant;
+                        this.craftRecipe(recipe);
+                    }
+                }
+            }else {
+                this.workTime = 0;
+            }
+        }
     }
 
     @Override

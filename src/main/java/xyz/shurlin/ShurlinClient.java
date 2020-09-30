@@ -4,13 +4,11 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.entity.EntityRenderer;
 import xyz.shurlin.block.Blocks;
 import xyz.shurlin.client.gui.screen.HandledScreens;
 import xyz.shurlin.entity.EntityTypes;
 import xyz.shurlin.entity.projectile.BeanEntityRender;
 import xyz.shurlin.entity.projectile.HolyPearArrowEntityRender;
-import xyz.shurlin.item.Items;
 
 public class ShurlinClient implements ClientModInitializer {
     @Override
