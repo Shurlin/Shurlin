@@ -1,8 +1,10 @@
 package xyz.shurlin.block.worker.entity;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import xyz.shurlin.block.entity.BlockEntityTypes;
@@ -81,7 +83,7 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
                     ++this.workTime;
                     if(this.workTime == this.workTimeTotal){
                         this.workTime = 0;
-                        this.craftRecipe(collection);
+                        this.craftRecipe();
                     }
                 }
             }else{
@@ -99,16 +101,14 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
 //        return this.inventory.get(0).getItem();
 //    }
 
-    private void craftRecipe(Item collection) {
+    private void craftRecipe() {
         ItemStack input = this.inventory.get(0);
         ItemStack output = this.inventory.get(1);
         if (output.isEmpty()) {
             this.inventory.set(1, input.copy());
         } else if (output.getItem() == input.getItem()) {
             output.increment(1);
-        }else return;
-
-        input.decrement(1);
+        }
     }
 
 

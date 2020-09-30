@@ -16,14 +16,13 @@ import xyz.shurlin.util.Utils;
 import xyz.shurlin.entity.EntityTypes;
 import xyz.shurlin.item.Items;
 
-public class HolyPearArrowEntity extends ArrowEntity {
+public class HolyPearArrowEntity extends PersistentProjectileEntity {
     private static final int[] powers = new int[]{2,8,30};
     private int power;
 
-    public HolyPearArrowEntity(EntityType<? extends HolyPearArrowEntity> entityType, World world) {
+    public HolyPearArrowEntity(EntityType<HolyPearArrowEntity> entityType, World world) {
         super(entityType, world);
     }
-
 
 //    @Override
 //    public void tick() {
@@ -56,7 +55,7 @@ public class HolyPearArrowEntity extends ArrowEntity {
     }
 
     public HolyPearArrowEntity(LivingEntity owner, World world, int level) {
-        super(world, owner);
+        super(EntityTypes.HOLY_PEAR_ARROW_ENTITY_TYPE, owner, world);
         this.power = powers[level];
     }
 

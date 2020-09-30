@@ -1,7 +1,9 @@
 package xyz.shurlin.block.worker.entity;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -92,6 +94,20 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
 //                this.workTime = 0;
 //            }
 //        }
+    }
+
+    @Override
+    public void fromTag(BlockState state, CompoundTag tag) {
+        super.fromTag(state, tag);
+        this.cur_extractant = tag.getShort("Cur_extractant");
+        this.extractant = tag.getShort("extractant");
+    }
+
+    @Override
+    public CompoundTag toTag(CompoundTag tag) {
+        tag.putShort("cur_extractant",(short) this.cur_extractant);
+        tag.putShort("extractant",(short) this.extractant);
+        return super.toTag(tag);
     }
 
     @Override

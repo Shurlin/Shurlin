@@ -1,22 +1,20 @@
 package xyz.shurlin.entity.projectile;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.EntityHitResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
 import xyz.shurlin.entity.EntityTypes;
 import xyz.shurlin.item.Items;
-import xyz.shurlin.util.Utils;
 
-public class BeanEntity extends ArrowEntity {
+public class BeanEntity extends PersistentProjectileEntity {
+
+    public BeanEntity(EntityType<BeanEntity> entityType, World world) {
+        super(entityType, world);
+    }
 
     @Override
     public void tick() {
@@ -35,7 +33,7 @@ public class BeanEntity extends ArrowEntity {
     }
 
     public BeanEntity(LivingEntity owner, World world) {
-        super(world, owner);
+        super(EntityTypes.BEAN_ENTITY_TYPE, owner, world);
     }
 
     @Override

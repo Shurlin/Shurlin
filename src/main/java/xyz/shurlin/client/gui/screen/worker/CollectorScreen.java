@@ -24,7 +24,7 @@ public class CollectorScreen extends AbstractWorkerScreen<CollectorScreenHandler
         int j = this.y;
         float k = this.handler.getWorkProgress();
         float consistence = this.handler.getConsistence();
-        int consistenceHeight = (int) consistence * this.consistenceHeightTotal;
+        int consistenceHeight = (int) (consistence * this.consistenceHeightTotal);
         this.drawTexture(matrices, i + 46, j + 35, 176, 0, (int) (k * this.progressLength +1), 17);
         this.drawTexture(matrices, i + 144, j + 13 + (consistenceHeightTotal - consistenceHeight), 176, 17 + (consistenceHeightTotal - consistenceHeight), 20, consistenceHeight);
     }
