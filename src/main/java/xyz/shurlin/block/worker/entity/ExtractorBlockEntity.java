@@ -87,6 +87,7 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
                     ExtractantItem extractantItem = (ExtractantItem) extractant;
                     this.extractant = extractantItem.getExtractant();
                     this.cur_extractant = this.extractant;
+                    extractantStack.decrement(1);
                 }
             }
             if(!input.isEmpty()){
@@ -111,13 +112,13 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
     public void fromTag(BlockState state, CompoundTag tag) {
         super.fromTag(state, tag);
         this.cur_extractant = tag.getShort("Cur_extractant");
-        this.extractant = tag.getShort("extractant");
+        this.extractant = tag.getShort("Extractant");
     }
 
     @Override
     public CompoundTag toTag(CompoundTag tag) {
-        tag.putShort("cur_extractant",(short) this.cur_extractant);
-        tag.putShort("extractant",(short) this.extractant);
+        tag.putShort("Cur_extractant",(short) this.cur_extractant);
+        tag.putShort("Extractant",(short) this.extractant);
         return super.toTag(tag);
     }
 
@@ -131,4 +132,8 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
 //    }
 
 
+    @Override
+    protected int getOutputSlot() {
+        return 2;
+    }
 }

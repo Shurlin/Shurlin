@@ -78,9 +78,9 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
         if (recipe != null && this.canAcceptRecipeOutput(recipe)) {
             ItemStack itemStack = this.inventory.get(0);
             ItemStack itemStack2 = recipe.getOutput();
-            ItemStack itemStack3 = this.inventory.get(1);
+            ItemStack itemStack3 = this.inventory.get(getOutputSlot());
             if (itemStack3.isEmpty()) {
-                this.inventory.set(1, itemStack2.copy());
+                this.inventory.set(getOutputSlot(), itemStack2.copy());
             } else if (itemStack3.getItem() == itemStack2.getItem()) {
                 itemStack3.increment(1);
             }
@@ -134,7 +134,7 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
             if (itemStack.isEmpty()) {
                 return false;
             } else {
-                ItemStack itemStack2 = this.inventory.get(1);
+                ItemStack itemStack2 = this.inventory.get(getOutputSlot());
                 if (itemStack2.isEmpty()) {
                     return true;
                 } else if (!itemStack2.isItemEqualIgnoreDamage(itemStack)) {
@@ -165,5 +165,9 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
             this.workTime = 0;
             this.markDirty();
         }
+    }
+
+    protected int getOutputSlot(){
+        return 1;
     }
 }
