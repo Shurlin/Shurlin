@@ -12,6 +12,7 @@ import xyz.shurlin.screen.worker.ExtractorScreenHandler;
 
 public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
     private int extractant;
+    private int cur_extractant;
 
     public ExtractorBlockEntity(int level) {
         super(BlockEntityTypes.EXTRACTOR_BLOCK_ENTITY, "extractor", level, RecipeTypes.BREAKING);//TODO
@@ -42,6 +43,8 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
                     case 1:
                         return ExtractorBlockEntity.this.workTimeTotal;
                     case 2:
+                        return ExtractorBlockEntity.this.cur_extractant;
+                    case 3:
                         return ExtractorBlockEntity.this.extractant;
                     default:
                         return 0;
@@ -56,13 +59,15 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
                     case 1:
                         ExtractorBlockEntity.this.workTimeTotal = value;
                     case 2:
+                        ExtractorBlockEntity.this.cur_extractant = value;
+                    case 3:
                         ExtractorBlockEntity.this.extractant = value;
                 }
             }
 
             @Override
             public int size() {
-                return 3;
+                return 4;
             }
         };
     }

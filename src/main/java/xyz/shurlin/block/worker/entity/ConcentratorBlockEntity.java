@@ -2,6 +2,7 @@ package xyz.shurlin.block.worker.entity;
 
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -64,6 +65,9 @@ public class ConcentratorBlockEntity extends AbstractWorkerBlockEntity {
 
     @Override
     public void tick() {//TODO
+        if(this.world != null && !this.world.isClient){
+
+        }
 //        if (this.world != null && !this.world.isClient) {
 //            ItemStack input = this.inventory.get(0);
 //            if(!input.isEmpty()){
