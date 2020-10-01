@@ -49,6 +49,10 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
         return RecipeSerializers.CONCENTRATING;
     }
 
+    public ConcentrationIngredientVector getConcentrationIngredients() {
+        return concentrationIngredients;
+    }
+
     public static class ConcentratorRecipeSerializer implements RecipeSerializer<ConcentratorRecipe> {
         private final ConcentratorRecipeSerializer.RecipeFactory<ConcentratorRecipe> recipeFactory;
 
@@ -97,7 +101,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
 
     }
 
-    static class ConcentrationIngredientVector extends Vector<ConcentrationIngredient>{
+    public static class ConcentrationIngredientVector extends Vector<ConcentrationIngredient>{
         private void write(PacketByteBuf buf){
             buf.writeVarInt(this.size());
             CompoundTag tags = new CompoundTag();
@@ -139,9 +143,13 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
         }
     }
 
-    static class ConcentrationIngredient {
+    public static class ConcentrationIngredient {
         ItemOrTag itemOrTag;
         int count;
+
+        public int getCount() {
+            return count;
+        }
 
         ConcentrationIngredient(ItemOrTag itemOrTag, int count) {
             this.itemOrTag = itemOrTag;

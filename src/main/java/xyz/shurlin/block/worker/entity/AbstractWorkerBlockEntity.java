@@ -19,6 +19,8 @@ import xyz.shurlin.block.entity.BasicBlockEntity;
 import xyz.shurlin.recipe.AbstractWorkerRecipe;
 import xyz.shurlin.util.ShurlinLevel;
 
+import java.util.Optional;
+
 public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity implements ShurlinLevel, Tickable {
     int workTime;
     int workTimeTotal;
