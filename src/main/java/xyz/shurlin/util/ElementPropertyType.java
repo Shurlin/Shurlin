@@ -1,16 +1,22 @@
 package xyz.shurlin.util;
 
 public enum ElementPropertyType {
-    METAL,
-    WOOD,
-    WATER,
-    FIRE,
-    EARTH,
-    WIND,
-    LIGHT,
-    DARKNESS,
-    POISON,
-    LIGHTNING,
-    ICE,
-    TIME_SPACE
+    METAL("metal"),
+    WOOD("wood"),
+    WATER("water"),
+    FIRE("fire"),
+    EARTH("earth"),
+    WIND("wind"),
+    LIGHT("light"),
+    DARKNESS("darkness"),
+    POISON("poison"),
+    LIGHTNING("lightning"),
+    ICE("ice"),
+    TIME_SPACE("time_space");
+
+    public final String name;
+
+    ElementPropertyType(String name) {
+        this.name = name;
+    }
 }

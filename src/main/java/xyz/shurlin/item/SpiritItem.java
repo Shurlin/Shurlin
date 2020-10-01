@@ -4,18 +4,18 @@ import xyz.shurlin.util.ElementPropertyType;
 
 public class SpiritItem extends BasicItem{
     private final ElementPropertyType elementPropertyType;
-    private final int spirit_consistence;
+    private final double spiritConsistence;
 
-    public SpiritItem(ElementPropertyType elementPropertyType, int spirit_consistence) {
+    public SpiritItem(ElementPropertyType elementPropertyType, double spiritConsistence) {
         this.elementPropertyType = elementPropertyType;
-        this.spirit_consistence = spirit_consistence;
+        this.spiritConsistence = spiritConsistence;
     }
 
     public ElementPropertyType getElementPropertyType() {
         return elementPropertyType;
     }
 
-    public int getSpirit_consistence() {
-        return spirit_consistence;
+    public double getSpiritConsistence() {
+        return spiritConsistence;
     }
 }
