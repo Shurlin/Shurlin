@@ -71,7 +71,7 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
     }
 
     @Override
-    public void tick() {//TODO
+    public void tick() {
         if(this.world != null && !this.world.isClient){
             ItemStack input = this.inventory.get(0);
             if(!input.isEmpty()){

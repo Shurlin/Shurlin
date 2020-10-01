@@ -1,0 +1,11 @@
+{
+  "type": "shurlin:concentrating",
+  "ingredients": [
+    {
+      "item": "shurlin:plant_mixture",
+      "count": 8
+    }
+  ],
+  "result": "shurlin:plant_mixture_heap",
+  "workingTime": 50
+}

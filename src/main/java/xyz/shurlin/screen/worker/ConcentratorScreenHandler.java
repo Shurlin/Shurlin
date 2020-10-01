@@ -40,6 +40,11 @@ public class ConcentratorScreenHandler extends AbstractWorkerScreenHandler {
         return 4;
     }
 
+    @Override
+    public int getCraftingWidth() {
+        return 4;
+    }
+
     @Environment(EnvType.CLIENT)
     @Override
     public int getCraftingSlotCount() {

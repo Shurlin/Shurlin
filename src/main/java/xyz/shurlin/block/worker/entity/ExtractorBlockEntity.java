@@ -19,7 +19,7 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
     private int cur_extractant;
 
     public ExtractorBlockEntity(int level) {
-        super(BlockEntityTypes.EXTRACTOR_BLOCK_ENTITY, "extractor", level, RecipeTypes.EXTRACTING);//TODO
+        super(BlockEntityTypes.EXTRACTOR_BLOCK_ENTITY, "extractor", level, RecipeTypes.EXTRACTING);
     }
 
     public ExtractorBlockEntity(){
@@ -77,7 +77,7 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
     }
 
     @Override
-    public void tick() {//TODO
+    public void tick() {
         if (this.world != null && !this.world.isClient) {
             ItemStack input = this.inventory.get(0);
             ItemStack extractantStack = this.inventory.get(1);

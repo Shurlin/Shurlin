@@ -13,7 +13,7 @@ import net.minecraft.util.registry.Registry;
 import xyz.shurlin.util.ShurlinLevel;
 
 public class WorkerRecipeSerializer<T extends AbstractWorkerRecipe> implements RecipeSerializer<T> {
-    private final int workingTime;
+    protected final int workingTime;
     private final RecipeFactory<T> recipeFactory;
 
     public WorkerRecipeSerializer(RecipeFactory<T> recipeFactory, int workingTime) {
