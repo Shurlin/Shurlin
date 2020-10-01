@@ -7,6 +7,9 @@ import com.google.gson.JsonSyntaxException;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.tag.Tag;
 import net.minecraft.tag.TagContainers;
@@ -22,9 +25,9 @@ import java.util.Vector;
 
 
 public class ConcentratorRecipe extends AbstractWorkerRecipe {
-    private final Vector<ConcentrationIngredient> concentrationIngredients;
+    private final ConcentrationIngredientVector concentrationIngredients;
 
-    ConcentratorRecipe(Identifier id, String group, Vector<ConcentrationIngredient> concentrationIngredients, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
+    ConcentratorRecipe(Identifier id, String group, ConcentrationIngredientVector concentrationIngredients, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
         super(RecipeTypes.CONCENTRATING, id, group, null, output, workTime, shurlinLevel);
         this.concentrationIngredients = concentrationIngredients;
     }
@@ -46,17 +49,18 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
         return RecipeSerializers.CONCENTRATING;
     }
 
-    public static class ConcentratorRecipeSerializer extends WorkerRecipeSerializer<ConcentratorRecipe> {
+    public static class ConcentratorRecipeSerializer implements RecipeSerializer<ConcentratorRecipe> {
+        private final ConcentratorRecipeSerializer.RecipeFactory<ConcentratorRecipe> recipeFactory;
 
         ConcentratorRecipeSerializer(RecipeFactory<ConcentratorRecipe> recipeFactory) {
-            super(recipeFactory);
+            this.recipeFactory = recipeFactory;
         }
 
         @Override
         public ConcentratorRecipe read(Identifier id, JsonObject jsonObject) {
             String group = JsonHelper.getString(jsonObject, "group", "");
             JsonArray jsonArray = JsonHelper.getArray(jsonObject, "ingredients");
-            Vector<ConcentrationIngredient> concentrationIngredients = new Vector<>();
+            ConcentrationIngredientVector concentrationIngredients = new ConcentrationIngredientVector();
             for(JsonElement jsonElement:jsonArray){
                 concentrationIngredients.add(new ConcentrationIngredient(jsonElement.getAsJsonObject()));
             }
@@ -64,17 +68,85 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             Identifier result_id = new Identifier(result);
             ItemStack output = new ItemStack(Registry.ITEM.getOrEmpty(result_id).orElseThrow(() ->
                     new IllegalStateException("Item: " + result + " does not exist")));
-            int workingTime = JsonHelper.getInt(jsonObject, "workingTime", this.workingTime);
+            int workingTime = JsonHelper.getInt(jsonObject, "workingTime");
             int shurlinLevel = JsonHelper.getInt(jsonObject, "shurlinLevel", 0);
-            return new ConcentratorRecipe(id, group, concentrationIngredients, output, workingTime, () -> shurlinLevel);
+            return this.recipeFactory.create(id, group, concentrationIngredients, output, workingTime, () -> shurlinLevel);
         }
 
+        @Override
+        public ConcentratorRecipe read(Identifier id, PacketByteBuf buf) {
+            String group = buf.readString(32767);
+            ConcentrationIngredientVector concentrationIngredients = ConcentrationIngredientVector.fromPacket(buf);
+            ItemStack output = buf.readItemStack();
+            int workingTime = buf.readVarInt();
+            int shurlinLevel = buf.readVarInt();
+            return this.recipeFactory.create(id, group, concentrationIngredients, output, workingTime, () -> shurlinLevel);
+        }
+
+        @Override
+        public void write(PacketByteBuf buf, ConcentratorRecipe recipe) {
+            buf.writeString(recipe.group);
+            recipe.concentrationIngredients.write(buf);
+            buf.writeItemStack(recipe.output);
+            buf.writeVarInt(recipe.workTime);
+        }
+
+        interface RecipeFactory<ConcentratorRecipe>{
+            ConcentratorRecipe create(Identifier id, String group, ConcentrationIngredientVector concentrationIngredientVector, ItemStack output, int cookTime, ShurlinLevel shurlinLevel);
+        }
 
     }
 
-    public static class ConcentrationIngredient {
+    static class ConcentrationIngredientVector extends Vector<ConcentrationIngredient>{
+        private void write(PacketByteBuf buf){
+            buf.writeVarInt(this.size());
+            CompoundTag tags = new CompoundTag();
+            int index = 0;
+            for(ConcentrationIngredient ingredient : this){
+                CompoundTag tag = new CompoundTag();
+                ItemOrTag itemOrTag = ingredient.itemOrTag;
+                boolean b = itemOrTag.isItem();
+                String id = b?itemOrTag.getItem().getTranslationKey():TagContainers.instance().items().checkId(itemOrTag.getTag()).toString();
+                tag.putBoolean("isItem", b);
+                tag.putString("id", id);
+                tag.putInt("count", ingredient.count);
+                tags.put("tag" + ++index, tag);
+            }
+            buf.writeCompoundTag(tags);
+        }
+
+        private static ConcentrationIngredientVector fromPacket(PacketByteBuf buf){
+            int size = buf.readVarInt();
+            CompoundTag tags = buf.readCompoundTag();
+            ConcentrationIngredientVector concentrationIngredients = new ConcentrationIngredientVector();
+            for(int i=1;i<=size;i++){
+                if (tags != null) {
+                    CompoundTag tag = tags.getCompound("tag"+i);
+                    boolean b = tag.getBoolean("isItem");
+                    Identifier id = new Identifier(tag.getString("id"));
+                    ItemOrTag itemOrTag;
+                    if(b)
+                        itemOrTag = new ItemOrTag(Registry.ITEM.get(id));
+                    else
+                        itemOrTag = new ItemOrTag(TagContainers.instance().items().get(id));
+                    int count = tag.getInt("count");
+                    ConcentrationIngredient concentrationIngredient = new ConcentrationIngredient(itemOrTag, count);
+                    concentrationIngredients.add(concentrationIngredient);
+
+                }
+            }
+            return concentrationIngredients;
+        }
+    }
+
+    static class ConcentrationIngredient {
         ItemOrTag itemOrTag;
         int count;
+
+        ConcentrationIngredient(ItemOrTag itemOrTag, int count) {
+            this.itemOrTag = itemOrTag;
+            this.count = count;
+        }
 
         ConcentrationIngredient(JsonObject object) {
             Identifier identifier;
