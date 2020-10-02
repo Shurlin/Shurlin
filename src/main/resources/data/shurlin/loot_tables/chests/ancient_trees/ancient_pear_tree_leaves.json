@@ -10,7 +10,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 30,
+          "weight": 25,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -107,6 +107,11 @@
           "type": "minecraft:item",
           "weight": 1,
           "name": "shurlin:plant_jade"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "shurlin:plant_extractant"
         }
       ]
     }

@@ -15,37 +15,37 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.StructureAccessor;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
-import xyz.shurlin.block.Blocks;
-import xyz.shurlin.loot.LootTables;
-import xyz.shurlin.world.biome.Biomes;
 
 import java.util.List;
 import java.util.Random;
 
-public class AncientOakTreeGenerator {
-    private static final Identifier TEMPLATE = new Identifier("ancient_trees/ancient_oak_tree");
+public class AncientTreeGenerator {
 
-    public static void addPieces(StructureManager manager, BlockPos pos, List<StructurePiece> pieces){
-        pieces.add(new AncientOakTreeGenerator.Piece(manager, TEMPLATE, pos));
+    public static void addPieces(StructureManager manager, BlockPos pos, List<StructurePiece> pieces, AncientTreeData data){
+        pieces.add(new AncientTreeGenerator.Piece(manager, pos, data));
     }
 
     public static class Piece extends SimpleStructurePiece {
+        private final AncientTreeData data;
         private final Identifier template;
         private final BlockRotation rotation;
 
-        private Piece(StructureManager manager, Identifier identifier, BlockPos pos) {
-            super(StructurePieceTypes.ANCIENT_OAK_TREE, 0);
-            this.template = identifier;
+        private Piece(StructureManager manager, BlockPos pos, AncientTreeData data) {
+            super(data.getType(), 0);
+            this.data = data;
+            this.template = data.getTemplate();
             this.rotation = BlockRotation.NONE;
             this.pos = pos;
 
             this.initializeStructureData(manager);
         }
 
-        Piece(StructureManager manager, CompoundTag tag) {
-            super(StructurePieceTypes.ANCIENT_OAK_TREE, tag);
+        Piece(StructureManager manager, CompoundTag tag, AncientTreeData data) {
+            super(data.getType(), tag);
             this.template = new Identifier(tag.getString("Template"));
             this.rotation = BlockRotation.NONE;
+//            this.data = AncientTreeData.findData(tag.getString("Type"));
+            this.data = data;
             this.initializeStructureData(manager);
         }
 
@@ -54,6 +54,7 @@ public class AncientOakTreeGenerator {
             super.toNbt(tag);
             tag.putString("Template", this.template.toString());
             tag.putString("Rotation", this.rotation.name());
+//            tag.putString("Type", this.data.name());
         }
 
         @Override
@@ -69,9 +70,9 @@ public class AncientOakTreeGenerator {
         @Override
         protected void handleMetadata(String metadata, BlockPos pos, WorldAccess world, Random random, BlockBox boundingBox) {
             if ("leaves_chest".equals(metadata)) {
-                LootableContainerBlockEntity.setLootTable(world, random, pos.down(), LootTables.ANCIENT_OAK_TREE_LEAVES_CHEST);
+                LootableContainerBlockEntity.setLootTable(world, random, pos.down(), this.data.getLeavesChest());
             }else if("root_chest".equals(metadata)) {
-                LootableContainerBlockEntity.setLootTable(world, random, pos.down(), LootTables.ANCIENT_OAK_TREE_ROOT_CHEST);
+                LootableContainerBlockEntity.setLootTable(world, random, pos.down(), this.data.getRootChest());
             }
         }
 

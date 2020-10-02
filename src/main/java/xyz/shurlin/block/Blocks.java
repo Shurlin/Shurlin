@@ -7,6 +7,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import sun.security.provider.ConfigFile;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.coral.*;
 import xyz.shurlin.block.worker.BreakerBlock;
@@ -73,7 +74,7 @@ public class Blocks {
     }
 
     private static Block registerOreBlock(String registryName){
-        return register(registryName, new OreBlock(BlockSettings.ORE));
+        return register(registryName, new SpiritOreBlock(BlockSettings.ORE));
     }
 
     private static Block registerOreBlock(String registryName, Material material){

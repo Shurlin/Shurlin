@@ -14,13 +14,15 @@ import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import xyz.shurlin.Shurlin;
-import xyz.shurlin.structure.AncientOakTreeGenerator;
-import xyz.shurlin.structure.AncientPearTreeGenerator;
+import xyz.shurlin.structure.AncientTreeData;
+import xyz.shurlin.structure.AncientTreeGenerator;
 
-public class AncientPearTreeStructureFeature extends StructureFeature<DefaultFeatureConfig> {
+public class AncientTreeStructureFeature extends StructureFeature<DefaultFeatureConfig> {
+    private final AncientTreeData data;
 
-    AncientPearTreeStructureFeature(Codec<DefaultFeatureConfig> codec) {
+    AncientTreeStructureFeature(Codec<DefaultFeatureConfig> codec, AncientTreeData data) {
         super(codec);
+        this.data = data;
     }
 
     @Override
@@ -35,10 +37,10 @@ public class AncientPearTreeStructureFeature extends StructureFeature<DefaultFea
 
     @Override
     public StructureStartFactory<DefaultFeatureConfig> getStructureStartFactory() {
-        return AncientPearTreeStructureFeature.Start::new;
+        return AncientTreeStructureFeature.Start::new;
     }
 
-    public static class Start extends StructureStart<DefaultFeatureConfig>{
+    public class Start extends StructureStart<DefaultFeatureConfig>{
 
         Start(StructureFeature<DefaultFeatureConfig> feature, int chunkX, int chunkZ, BlockBox box, int references, long seed) {
             super(feature, chunkX, chunkZ, box, references, seed);
@@ -48,11 +50,8 @@ public class AncientPearTreeStructureFeature extends StructureFeature<DefaultFea
         public void init(ChunkGenerator chunkGenerator, StructureManager structureManager, int x, int z, Biome biome, DefaultFeatureConfig DefaultFeatureConfig) {
             int i = x * 16;
             int j = z * 16;
-//            BlockPos blockPos = new BlockPos(i + random.nextInt(16), 0, j + random.nextInt(16));
             BlockPos blockPos = new BlockPos(i, 0, j);
-//            BlockRotation blockRotation = BlockRotation.random(this.random);
-            Shurlin.LOGGER.debug("you're sb");
-            AncientPearTreeGenerator.addPieces(structureManager, blockPos, this.children);
+            AncientTreeGenerator.addPieces(structureManager, blockPos, this.children, AncientTreeStructureFeature.this.data);
             this.setBoundingBoxFromChildren();
         }
     }

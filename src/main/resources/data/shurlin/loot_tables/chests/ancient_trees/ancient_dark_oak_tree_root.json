@@ -10,7 +10,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 25,
+          "weight": 30,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -21,11 +21,11 @@
               }
             }
           ],
-          "name": "minecraft:oak_leaves"
+          "name": "minecraft:dark_oak_log"
         },
         {
           "type": "minecraft:item",
-          "weight": 30,
+          "weight": 40,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -37,21 +37,6 @@
             }
           ],
           "name": "minecraft:stick"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 10,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1.0,
-                "max": 3.0,
-                "type": "minecraft:uniform"
-              }
-            }
-          ],
-          "name": "minecraft:oak_sapling"
         },
         {
           "type": "minecraft:item",
@@ -96,22 +81,17 @@
               "function": "minecraft:set_count",
               "count": {
                 "min": 1.0,
-                "max": 3.0,
+                "max": 4.0,
                 "type": "minecraft:uniform"
               }
             }
           ],
-          "name": "shurlin:pear"
+          "name": "minecraft:wheat"
         },
         {
           "type": "minecraft:item",
           "weight": 3,
           "name": "shurlin:plant_jade"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 5,
-          "name": "shurlin:plant_extractant"
         }
       ]
     }

@@ -21,7 +21,7 @@
               }
             }
           ],
-          "name": "minecraft:oak_leaves"
+          "name": "minecraft:acacia_leaves"
         },
         {
           "type": "minecraft:item",
@@ -51,7 +51,7 @@
               }
             }
           ],
-          "name": "minecraft:oak_sapling"
+          "name": "minecraft:acacia_sapling"
         },
         {
           "type": "minecraft:item",

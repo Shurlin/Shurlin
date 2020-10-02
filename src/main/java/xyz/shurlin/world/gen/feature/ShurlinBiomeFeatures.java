@@ -37,6 +37,11 @@ public class ShurlinBiomeFeatures {
     public static final ConfiguredFeature<TreeFeatureConfig, ?> PEAR_TREE_CONFIG;
     public static final ConfiguredFeature<TreeFeatureConfig, ?> PHOENIX_TREE_CONFIG;
     public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_OAK_TREE;
+    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_BIRCH_TREE;
+    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_DARK_OAK_TREE;
+    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_ACACIA_TREE;
+    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_SPRUCE_TREE;
+    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_JUNGLE_TREE;
     public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_PEAR_TREE;
 
     public static void addPearTrees(Biome biome) {
@@ -98,6 +103,11 @@ public class ShurlinBiomeFeatures {
         PEAR_TREE_CONFIG =  Feature.TREE.configure((new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(PEAR_LOG), PEAR_LEAVES_PROVIDER, new BlobFoliagePlacer(2, 0, 0, 0, 3), new StraightTrunkPlacer(5, 2, 0), new TwoLayersFeatureSize(1, 0, 1))).build());
         PHOENIX_TREE_CONFIG =  Feature.TREE.configure((new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(PHOENIX_LOG), new SimpleBlockStateProvider(PHOENIX_LEAVES), new DarkOakFoliagePlacer(0, 0, 0, 0), new DarkOakTrunkPlacer(6, 2, 1), new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty()))).ignoreVines().build());
         ANCIENT_OAK_TREE = StructureFeatures.ANCIENT_OAK_TREE.configure(DefaultFeatureConfig.INSTANCE);
+        ANCIENT_BIRCH_TREE = StructureFeatures.ANCIENT_BIRCH_TREE.configure(DefaultFeatureConfig.INSTANCE);
+        ANCIENT_DARK_OAK_TREE = StructureFeatures.ANCIENT_DARK_OAK_TREE.configure(DefaultFeatureConfig.INSTANCE);
+        ANCIENT_ACACIA_TREE = StructureFeatures.ANCIENT_ACACIA_TREE.configure(DefaultFeatureConfig.INSTANCE);
+        ANCIENT_SPRUCE_TREE = StructureFeatures.ANCIENT_SPRUCE_TREE.configure(DefaultFeatureConfig.INSTANCE);
+        ANCIENT_JUNGLE_TREE = StructureFeatures.ANCIENT_JUNGLE_TREE.configure(DefaultFeatureConfig.INSTANCE);
         ANCIENT_PEAR_TREE = StructureFeatures.ANCIENT_PEAR_TREE.configure(DefaultFeatureConfig.INSTANCE);
     }
 }

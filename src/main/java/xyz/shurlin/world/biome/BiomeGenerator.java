@@ -3,6 +3,7 @@ package xyz.shurlin.world.biome;
 import net.minecraft.block.Block;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
@@ -21,6 +22,7 @@ public class BiomeGenerator {
         Registry.BIOME.forEach(this::handleBiome);
         STRUCTURES.put("ancient_oak_tree", StructureFeatures.ANCIENT_OAK_TREE);
         STRUCTURES.put("ancient_pear_tree", StructureFeatures.ANCIENT_PEAR_TREE);
+        Biomes.DARK_FOREST.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_DARK_OAK_TREE);//TODO
     }
 
     private void handleBiome(Biome biome){
