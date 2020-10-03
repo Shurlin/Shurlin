@@ -36,6 +36,11 @@ public class Items {
     public static final Item MYSTERIOUS_SPIRIT_OF_PLANT;
     public static final Item PLANT_EXTRACTANT;
 
+    public static final Item BREAKER_CORE;
+    public static final Item COLLECTOR_CORE;
+    public static final Item CONCENTRATOR_CORE;
+    public static final Item EXTRACTOR_CORE;
+
     public static final Item TENUOUS_METAL_SPIRIT;
     public static final Item TENUOUS_WOOD_SPIRIT;
     public static final Item TENUOUS_WATER_SPIRIT;
@@ -164,6 +169,12 @@ public class Items {
         PLANT_WAND = register("plant_wand", new PlantWandItem());
         MYSTERIOUS_SPIRIT_OF_PLANT = register("mysterious_spirit_of_plant");
         PLANT_EXTRACTANT = register("plant_extractant", new ExtractantItem(64));
+
+        BREAKER_CORE = register("breaker_core");
+        COLLECTOR_CORE = register("collector_core");
+        CONCENTRATOR_CORE = register("concentrator_core");
+        EXTRACTOR_CORE = register("extractor_core");
+
 
         TENUOUS_METAL_SPIRIT = registerSpirit("tenuous_metal_spirit", ElementPropertyType.METAL, SpiritConsistences.TENUOUS);
         TENUOUS_WOOD_SPIRIT = registerSpirit("tenuous_wood_spirit", ElementPropertyType.WOOD, SpiritConsistences.TENUOUS);
