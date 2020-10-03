@@ -37,7 +37,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
         for(int i=0;i<concentrationIngredients.size();i++){
             ConcentrationIngredient concentrationIngredient = concentrationIngredients.elementAt(i);
             ItemStack stack = inv.getStack(i);
-            boolean b = concentrationIngredient.itemOrTag.contains(stack.getItem()) && stack.getCount() == concentrationIngredient.count;
+            boolean b = concentrationIngredient.itemOrTag.contains(stack.getItem()) && stack.getCount() >= concentrationIngredient.count;
             if(!b)
                 return false;
         }
