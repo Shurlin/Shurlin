@@ -2,16 +2,17 @@ package xyz.shurlin.structure;
 
 import net.minecraft.structure.StructurePieceType;
 import net.minecraft.util.Identifier;
+import xyz.shurlin.Shurlin;
 import xyz.shurlin.loot.LootTables;
 
-public enum AncientTreeData {
-    OAK(StructurePieceTypes.ANCIENT_OAK_TREE, "oak", LootTables.ANCIENT_OAK_TREE_LEAVES_CHEST, LootTables.ANCIENT_OAK_TREE_ROOT_CHEST),
-    BIRCH(StructurePieceTypes.ANCIENT_BIRCH_TREE, "birch", LootTables.ANCIENT_BIRCH_TREE_LEAVES_CHEST, LootTables.ANCIENT_BIRCH_TREE_ROOT_CHEST),
-    DARK_OAK(StructurePieceTypes.ANCIENT_DARK_OAK_TREE, "dark_oak", LootTables.ANCIENT_DARK_OAK_TREE_LEAVES_CHEST, LootTables.ANCIENT_DARK_OAK_TREE_ROOT_CHEST),
-    ACACIA(StructurePieceTypes.ANCIENT_ACACIA_TREE, "acacia", LootTables.ANCIENT_ACACIA_TREE_LEAVES_CHEST, LootTables.ANCIENT_ACACIA_TREE_ROOT_CHEST),
-    SPRUCE(StructurePieceTypes.ANCIENT_SPRUCE_TREE, "spruce", LootTables.ANCIENT_SPRUCE_TREE_LEAVES_CHEST, LootTables.ANCIENT_SPRUCE_TREE_ROOT_CHEST),
-    JUNGLE(StructurePieceTypes.ANCIENT_JUNGLE_TREE, "jungle", LootTables.ANCIENT_JUNGLE_TREE_LEAVES_CHEST, LootTables.ANCIENT_JUNGLE_TREE_ROOT_CHEST),
-    PEAR(StructurePieceTypes.ANCIENT_PEAR_TREE, "pear", LootTables.ANCIENT_PEAR_TREE_LEAVES_CHEST, LootTables.ANCIENT_PEAR_TREE_ROOT_CHEST);
+public class AncientTreeData {
+    public static final AncientTreeData OAK = new AncientTreeData(StructurePieceTypes.ANCIENT_OAK_TREE, "oak", LootTables.ANCIENT_OAK_TREE_LEAVES_CHEST, LootTables.ANCIENT_OAK_TREE_ROOT_CHEST);
+    public static final AncientTreeData BIRCH = new AncientTreeData(StructurePieceTypes.ANCIENT_BIRCH_TREE, "birch", LootTables.ANCIENT_BIRCH_TREE_LEAVES_CHEST, LootTables.ANCIENT_BIRCH_TREE_ROOT_CHEST);
+    public static final AncientTreeData DARK_OAK = new AncientTreeData(StructurePieceTypes.ANCIENT_DARK_OAK_TREE, "dark_oak", LootTables.ANCIENT_DARK_OAK_TREE_LEAVES_CHEST, LootTables.ANCIENT_DARK_OAK_TREE_ROOT_CHEST);
+    public static final AncientTreeData ACACIA = new AncientTreeData(StructurePieceTypes.ANCIENT_ACACIA_TREE, "acacia", LootTables.ANCIENT_ACACIA_TREE_LEAVES_CHEST, LootTables.ANCIENT_ACACIA_TREE_ROOT_CHEST);
+    public static final AncientTreeData SPRUCE = new AncientTreeData(StructurePieceTypes.ANCIENT_SPRUCE_TREE, "spruce", LootTables.ANCIENT_SPRUCE_TREE_LEAVES_CHEST, LootTables.ANCIENT_SPRUCE_TREE_ROOT_CHEST);
+    public static final AncientTreeData JUNGLE = new AncientTreeData(StructurePieceTypes.ANCIENT_JUNGLE_TREE, "jungle", LootTables.ANCIENT_JUNGLE_TREE_LEAVES_CHEST, LootTables.ANCIENT_JUNGLE_TREE_ROOT_CHEST);
+    public static final AncientTreeData PEAR = new AncientTreeData(StructurePieceTypes.ANCIENT_PEAR_TREE, "pear", LootTables.ANCIENT_PEAR_TREE_LEAVES_CHEST, LootTables.ANCIENT_PEAR_TREE_ROOT_CHEST);
 
     private StructurePieceType type;
     private String name;
@@ -19,10 +20,10 @@ public enum AncientTreeData {
     private Identifier leavesChest;
     private Identifier rootChest;
 
-    AncientTreeData(StructurePieceType type, String name, Identifier leavesChest, Identifier rootChest) {
+    private AncientTreeData(StructurePieceType type, String name, Identifier leavesChest, Identifier rootChest) {
         this.type = type;
         this.name = name;
-        this.template = new Identifier("ancient_trees/ancient_" + name + "_tree");
+        this.template = new Identifier(Shurlin.MODID, "ancient_trees/ancient_" + name + "_tree");
         this.leavesChest = leavesChest;
         this.rootChest = rootChest;
     }
@@ -31,7 +32,7 @@ public enum AncientTreeData {
         return name;
     }
 
-    public static AncientTreeData findData(String name){
+    static AncientTreeData findData(String name){
         switch (name){
             case "oak":
                 return OAK;

@@ -90,7 +90,7 @@ public abstract class AbstractWorkerScreenHandler extends AbstractRecipeScreenHa
     }
 
     @Override
-    public ItemStack transferSlot(PlayerEntity player, int index) {
+    public ItemStack transferSlot(PlayerEntity player, int index) {//TODO
         ItemStack itemStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
         if (slot != null && slot.hasStack()) {

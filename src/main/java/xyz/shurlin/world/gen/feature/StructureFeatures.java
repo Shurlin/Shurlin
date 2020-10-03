@@ -27,6 +27,6 @@ public class StructureFeatures {
         ANCIENT_ACACIA_TREE = register("ancient_acacia_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.ACACIA));
         ANCIENT_SPRUCE_TREE = register("ancient_spruce_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.SPRUCE));
         ANCIENT_JUNGLE_TREE = register("ancient_jungle_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.JUNGLE));
-        ANCIENT_PEAR_TREE = register("ancient_oak_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.PEAR));
+        ANCIENT_PEAR_TREE = register("ancient_pear_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.PEAR));
     }
 }

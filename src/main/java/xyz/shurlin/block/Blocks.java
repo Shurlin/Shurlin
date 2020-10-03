@@ -7,7 +7,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import sun.security.provider.ConfigFile;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.coral.*;
 import xyz.shurlin.block.worker.BreakerBlock;

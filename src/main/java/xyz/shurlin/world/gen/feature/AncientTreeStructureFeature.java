@@ -15,7 +15,7 @@ import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.structure.AncientTreeData;
-import xyz.shurlin.structure.AncientTreeGenerator;
+import xyz.shurlin.structure.AncientTreePiece;
 
 public class AncientTreeStructureFeature extends StructureFeature<DefaultFeatureConfig> {
     private final AncientTreeData data;
@@ -51,7 +51,7 @@ public class AncientTreeStructureFeature extends StructureFeature<DefaultFeature
             int i = x * 16;
             int j = z * 16;
             BlockPos blockPos = new BlockPos(i, 0, j);
-            AncientTreeGenerator.addPieces(structureManager, blockPos, this.children, AncientTreeStructureFeature.this.data);
+            AncientTreePiece.addPieces(structureManager, blockPos, this.children, AncientTreeStructureFeature.this.data);
             this.setBoundingBoxFromChildren();
         }
     }

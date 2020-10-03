@@ -4,9 +4,11 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.recipebook.RecipeBookGroup;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.recipe.WorkerRecipeSerializer;
 import xyz.shurlin.screen.ScreenHandlerTypes;
+import xyz.shurlin.structure.AncientTreeData;
 import xyz.shurlin.structure.StructurePieceTypes;
 import xyz.shurlin.util.ServerReceiver;
 import xyz.shurlin.world.biome.BiomeGenerator;
@@ -25,9 +27,10 @@ public class Shurlin implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        new Items();
-//        new Features();
         new StructurePieceTypes();
+        new Items();
+        new BlockEntityTypes();
+//        new Features();
         new RecipeSerializers();
         new Biomes();
         new BiomeGenerator();

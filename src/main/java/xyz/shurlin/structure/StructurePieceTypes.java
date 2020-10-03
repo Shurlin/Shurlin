@@ -1,7 +1,10 @@
 package xyz.shurlin.structure;
 
 import net.minecraft.structure.StructurePieceType;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.SimpleRegistry;
+import xyz.shurlin.Shurlin;
 
 import java.util.Locale;
 
@@ -15,20 +18,16 @@ public class StructurePieceTypes {
     public static final StructurePieceType ANCIENT_PEAR_TREE;
 
     private static StructurePieceType register(String id, StructurePieceType piece){
-        return Registry.register(Registry.STRUCTURE_PIECE, id.toLowerCase(Locale.ROOT), piece);
-    }
-
-    private static StructurePieceType registerAncientTree(String id, AncientTreeData data){
-        return register(id, (manager, tag)->new AncientTreeGenerator.Piece(manager, tag, data));
+        return Registry.register(Registry.STRUCTURE_PIECE, id, piece);
     }
 
     static {
-        ANCIENT_OAK_TREE = registerAncientTree("ancient_oak_tree", AncientTreeData.OAK);
-        ANCIENT_BIRCH_TREE = registerAncientTree("ancient_birch_tree", AncientTreeData.BIRCH);
-        ANCIENT_DARK_OAK_TREE = registerAncientTree("ancient_dark_oak_tree", AncientTreeData.DARK_OAK);
-        ANCIENT_ACACIA_TREE = registerAncientTree("ancient_acacia_tree", AncientTreeData.ACACIA);
-        ANCIENT_SPRUCE_TREE = registerAncientTree("ancient_spruce_tree", AncientTreeData.SPRUCE);
-        ANCIENT_JUNGLE_TREE = registerAncientTree("ancient_jungle_tree", AncientTreeData.JUNGLE);
-        ANCIENT_PEAR_TREE = registerAncientTree("ancient_oak_tree", AncientTreeData.PEAR);
+        ANCIENT_OAK_TREE = register("ancient_oak_tree", AncientTreePieces.OakPieces::new);
+        ANCIENT_BIRCH_TREE = register("ancient_birch_tree", AncientTreePieces.BirchPieces::new);
+        ANCIENT_DARK_OAK_TREE = register("ancient_dark_oak_tree", AncientTreePieces.DarkOakPieces::new);
+        ANCIENT_ACACIA_TREE = register("ancient_acacia_tree", AncientTreePieces.AcaciaPieces::new);
+        ANCIENT_SPRUCE_TREE = register("ancient_spruce_tree", AncientTreePieces.SprucePieces::new);
+        ANCIENT_JUNGLE_TREE = register("ancient_jungle_tree", AncientTreePieces.JunglePieces::new);
+        ANCIENT_PEAR_TREE = register("ancient_pear_tree", AncientTreePieces.PearPieces::new);
     }
 }
