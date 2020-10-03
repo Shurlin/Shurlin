@@ -1,9 +1,0 @@
-plant_iron:120 60 -40  7/5
-plant_essence:120 60 -60
-plant_gold:40 0 0
-plant_mixture:blue_dye, -120 0 -40
-
-small_bud:100 80 25
-pearleaves 100 70 -30
-pearlog
-jade dimaond -60 0 0

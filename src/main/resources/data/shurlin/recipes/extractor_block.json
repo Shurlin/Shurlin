@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "worker",
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "shurlin:worker_shell"
+    },
+    "*": {
+      "item": "shurlin:extractor_core"
+    }
+  },
+  "result": {
+    "item": "shurlin:extractor_block"
+  }
+}

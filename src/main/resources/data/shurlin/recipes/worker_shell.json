@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "worker",
+  "pattern": [
+    "#*#",
+    "*#*",
+    "#*#"
+  ],
+  "key": {
+    "#": {
+      "item": "shurlin:plant_iron_nugget"
+    },
+    "*": {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "result": {
+    "item": "shurlin:worker_shell",
+    "count": 4
+  }
+}

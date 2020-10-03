@@ -137,5 +137,8 @@
   "advancements.shurlin.power_of_mysterious_spirit.description" : "用钻石从玄石中引出的灵力",
 
   "container.breaker": "破碎仪",
+  "container.collector": "收集器",
+  "container.concentrator": "浓缩仪",
+  "container.extractor": "萃取仪",
   "container.portable_container": "便携背包"
 }

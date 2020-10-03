@@ -36,6 +36,7 @@ public class Items {
     public static final Item MYSTERIOUS_SPIRIT_OF_PLANT;
     public static final Item PLANT_EXTRACTANT;
 
+    public static final Item WORKER_SHELL;
     public static final Item BREAKER_CORE;
     public static final Item COLLECTOR_CORE;
     public static final Item CONCENTRATOR_CORE;
@@ -170,6 +171,7 @@ public class Items {
         MYSTERIOUS_SPIRIT_OF_PLANT = register("mysterious_spirit_of_plant");
         PLANT_EXTRACTANT = register("plant_extractant", new ExtractantItem(64));
 
+        WORKER_SHELL = register("worker_shell");
         BREAKER_CORE = register("breaker_core");
         COLLECTOR_CORE = register("collector_core");
         CONCENTRATOR_CORE = register("concentrator_core");
