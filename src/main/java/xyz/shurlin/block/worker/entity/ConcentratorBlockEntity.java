@@ -77,10 +77,10 @@ public class ConcentratorBlockEntity extends AbstractWorkerBlockEntity {
                         this.workTime = 0;
                         this.craftRecipe(recipe);
                     }
+                }else {
+                    this.workTime = 0;
+                    this.workTimeTotal = 0;
                 }
-            }else {
-                this.workTime = 0;
-                this.workTimeTotal = 0;
             }
         }
     }
