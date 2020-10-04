@@ -1,5 +1,5 @@
 {
-  "itemGroup.shurlin" : "仙灵",
+  "itemGroup.shurlin.shurlin" : "仙灵",
 
   "item.shurlin.bean" : "豆子",
   "item.shurlin.plant_essence" : "植物精华",
@@ -29,6 +29,10 @@
   "item.shurlin.mysterious_spirit_of_plant" : "植物玄灵",
   "item.shurlin.plant_extractant" : "植物萃取剂",
   "item.shurlin.worker_shell" : "工作器外壳",
+  "item.shurlin.breaker_core" : "破碎仪核心",
+  "item.shurlin.collector_core" : "收集器核心",
+  "item.shurlin.concentrator_core" : "浓缩仪核心",
+  "item.shurlin.extractor_core" : "萃取仪核心",
 
 
   "item.shurlin.tenuous_metal_spirit": "稀薄的金灵气",

@@ -1,7 +1,7 @@
 {
   "type": "shurlin:breaking",
   "ingredient": {
-    "item": "minecraft:flowers"
+    "tag": "minecraft:flowers"
   },
   "result": "shurlin:plant_mixture",
   "count": 2,

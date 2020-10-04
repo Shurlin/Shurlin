@@ -1,7 +1,7 @@
 {
   "type": "shurlin:breaking",
   "ingredient": {
-    "item": "minecraft:plant_essence_ingot"
+    "item": "shurlin:plant_essence_ingot"
   },
   "result": "shurlin:plant_essence",
   "count": 6,

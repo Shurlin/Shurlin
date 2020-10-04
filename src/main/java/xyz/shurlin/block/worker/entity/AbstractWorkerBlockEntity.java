@@ -45,15 +45,15 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
     @Override
     public void fromTag(BlockState state, CompoundTag tag) {
         super.fromTag(state, tag);
-        this.workTime = tag.getShort("WorkTime");
-        this.workTimeTotal = tag.getShort("WorkTimeTotal");
+        this.workTime = tag.getInt("WorkTime");
+        this.workTimeTotal = tag.getInt("WorkTimeTotal");
     }
 
     @Override
     public CompoundTag toTag(CompoundTag tag) {
         super.toTag(tag);
-        tag.putShort("WorkTime", (short)this.workTime);
-        tag.putShort("WorkTimeTotal", (short)this.workTimeTotal);
+        tag.putInt("WorkTime", (short)this.workTime);
+        tag.putInt("WorkTimeTotal", (short)this.workTimeTotal);
         return tag;
     }
 

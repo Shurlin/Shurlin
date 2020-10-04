@@ -169,7 +169,7 @@ public class Items {
         HOLY_PEAR_BAG = register("holy_pear_bag", new HolyPearBagItem());
         PLANT_WAND = register("plant_wand", new PlantWandItem());
         MYSTERIOUS_SPIRIT_OF_PLANT = register("mysterious_spirit_of_plant");
-        PLANT_EXTRACTANT = register("plant_extractant", new ExtractantItem(64));
+        PLANT_EXTRACTANT = register("plant_extractant", new PlantExtractantItem(64));
 
         WORKER_SHELL = register("worker_shell");
         BREAKER_CORE = register("breaker_core");

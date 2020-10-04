@@ -79,7 +79,7 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
                 if(collection instanceof Collectable){
                     Collectable collectable = ((Collectable) collection);
                     this.consistence = collectable.getConsistence(this.world, this.pos);
-                    if(!isWorking())
+                    if(!isWorking() || this.workTimeTotal <= 0)
                         this.workTimeTotal = collectable.getTime();
                     if(getCollected()){
                         ++this.workTime;
@@ -91,6 +91,7 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
                 }
             }else{
                 this.workTime = 0;
+                this.workTimeTotal = 0;
                 this.consistence = 0;
             }
         }

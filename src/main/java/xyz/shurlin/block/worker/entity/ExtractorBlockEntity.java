@@ -91,9 +91,9 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
                 }
             }
             if(!input.isEmpty()){
-                Recipe<?> recipe = (Recipe) this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).orElse(null);
+                Recipe<?> recipe = this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).orElse(null);
                 if(this.canAcceptRecipeOutput(recipe) && this.cur_extractant > 0){
-                    if(!isWorking())
+                    if(!isWorking() || this.workTimeTotal <= 0)
                         this.workTimeTotal = this.getWorkTimeTotal();
                     ++this.workTime;
                     if(this.workTime == this.workTimeTotal){
@@ -104,6 +104,7 @@ public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {
                 }
             }else {
                 this.workTime = 0;
+                this.workTimeTotal = 0;
             }
         }
     }

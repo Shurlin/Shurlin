@@ -70,7 +70,7 @@ public class ConcentratorBlockEntity extends AbstractWorkerBlockEntity {
             if(!this.inventory.get(0).isEmpty()){
                 ConcentratorRecipe recipe = (ConcentratorRecipe) this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).orElse(null);
                 if(this.canAcceptRecipeOutput(recipe)){
-                    if(!isWorking())
+                    if(!isWorking() || this.workTimeTotal <= 0)
                         this.workTimeTotal = this.getWorkTimeTotal();
                     ++this.workTime;
                     if(this.workTime == this.workTimeTotal){
@@ -80,6 +80,7 @@ public class ConcentratorBlockEntity extends AbstractWorkerBlockEntity {
                 }
             }else {
                 this.workTime = 0;
+                this.workTimeTotal = 0;
             }
         }
     }

@@ -1,5 +1,5 @@
 {
-  "itemGroup.shurlin" : "Shurlin",
+  "itemGroup.shurlin.shurlin" : "Shurlin",
 
   "item.shurlin.bean" : "Bean",
   "item.shurlin.plant_essence" : "Plant Essence",
@@ -29,6 +29,10 @@
   "item.shurlin.mysterious_spirit_of_plant" : "Mysterious Spirit Of Plant",
   "item.shurlin.plant_extractant" : "Plant Extractant",
   "item.shurlin.worker_shell" : "Worker Shell",
+  "item.shurlin.breaker_core" : "Breaker Core",
+  "item.shurlin.collector_core" : "Collector Core",
+  "item.shurlin.concentrator_core" : "Concentrator Core",
+  "item.shurlin.extractor_core" : "Extractor Core",
 
 
   "item.shurlin.tenuous_metal_spirit": "Tenuous Metal Spirit",

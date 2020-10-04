@@ -23,7 +23,7 @@ public class AncientTreeData {
     private AncientTreeData(StructurePieceType type, String name, Identifier leavesChest, Identifier rootChest) {
         this.type = type;
         this.name = name;
-        this.template = new Identifier(Shurlin.MODID, "ancient_trees/ancient_" + name + "_tree");
+        this.template = new Identifier("ancient_trees/ancient_" + name + "_tree");
         this.leavesChest = leavesChest;
         this.rootChest = rootChest;
     }

@@ -66,9 +66,9 @@ public class BreakerBlockEntity extends AbstractWorkerBlockEntity {
         if (this.world != null && !this.world.isClient) {
             ItemStack input = this.inventory.get(0);
             if(!input.isEmpty()){
-                Recipe<?> recipe = (Recipe) this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).orElse(null);
+                Recipe<?> recipe = this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).orElse(null);
                 if(this.canAcceptRecipeOutput(recipe)){
-                    if(!isWorking())
+                    if(!isWorking() || this.workTimeTotal <= 0)
                         this.workTimeTotal = this.getWorkTimeTotal();
                     ++this.workTime;
                     if(this.workTime == this.workTimeTotal){
@@ -78,6 +78,7 @@ public class BreakerBlockEntity extends AbstractWorkerBlockEntity {
                 }
             }else {
                 this.workTime = 0;
+                this.workTimeTotal = 0;
             }
         }
     }
