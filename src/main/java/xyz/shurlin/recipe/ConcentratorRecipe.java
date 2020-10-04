@@ -70,8 +70,9 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             }
             String result = JsonHelper.getString(jsonObject, "result");
             Identifier result_id = new Identifier(result);
+            int count = JsonHelper.getInt(jsonObject, "count",1);
             ItemStack output = new ItemStack(Registry.ITEM.getOrEmpty(result_id).orElseThrow(() ->
-                    new IllegalStateException("Item: " + result + " does not exist")));
+                    new IllegalStateException("Item: " + result + " does not exist")), count);
             int workingTime = JsonHelper.getInt(jsonObject, "workingTime");
             int shurlinLevel = JsonHelper.getInt(jsonObject, "shurlinLevel", 0);
             return this.recipeFactory.create(id, group, concentrationIngredients, output, workingTime, () -> shurlinLevel);

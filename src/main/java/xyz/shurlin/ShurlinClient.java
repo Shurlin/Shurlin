@@ -27,8 +27,8 @@ public class ShurlinClient implements ClientModInitializer {
                 Blocks.DEAD_LEAVE_CORAL_WALL_FAN);
 //        BlockRenderLayerMap.INSTANCE.putItem(Items.TENUOUS_WOOD_SPIRIT, RenderLayer.());
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.HOLY_FARMER_PORTAL, RenderLayer.getTranslucent());
-        EntityRendererRegistry.INSTANCE.register(EntityTypes.BEAN_ENTITY_TYPE, BeanEntityRender::new);
-        EntityRendererRegistry.INSTANCE.register(EntityTypes.HOLY_PEAR_ARROW_ENTITY_TYPE, HolyPearArrowEntityRender::new);
+//        EntityRendererRegistry.INSTANCE.register(EntityTypes.BEAN_ENTITY_TYPE, BeanEntityRender::new);
+//        EntityRendererRegistry.INSTANCE.register(EntityTypes.HOLY_PEAR_ARROW_ENTITY_TYPE, HolyPearArrowEntityRender::new);
         new HandledScreens();
     }
 }

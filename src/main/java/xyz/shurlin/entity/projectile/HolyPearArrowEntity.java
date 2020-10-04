@@ -16,7 +16,7 @@ import xyz.shurlin.util.Utils;
 import xyz.shurlin.entity.EntityTypes;
 import xyz.shurlin.item.Items;
 
-public class HolyPearArrowEntity extends PersistentProjectileEntity {
+public class HolyPearArrowEntity extends ArrowEntity {
     private static final int[] powers = new int[]{2,8,30};
     private int power;
 
@@ -55,7 +55,7 @@ public class HolyPearArrowEntity extends PersistentProjectileEntity {
     }
 
     public HolyPearArrowEntity(LivingEntity owner, World world, int level) {
-        super(EntityTypes.HOLY_PEAR_ARROW_ENTITY_TYPE, owner, world);
+        super(world, owner);
         this.power = powers[level];
     }
 

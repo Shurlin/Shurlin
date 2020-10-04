@@ -10,9 +10,12 @@ public class ItemGroups {
 //    static final ItemGroup SHURLIN = new ItemGroup(ItemGroup.GROUPS.length, "shurlin"){
 //        @Override
 //        public ItemStack createIcon() {
-//            return new ItemStack(Items.PLANT_ESSENCE);
+//            return ;
 //        }
 //    };
 
-    static final ItemGroup SHURLIN = FabricItemGroupBuilder.create(new Identifier(Shurlin.MODID, Shurlin.MODID)).build();
+    static final ItemGroup SHURLIN = FabricItemGroupBuilder
+            .create(new Identifier(Shurlin.MODID))
+            .icon(()->new ItemStack(Items.PLANT_ESSENCE))
+            .build();
 }

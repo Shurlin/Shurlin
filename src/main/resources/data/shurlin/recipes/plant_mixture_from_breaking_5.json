@@ -1,0 +1,8 @@
+{
+  "type": "shurlin:breaking",
+  "ingredient": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "result": "shurlin:plant_mixture",
+  "workingTime": 20
+}

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "shurlin:plant_mixture"
-  },
-  "result": "shurlin:plant_essence_particle",
-  "experience": 1.5,
-  "cookingtime": 100
-}
