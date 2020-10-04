@@ -90,21 +90,6 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 12,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1.0,
-                "max": 3.0,
-                "type": "minecraft:uniform"
-              }
-            }
-          ],
-          "name": "shurlin:pear"
-        },
-        {
-          "type": "minecraft:item",
           "weight": 3,
           "name": "shurlin:plant_jade"
         },

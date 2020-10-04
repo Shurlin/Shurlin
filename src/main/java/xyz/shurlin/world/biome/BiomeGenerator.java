@@ -25,6 +25,7 @@ public class BiomeGenerator {
         STRUCTURES.put("ancient_jungle_tree",  StructureFeatures.ANCIENT_JUNGLE_TREE);
         STRUCTURES.put("ancient_pear_tree", StructureFeatures.ANCIENT_PEAR_TREE);
         Registry.BIOME.forEach(this::handleBiome);
+        Biomes.FOREST.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_OAK_TREE);
     }
 
     private void handleBiome(Biome biome){
@@ -57,7 +58,7 @@ public class BiomeGenerator {
         }
 
         if(biome == Biomes.FOREST){
-            biome.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_OAK_TREE);
+//            biome.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_OAK_TREE);
         } else if(biome == Biomes.BIRCH_FOREST || biome == Biomes.TALL_BIRCH_FOREST){
             biome.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_BIRCH_TREE);
         }else if(biome == Biomes.DARK_FOREST){

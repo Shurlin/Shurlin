@@ -11,12 +11,6 @@ import net.minecraft.world.World;
 public class CoralAmuletItem extends BasicItem {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if(enable(slot)){
-            ((PlayerEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.CONDUIT_POWER, 200, 255));
-        }
-    }
-
-    private boolean enable(int slot){
-        return slot == 24;
+        ((PlayerEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.CONDUIT_POWER, 200));
     }
 }

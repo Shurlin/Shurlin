@@ -6,7 +6,6 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 
 public class Features {
-//    public static final Feature<CustomOreFeatureConfig> CUSTOM_ORE;
     public static final Feature<DefaultFeatureConfig> MYSTERIOUS_STONE_PILLAR_FEATURE;
     public static final Feature<DefaultFeatureConfig> PLANT_OBSIDIAN_HEAP;
 
@@ -15,7 +14,6 @@ public class Features {
     }
 
     static {
-//        CUSTOM_ORE = register("custom_ore", new OreFeature(CustomOreFeatureConfig.CODEC));
         MYSTERIOUS_STONE_PILLAR_FEATURE = register("mysterious_stone_pillar", new MysteriousStonePillarFeature(DefaultFeatureConfig.CODEC));
         PLANT_OBSIDIAN_HEAP = register("plant_obsidian_heap", new PlantObsidianHeapFeature(DefaultFeatureConfig.CODEC));
     }
