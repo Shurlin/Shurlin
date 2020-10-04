@@ -109,4 +109,9 @@ public class ConcentratorBlockEntity extends AbstractWorkerBlockEntity {
                 this.inventory.get(i).decrement(vector.get(i).getCount());
         }
     }
+
+    @Override
+    protected int getOutputSlot() {
+        return 4;
+    }
 }

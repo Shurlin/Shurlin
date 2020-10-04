@@ -2,6 +2,6 @@
   "parent": "block/cube_column",
   "textures": {
     "end": "shurlin:block/worker_top",
-    "side": "shurlin:block/breaker"
+    "side": "shurlin:block/breaker_side"
   }
 }

@@ -26,9 +26,9 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
     int workTimeTotal;
     final PropertyDelegate propertyDelegate;
     int level;
-    RecipeType recipeType;
+    RecipeType<? extends AbstractWorkerRecipe> recipeType;
 
-    AbstractWorkerBlockEntity(BlockEntityType<?> blockEntityType, String containerName, int level, RecipeType recipeType) {
+    AbstractWorkerBlockEntity(BlockEntityType<?> blockEntityType, String containerName, int level, RecipeType<? extends AbstractWorkerRecipe> recipeType) {
         super(blockEntityType, containerName);
         this.level = level;
         this.propertyDelegate = getPropertyDelegate();
@@ -153,8 +153,7 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
     }
 
     int getWorkTimeTotal() {
-//        return this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).map(AbstractWorkerRecipe::getWorkTime).orElse(200);
-        return 20;
+        return this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).map(AbstractWorkerRecipe::getWorkTime).orElse(200);
     }
 
     @Override

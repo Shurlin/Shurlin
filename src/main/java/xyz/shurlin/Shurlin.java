@@ -1,5 +1,8 @@
 package xyz.shurlin;
 
+import com.mojang.datafixers.DataFixer;
+import com.mojang.datafixers.DataFixerBuilder;
+import com.mojang.datafixers.DataFixerUpper;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.recipebook.RecipeBookGroup;
 import org.apache.logging.log4j.LogManager;
@@ -27,9 +30,8 @@ public class Shurlin implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        new StructurePieceTypes();
-        new Items();
         new BlockEntityTypes();
+        new Items();
 //        new Features();
         new RecipeSerializers();
         new Biomes();

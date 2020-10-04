@@ -119,23 +119,26 @@
 
   "message.shurlin.holy_pear_altar.bound_success" : "Bound Successfully",
   "message.shurlin.holy_pear_altar.bound_fail" : "Bound Fail",
-  "message.shurlin.small_bud": "仙灵威严，不容侵犯",
+  "message.shurlin.small_bud": "Shurlin above all",
 
-  "effect.shurlin.loved": "爱",
+  "effect.shurlin.loved": "Loved",
 
-  "advancements.shurlin.root.title": "仙灵伊始",
-  "advancements.shurlin.root.description" : "从植物的精华开始",
-  "advancements.shurlin.ore_of_plant.title": "植物之矿",
-  "advancements.shurlin.ore_of_plant.description" : "渗入地下的植物精华",
-  "advancements.shurlin.pear_forest.title": "梨树林",
-  "advancements.shurlin.pear_forest.description" : "长满梨子的小树林",
-  "advancements.shurlin.love_forever.title": "爱，永恒不朽",
-  "advancements.shurlin.love_forever.description" : "桔梗花语",
-  "advancements.shurlin.newly_arrived.title": "初来乍到",
-  "advancements.shurlin.newly_arrived.description" : "初次来到梧桐古林",
-  "advancements.shurlin.power_of_mysterious_spirit.title": "玄灵之力",
-  "advancements.shurlin.power_of_mysterious_spirit.description" : "用钻石从玄石中引出的灵力",
+  "advancements.shurlin.root.title": "Shurlin Start",
+  "advancements.shurlin.root.description" : "Start from plant essence",
+  "advancements.shurlin.ore_of_plant.title": "Ore of Plant",
+  "advancements.shurlin.ore_of_plant.description" : "The plant essence seeped into the ground",
+  "advancements.shurlin.pear_forest.title": "Pear Forest",
+  "advancements.shurlin.pear_forest.description" : "Grove with pears",
+  "advancements.shurlin.love_forever.title": "Love forever",
+  "advancements.shurlin.love_forever.description" : "Flower Language of platycodon grandiflorus",
+  "advancements.shurlin.newly_arrived.title": "Newly Arrived",
+  "advancements.shurlin.newly_arrived.description" : "Come here for the first time",
+  "advancements.shurlin.power_of_mysterious_spirit.title": "Power of Mysterious Spirit",
+  "advancements.shurlin.power_of_mysterious_spirit.description" : "Extract the power of mysterious spirit from the mysterious stone with the plant jade",
 
-  "container.breaker": "破碎仪",
-  "container.portable_container": "便携背包"
+  "container.breaker": "Breaker",
+  "container.collector": "Collector",
+  "container.concentrator": "Concentrator",
+  "container.extractor": "Extractor",
+  "container.portable_container": "Portable Container"
 }
