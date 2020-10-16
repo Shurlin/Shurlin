@@ -148,5 +148,18 @@
   "container.collector": "收集器",
   "container.concentrator": "浓缩仪",
   "container.extractor": "萃取仪",
-  "container.portable_container": "便携背包"
+  "container.portable_container": "便携背包",
+
+  "realm.shurlin.soldier": "灵士",
+  "realm.shurlin.emissary": "灵使",
+  "realm.shurlin.teacher": "灵师",
+  "realm.shurlin.overlord": "灵霸",
+  "realm.shurlin.general": "灵将",
+  "realm.shurlin.marquis": "灵侯",
+  "realm.shurlin.senior": "灵尊",
+  "realm.shurlin.master": "灵宗",
+  "realm.shurlin.sovereign": "灵君",
+  "realm.shurlin.king": "灵王",
+  "realm.shurlin.emperor": "灵帝",
+  "realm.shurlin.sage": "灵圣"
 }

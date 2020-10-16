@@ -1,4 +1,4 @@
-package xyz.shurlin.util;
+package xyz.shurlin.spirit;
 
 public class SpiritConsistences {
     public static final double TENUOUS = 10d;

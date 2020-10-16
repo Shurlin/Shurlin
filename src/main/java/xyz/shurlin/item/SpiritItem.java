@@ -1,6 +1,6 @@
 package xyz.shurlin.item;
 
-import xyz.shurlin.util.ElementPropertyType;
+import xyz.shurlin.spirit.ElementPropertyType;
 
 public class SpiritItem extends BasicItem{
     private final ElementPropertyType elementPropertyType;

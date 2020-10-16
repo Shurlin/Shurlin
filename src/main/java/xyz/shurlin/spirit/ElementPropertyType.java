@@ -1,4 +1,4 @@
-package xyz.shurlin.util;
+package xyz.shurlin.spirit;
 
 public enum ElementPropertyType {
     METAL("metal"),

@@ -6,9 +6,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.Blocks;
-import xyz.shurlin.block.coral.*;
-import xyz.shurlin.util.ElementPropertyType;
-import xyz.shurlin.util.SpiritConsistences;
+import xyz.shurlin.spirit.ElementPropertyType;
+import xyz.shurlin.spirit.SpiritConsistences;
 
 public class Items {
     public static final Item PLANT_MIXTURE;

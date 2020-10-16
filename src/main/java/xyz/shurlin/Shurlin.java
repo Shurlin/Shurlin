@@ -3,6 +3,7 @@ package xyz.shurlin;
 import com.mojang.datafixers.DataFixer;
 import com.mojang.datafixers.DataFixerBuilder;
 import com.mojang.datafixers.DataFixerUpper;
+import com.sun.glass.ui.View;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.recipebook.RecipeBookGroup;
 import org.apache.logging.log4j.LogManager;
