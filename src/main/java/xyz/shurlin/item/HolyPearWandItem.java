@@ -1,6 +1,7 @@
 package xyz.shurlin.item;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.client.render.RenderPhase;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -36,7 +37,7 @@ public class HolyPearWandItem extends BasicItem {
 
     @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
-        return true;
+        return ingredient.getItem().equals(Items.HOLY_PEAR);
     }
 
 //    @Override

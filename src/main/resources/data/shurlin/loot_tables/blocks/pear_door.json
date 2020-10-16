@@ -9,7 +9,7 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "minecraft:pear_door",
+              "block": "shurlin:pear_door",
               "properties": {
                 "half": "lower"
               }

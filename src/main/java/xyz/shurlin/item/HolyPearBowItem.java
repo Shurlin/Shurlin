@@ -30,6 +30,11 @@ class HolyPearBowItem extends BowItem {
         return true;
     }
 
+    @Override
+    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+        return ingredient.getItem().equals(Items.HOLY_PEAR);
+    }
+
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {

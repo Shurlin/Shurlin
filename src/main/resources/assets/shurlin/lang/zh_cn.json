@@ -161,5 +161,18 @@
   "realm.shurlin.sovereign": "灵君",
   "realm.shurlin.king": "灵王",
   "realm.shurlin.emperor": "灵帝",
-  "realm.shurlin.sage": "灵圣"
+  "realm.shurlin.sage": "灵圣",
+
+  "realm.shurlin.soldier.rank": "灵士%d阶",
+  "realm.shurlin.emissary.rank": "灵使%d阶",
+  "realm.shurlin.teacher.rank": "灵师%d阶",
+  "realm.shurlin.overlord.rank": "灵霸%d阶",
+  "realm.shurlin.general.rank": "灵将%d阶",
+  "realm.shurlin.marquis.rank": "灵侯%d阶",
+  "realm.shurlin.senior.rank": "灵尊%d阶",
+  "realm.shurlin.master.rank": "灵宗%d阶",
+  "realm.shurlin.sovereign.rank": "灵君%d阶",
+  "realm.shurlin.king.rank": "灵王%d阶",
+  "realm.shurlin.emperor.rank": "灵帝%d阶",
+  "realm.shurlin.sage.rank": "灵圣%d阶"
 }
