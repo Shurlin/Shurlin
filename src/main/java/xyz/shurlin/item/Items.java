@@ -6,8 +6,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.Blocks;
-import xyz.shurlin.spirit.ElementPropertyType;
-import xyz.shurlin.spirit.SpiritConsistences;
+import xyz.shurlin.cultivation.SpiritPropertyType;
+import xyz.shurlin.cultivation.SpiritConsistences;
 
 public class Items {
     public static final Item PLANT_MIXTURE;
@@ -127,7 +127,7 @@ public class Items {
         return register(registryName, new Item(settings));
     }
 
-    private static Item registerSpirit(String registryName, ElementPropertyType type, double consistence){
+    private static Item registerSpirit(String registryName, SpiritPropertyType type, double consistence){
         return register(registryName, new SpiritItem(type, consistence));
     }
 
@@ -177,18 +177,18 @@ public class Items {
         EXTRACTOR_CORE = register("extractor_core");
 
 
-        TENUOUS_METAL_SPIRIT = registerSpirit("tenuous_metal_spirit", ElementPropertyType.METAL, SpiritConsistences.TENUOUS);
-        TENUOUS_WOOD_SPIRIT = registerSpirit("tenuous_wood_spirit", ElementPropertyType.WOOD, SpiritConsistences.TENUOUS);
-        TENUOUS_WATER_SPIRIT = registerSpirit("tenuous_water_spirit", ElementPropertyType.WATER, SpiritConsistences.TENUOUS);
-        TENUOUS_FIRE_SPIRIT = registerSpirit("tenuous_fire_spirit", ElementPropertyType.FIRE, SpiritConsistences.TENUOUS);
-        TENUOUS_EARTH_SPIRIT = registerSpirit("tenuous_earth_spirit", ElementPropertyType.EARTH, SpiritConsistences.TENUOUS);
-        TENUOUS_WIND_SPIRIT = registerSpirit("tenuous_wind_spirit", ElementPropertyType.WIND, SpiritConsistences.TENUOUS);
-        TENUOUS_LIGHT_SPIRIT = registerSpirit("tenuous_light_spirit", ElementPropertyType.LIGHT, SpiritConsistences.TENUOUS);
-        TENUOUS_DARKNESS_SPIRIT = registerSpirit("tenuous_darkness_spirit", ElementPropertyType.DARKNESS, SpiritConsistences.TENUOUS);
-        TENUOUS_POISON_SPIRIT = registerSpirit("tenuous_poison_spirit", ElementPropertyType.POISON, SpiritConsistences.TENUOUS);
-        TENUOUS_LIGHTNING_SPIRIT = registerSpirit("tenuous_lightning_spirit", ElementPropertyType.LIGHTNING, SpiritConsistences.TENUOUS);
-        TENUOUS_ICE_SPIRIT = registerSpirit("tenuous_ice_spirit", ElementPropertyType.ICE, SpiritConsistences.TENUOUS);
-        TENUOUS_TIME_SPACE_SPIRIT = registerSpirit("tenuous_time_space_spirit", ElementPropertyType.TIME_SPACE, SpiritConsistences.TENUOUS);
+        TENUOUS_METAL_SPIRIT = registerSpirit("tenuous_metal_spirit", SpiritPropertyType.METAL, SpiritConsistences.TENUOUS);
+        TENUOUS_WOOD_SPIRIT = registerSpirit("tenuous_wood_spirit", SpiritPropertyType.WOOD, SpiritConsistences.TENUOUS);
+        TENUOUS_WATER_SPIRIT = registerSpirit("tenuous_water_spirit", SpiritPropertyType.WATER, SpiritConsistences.TENUOUS);
+        TENUOUS_FIRE_SPIRIT = registerSpirit("tenuous_fire_spirit", SpiritPropertyType.FIRE, SpiritConsistences.TENUOUS);
+        TENUOUS_EARTH_SPIRIT = registerSpirit("tenuous_earth_spirit", SpiritPropertyType.EARTH, SpiritConsistences.TENUOUS);
+        TENUOUS_WIND_SPIRIT = registerSpirit("tenuous_wind_spirit", SpiritPropertyType.WIND, SpiritConsistences.TENUOUS);
+        TENUOUS_LIGHT_SPIRIT = registerSpirit("tenuous_light_spirit", SpiritPropertyType.LIGHT, SpiritConsistences.TENUOUS);
+        TENUOUS_DARKNESS_SPIRIT = registerSpirit("tenuous_darkness_spirit", SpiritPropertyType.DARKNESS, SpiritConsistences.TENUOUS);
+        TENUOUS_POISON_SPIRIT = registerSpirit("tenuous_poison_spirit", SpiritPropertyType.POISON, SpiritConsistences.TENUOUS);
+        TENUOUS_LIGHTNING_SPIRIT = registerSpirit("tenuous_lightning_spirit", SpiritPropertyType.LIGHTNING, SpiritConsistences.TENUOUS);
+        TENUOUS_ICE_SPIRIT = registerSpirit("tenuous_ice_spirit", SpiritPropertyType.ICE, SpiritConsistences.TENUOUS);
+        TENUOUS_TIME_SPACE_SPIRIT = registerSpirit("tenuous_time_space_spirit", SpiritPropertyType.TIME_SPACE, SpiritConsistences.TENUOUS);
 
         SHURLIN_INGOT = register("shurlin_ingot", new Item.Settings().group(ItemGroups.SHURLIN).fireproof());
         SHURLIN_POWERFUL_AXE = register("shurlin_powerful_axe", new ShurlinPowerfulAxeItem());

@@ -1,4 +1,4 @@
-package xyz.shurlin.spirit;
+package xyz.shurlin.cultivation;
 
 public enum CultivationRealms {
     SOLDIER("soldier", 1, 3),
@@ -33,7 +33,7 @@ public enum CultivationRealms {
     }
 
     public CultivationRealms getNextGradation(){
-        return getRealmByGradation(gradation);
+        return getRealmByGradation((short) (gradation+1));
     }
 
     public short getGradation() {
@@ -69,5 +69,4 @@ public enum CultivationRealms {
         }
         return null;
     }
-
 }

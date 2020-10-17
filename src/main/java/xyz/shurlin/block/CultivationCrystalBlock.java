@@ -15,8 +15,8 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import xyz.shurlin.block.entity.CultivationCrystalBlockEntity;
-import xyz.shurlin.spirit.CultivationManager;
-import xyz.shurlin.spirit.CultivationRealm;
+import xyz.shurlin.cultivation.CultivationManager;
+import xyz.shurlin.cultivation.CultivationRealm;
 
 public class CultivationCrystalBlock extends BlockWithEntity {
     private static CultivationManager manager = CultivationManager.INSTANCE;

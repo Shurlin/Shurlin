@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.Blocks;
-import xyz.shurlin.spirit.CultivationManager;
+import xyz.shurlin.cultivation.CultivationManager;
 
 public class CultivationCrystalBlockEntity extends BlockEntity {
     public static CultivationManager manager = CultivationManager.INSTANCE;
