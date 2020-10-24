@@ -14,5 +14,8 @@ public class ServerReceiver {
                 ((HolyPearAltarBlock) block).setOwner(packetContext.getPlayer());
             }
         });
+        ServerSidePacketRegistry.INSTANCE.register(Utils.OPEN_CUL, (packetContext, packetByteBuf) -> {
+
+        });
     }
 }
