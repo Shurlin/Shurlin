@@ -58,9 +58,13 @@ public class CultivationManager {
     @Nullable
     public CultivationRealm getCultivationRealmByEntity(Entity entity){
         UUID uuid = entity.getUuid();
-        if(!id_map.contains(uuid))
+        if(isCultivated(entity))
             return null;
         return cul_map.get(id_map.indexOf(uuid));
+    }
+
+    public boolean isCultivated(Entity entity){
+        return id_map.contains(entity);
     }
 
     public CultivationRealm appendCultivationEntity(Entity entity){

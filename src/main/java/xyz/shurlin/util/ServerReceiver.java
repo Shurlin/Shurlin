@@ -2,8 +2,10 @@ package xyz.shurlin.util;
 
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import xyz.shurlin.block.HolyPearAltarBlock;
+import xyz.shurlin.cultivation.screen.CultivationUI;
 
 public class ServerReceiver {
     public ServerReceiver() {
@@ -15,7 +17,8 @@ public class ServerReceiver {
             }
         });
         ServerSidePacketRegistry.INSTANCE.register(Utils.OPEN_CUL, (packetContext, packetByteBuf) -> {
-
+            PlayerEntity player = packetContext.getPlayer();
+            player.openHandledScreen(new CultivationUI());
         });
     }
 }
