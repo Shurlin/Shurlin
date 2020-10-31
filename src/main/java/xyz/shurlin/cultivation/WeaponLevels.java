@@ -1,0 +1,14 @@
+package xyz.shurlin.cultivation;
+
+public enum WeaponLevels {
+    INFERIOR_WEAPON,
+    STANDARD_WEAPON,
+    QUALITY_WEAPON,
+    INFERIOR_TAO_WEAPON,
+    STANDARD_TAO_WEAPON,
+    QUALITY_TAO_WEAPON,
+    INFERIOR_HOLY_WEAPON,
+    HOLY_WEAPON,
+    SUPER_HOLY_WEAPON,
+    HOLY_SPIRIT_WEAPON
+}

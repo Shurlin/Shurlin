@@ -7,7 +7,7 @@ import xyz.shurlin.cultivation.CultivationManager;
 import xyz.shurlin.cultivation.CultivationRealm;
 
 public class CultivationScreenHandler extends ScreenHandler {
-    private CultivationRealm realm;
+    CultivationRealm realm;
 
     CultivationScreenHandler(int syncId, CultivationRealm realm) {
         super(null, syncId);
