@@ -1,32 +1,33 @@
 package xyz.shurlin.item;
 
 public class WeaponProperties {
+    public static final WeaponProperties DARK_IRON = new WeaponProperties(8,6,-2.0f,-2.4f);
 
     private int attackWithSpirit;
     private int attackWithoutSpirit;
-    private int speedWithSpirit;
-    private int speedWithoutSpirit;
+    private float speedWithSpirit;
+    private float speedWithoutSpirit;
 
-    public WeaponProperties(int attackWithSpirit, int attackWithoutSpirit, int speedWithSpirit, int speedWithoutSpirit) {
+    public WeaponProperties(int attackWithSpirit, int attackWithoutSpirit, float speedWithSpirit, float speedWithoutSpirit) {
         this.attackWithSpirit = attackWithSpirit;
         this.attackWithoutSpirit = attackWithoutSpirit;
         this.speedWithSpirit = speedWithSpirit;
         this.speedWithoutSpirit = speedWithoutSpirit;
     }
 
-    public int getAttackWithSpirit() {
+    int getAttackWithSpirit() {
         return attackWithSpirit;
     }
 
-    public int getAttackWithoutSpirit() {
+    int getAttackWithoutSpirit() {
         return attackWithoutSpirit;
     }
 
-    public int getSpeedWithSpirit() {
+    float getSpeedWithSpirit() {
         return speedWithSpirit;
     }
 
-    public int getSpeedWithoutSpirit() {
+    float getSpeedWithoutSpirit() {
         return speedWithoutSpirit;
     }
 }

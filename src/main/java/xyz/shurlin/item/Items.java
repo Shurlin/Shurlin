@@ -8,6 +8,7 @@ import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.Blocks;
 import xyz.shurlin.cultivation.SpiritPropertyType;
 import xyz.shurlin.cultivation.SpiritConsistences;
+import xyz.shurlin.cultivation.WeaponLevels;
 
 public class Items {
     public static final Item PLANT_MIXTURE;
@@ -87,6 +88,9 @@ public class Items {
     public static final BasicArmors PLANT_IRON_ARMORS;
     public static final BasicArmors PLANT_GOLDEN_ARMORS;
     public static final BasicArmors PLANT_JADE_ARMORS;
+
+    //weapon
+    public static final Item DARK_IRON_SWORD;
 
     public static final Item PLANT_IRON_ORE_BLOCK;
     public static final Item PLANT_GOLD_ORE_BLOCK;
@@ -248,6 +252,9 @@ public class Items {
         PLANT_IRON_ARMORS = new BasicArmors(ArmorMaterials.PLANT_IRON, "plant_iron");
         PLANT_GOLDEN_ARMORS = new BasicArmors(ArmorMaterials.PLANT_GOLD, "plant_golden");
         PLANT_JADE_ARMORS = new BasicArmors(ArmorMaterials.PLANT_JADE, "plant_jade");
+
+        //weapon
+        DARK_IRON_SWORD = register("dark_iron_sword", new SwordWeaponItem(WeaponLevels.INFERIOR_WEAPON, WeaponProperties.DARK_IRON));
 
         PLANT_IRON_ORE_BLOCK = register(Blocks.PLANT_IRON_ORE_BLOCK);
         PLANT_GOLD_ORE_BLOCK = register(Blocks.PLANT_GOLD_ORE_BLOCK);

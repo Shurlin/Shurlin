@@ -31,7 +31,6 @@ public class KeyBindings {
 
 
     public KeyBindings() {
-
         ClientTickCallback.EVENT.register(minecraftClient -> {
             if(keyBinding_j.isPressed()) {
                 ClientPlayerEntity player = minecraftClient.player;

@@ -21,4 +21,8 @@ public enum WeaponLevels {
     public boolean unbreakable(){
         return this.lv >= 8;
     }
+
+    public int getLevel() {
+        return lv;
+    }
 }

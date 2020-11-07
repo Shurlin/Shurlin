@@ -9,6 +9,7 @@ import net.minecraft.client.recipebook.RecipeBookGroup;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xyz.shurlin.block.entity.BlockEntityTypes;
+import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.recipe.WorkerRecipeSerializer;
 import xyz.shurlin.screen.ScreenHandlerTypes;
@@ -42,6 +43,7 @@ public class Shurlin implements ModInitializer {
         new ChunkGeneratorTypes();
         new Dimensions();
         new DimensionTypes();
+        new KeyBindings();
 //        new DimensionTypes();
 //        new DimensionOptions();
     }

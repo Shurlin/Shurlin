@@ -7,6 +7,7 @@ import xyz.shurlin.client.gui.screen.worker.BreakerScreen;
 import xyz.shurlin.client.gui.screen.worker.CollectorScreen;
 import xyz.shurlin.client.gui.screen.worker.ConcentratorScreen;
 import xyz.shurlin.client.gui.screen.worker.ExtractorScreen;
+import xyz.shurlin.cultivation.screen.CultivationScreen;
 import xyz.shurlin.screen.ScreenHandlerTypes;
 
 @Environment(EnvType.CLIENT)
@@ -17,5 +18,6 @@ public class HandledScreens {
         ScreenRegistry.register(ScreenHandlerTypes.CONCENTRATOR_SCREEN_HANDLER_TYPE, ConcentratorScreen::new);
         ScreenRegistry.register(ScreenHandlerTypes.EXTRACTOR_SCREEN_HANDLER_TYPE, ExtractorScreen::new);
         ScreenRegistry.register(ScreenHandlerTypes.BIGGER_CONTAINER_SCREEN_HANDLER_TYPE, BiggerContainerScreen::new);
+        ScreenRegistry.register(ScreenHandlerTypes.CULTIVATION_SCREEN_HANDLER_TYPE, CultivationScreen::new);
     }
 }
