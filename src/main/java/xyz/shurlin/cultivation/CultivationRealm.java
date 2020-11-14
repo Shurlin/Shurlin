@@ -51,6 +51,10 @@ public class CultivationRealm {
         return meridians.get(type);
     }
 
+    public Object2ObjectArrayMap<SpiritPropertyType, SpiritMeridians> getMeridians() {
+        return meridians;
+    }
+
     public void putMeridians(SpiritPropertyType type, SpiritMeridians meridians){
         this.meridians.put(type, meridians);
     }

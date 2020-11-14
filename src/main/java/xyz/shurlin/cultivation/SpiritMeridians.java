@@ -1,12 +1,14 @@
 package xyz.shurlin.cultivation;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.Tickable;
 
-public class SpiritMeridians {
+public class SpiritMeridians implements Tickable {
     private SpiritPropertyType type;
     private short level;
     private double maxSpirit;
     private double curSpirit;
+    private double curEx;
     private static double[] ratios = new double[]{0, 1d, 3d, 10d, 30d, 100d, 300d, 1e3, 3e3, 1e4};
 
     SpiritMeridians(SpiritPropertyType type) {
@@ -23,8 +25,10 @@ public class SpiritMeridians {
     }
 
     public void upgrade(){
-        this.curSpirit += ratios[++this.level] - this.maxSpirit;
-        this.maxSpirit = ratios[++this.level];
+        this.curEx = 0;
+        this.level++;
+        this.maxSpirit = ratios[this.level];
+        this.curSpirit = this.maxSpirit;
     }
 
     private double getMaxSpirits(int ratio){
@@ -48,6 +52,8 @@ public class SpiritMeridians {
     }
 
     private void check(){
+        if(this.level < 9 && this.curEx >= ratios[this.level+1]*1e2)
+            this.upgrade();
         if(this.curSpirit>this.maxSpirit)
             this.curSpirit = this.maxSpirit;
         else if(this.curSpirit < 0)
@@ -70,6 +76,10 @@ public class SpiritMeridians {
         return curSpirit;
     }
 
+    public double getCurEx() {
+        return curEx;
+    }
+
     CompoundTag toTag(){
         CompoundTag tag = new CompoundTag();
         tag.putShort("level", this.level);
@@ -79,5 +89,10 @@ public class SpiritMeridians {
 
     static SpiritMeridians fromTag(SpiritPropertyType type, CompoundTag tag){
         return new SpiritMeridians(type, tag.getShort("level"), tag.getDouble("cur_spirit"));
+    }
+
+    @Override
+    public void tick() {
+        this.heal();
     }
 }
