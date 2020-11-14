@@ -43,6 +43,7 @@ public class Blocks {
     public static final Block PLANT_OBSIDIAN;
     public static final Block HOLY_FARMER_PORTAL;
     public static final Block CULTIVATION_CRYSTAL;
+    public static final Block SUCCULENT_BLOCK;
 
     public static final Block PEAR_SAPLING;
     public static final Block PHOENIX_SAPLING;
@@ -112,6 +113,9 @@ public class Blocks {
         PLANT_OBSIDIAN = register("plant_obsidian", BlockSettings.OBSIDIAN);
         HOLY_FARMER_PORTAL = register("holy_farmer_portal", new HolyFarmerPortalBlock(FabricBlockSettings.of(Material.PORTAL).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GLASS).lightLevel(12)));
         CULTIVATION_CRYSTAL = register("cultivation_crystal", new CultivationCrystalBlock(FabricBlockSettings.of(Material.GLASS).strength(-1).nonOpaque()));
+        SUCCULENT_BLOCK = register("succulent_block", new SucculentBlock(FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MaterialColor.GRASS).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque().lightLevel((state)->
+            state.get(SucculentBlock.SHINING)?8:0
+        )));
 
         PEAR_SAPLING = register("pear_sapling", new BasicSaplingBlock(ShurlinBiomeFeatures.PEAR_TREE_CONFIG, BlockSettings.PLANT));
         PHOENIX_SAPLING = register("phoenix_sapling", new BasicSaplingBlock(ShurlinBiomeFeatures.PHOENIX_TREE_CONFIG, BlockSettings.PLANT));
