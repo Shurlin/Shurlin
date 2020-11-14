@@ -12,12 +12,9 @@ import xyz.shurlin.cultivation.CultivationManager;
 
 public class CultivationCrystalBlockEntity extends BlockEntity {
     public static CultivationManager manager = CultivationManager.INSTANCE;
-    public static final BlockEntityType BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
-            new Identifier(Shurlin.MODID, "cultivation_crystal"),
-            BlockEntityType.Builder.create(CultivationCrystalBlockEntity::new, Blocks.CULTIVATION_CRYSTAL).build(null));
 
     public CultivationCrystalBlockEntity() {
-        super(BLOCK_ENTITY);
+        super(BlockEntityTypes.CULTIVATION_CRYSTAL_BLOCK_ENTITY);
     }
 
     @Override

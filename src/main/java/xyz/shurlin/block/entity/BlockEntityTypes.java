@@ -11,6 +11,10 @@ import xyz.shurlin.block.worker.entity.ConcentratorBlockEntity;
 import xyz.shurlin.block.worker.entity.ExtractorBlockEntity;
 
 public class BlockEntityTypes {
+    public static final BlockEntityType CULTIVATION_CRYSTAL_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+            new Identifier(Shurlin.MODID, "cultivation_crystal"),
+            BlockEntityType.Builder.create(CultivationCrystalBlockEntity::new, Blocks.CULTIVATION_CRYSTAL).build(null));
+
     public static final BlockEntityType BREAKER_BLOCK_ENTITY =
             register("breaker_block_entity", BlockEntityType.Builder.create(BreakerBlockEntity::new, Blocks.BREAKER_BLOCK).build(null));
 
