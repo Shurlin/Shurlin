@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.text.StringRenderable;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import xyz.shurlin.Shurlin;
@@ -18,9 +19,12 @@ public class CultivationScreen extends HandledScreen<CultivationScreenHandler> {
     private final Identifier TEXTURE = new Identifier(Shurlin.MODID, "textures/gui/cultivation_ui.png");
     private CultivationRealm realm = handler.realm;
     private Object2ObjectArrayMap<SpiritPropertyType, SpiritMeridians> meridians = realm.getMeridians();
+    private static final int COLOR = 4210752;
 
     public CultivationScreen(CultivationScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
+        this.backgroundWidth = 256;
+        this.backgroundHeight = 200;
     }
 
     @Override
@@ -32,7 +36,13 @@ public class CultivationScreen extends HandledScreen<CultivationScreenHandler> {
             SpiritMeridians meridians = this.meridians.get(type);
             //TODO
         }
+//        this.textRenderer.draw(matrices, "土", 81, 151, COLOR);
     }
+
+    @Override
+    protected void drawForeground(MatrixStack matrices, int mouseX, int mouseY) {
+        this.textRenderer.draw(matrices, this.title, (float)this.titleX, (float)this.titleY, COLOR);
+}
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {

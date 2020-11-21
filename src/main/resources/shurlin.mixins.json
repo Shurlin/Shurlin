@@ -6,7 +6,7 @@
   "mixins": [
   ],
   "client": [
-    "ShurlinMixin"
+    "CultivatedPlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

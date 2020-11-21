@@ -28,31 +28,15 @@ import java.util.Objects;
 public class KeyBindings {
     public static KeyBinding keyBinding_j;
     public static KeyBinding open_cul;
+    public static KeyBinding inject_spirit;
 
 
     public KeyBindings() {
         ClientTickCallback.EVENT.register(minecraftClient -> {
-            if(keyBinding_j.isPressed()) {
-                ClientPlayerEntity player = minecraftClient.player;
-                ClientWorld world = minecraftClient.world;
-                Block block;
-                if (world != null && player != null)
-                    block = world.getBlockState(player.getBlockPos().down()).getBlock();
-                else
-                    return ;
-                if(block instanceof HolyPearAltarBlock){
-                    ((HolyPearAltarBlock) block).setOwner(player);
-                    player.sendMessage(new TranslatableText("message.shurlin.holy_pear_altar.bound_success"), false);
-                }else {
-                    player.sendMessage(new TranslatableText("message.shurlin.holy_pear_altar.bound_fail"), false);
-                }
-
-            }
-            if(open_cul.isPressed()){
+            if(open_cul.isPressed()) {
                 PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());
                 ClientSidePacketRegistry.INSTANCE.sendToServer(Utils.OPEN_CUL, passedData);
             }
-
         });
     }
 
@@ -68,6 +52,12 @@ public class KeyBindings {
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_O,
                 "category.shurlin.open_cul"
+        );
+        inject_spirit = new KeyBinding(
+                "key.shurlin.inject_spirit",
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_I,
+                "category.shurlin.inject_spirit"
         );
     }
 

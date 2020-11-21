@@ -3,6 +3,9 @@ package xyz.shurlin.util;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.RenderPhase;
+import net.minecraft.client.render.VertexFormats;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
@@ -108,6 +111,7 @@ public class Utils {
 
     public static final Identifier PACKET_ID_1 = new Identifier(Shurlin.MODID, "data_1");
     public static final Identifier OPEN_CUL = new Identifier(Shurlin.MODID, "key_open_cul");
+    public static final Identifier INJECT_SPIRIT = new Identifier(Shurlin.MODID, "inject_spirit");
 
     public static void spawnItem(World world, BlockPos pos, Item item, int cnt){
         world.spawnEntity(new ItemEntity(world, pos.getX(),pos.getY(),pos.getZ(),new ItemStack(item, cnt)));
