@@ -1,10 +1,12 @@
 package xyz.shurlin;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.client.gui.screen.TickableElement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.client.options.KeyBindings;
+import xyz.shurlin.commend.Commands;
 import xyz.shurlin.item.Items;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.screen.ScreenHandlerTypes;
@@ -36,6 +38,7 @@ public class Shurlin implements ModInitializer {
         new Dimensions();
         new DimensionTypes();
         new KeyBindings();
+        new Commands();
 //        new Reflector();
 //        new DimensionTypes();
 //        new DimensionOptions();

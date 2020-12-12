@@ -9,30 +9,41 @@ public class SpiritMeridians implements Tickable {
     private double maxSpirit;
     private double curSpirit;
     private double curEx;
+    private double maxEx;
     private static double[] ratios = new double[]{0, 1d, 3d, 10d, 30d, 100d, 300d, 1e3, 3e3, 1e4};
 
     SpiritMeridians(SpiritPropertyType type) {
         this.type = type;
         this.level = 1;
-        this.maxSpirit = ratios[level];
+        this.maxSpirit = getMaxSpirits(level);
         this.curSpirit = maxSpirit;
+        this.maxEx = getMaxExs(level);
     }
 
-    private SpiritMeridians(SpiritPropertyType type, short level, double curSpirit) {
+    SpiritMeridians(SpiritPropertyType type, short level, double curSpirit, double curEx) {
         this.type = type;
         this.level = level;
         this.curSpirit = curSpirit;
+        this.curEx = curEx;
+        this.maxSpirit = getMaxSpirits(level);
+        this.maxEx = getMaxExs(level);
+
     }
 
     public void upgrade(){
         this.curEx = 0;
         this.level++;
-        this.maxSpirit = ratios[this.level];
+        this.maxSpirit = getMaxSpirits(level);
+        this.maxEx = getMaxExs(level);
         this.curSpirit = this.maxSpirit;
     }
 
-    private double getMaxSpirits(int ratio){
-        return ratio * 1e3;
+    static double getMaxSpirits(int level){
+        return ratios[level] * 1e3;
+    }
+
+    static double getMaxExs(int level){
+        return ratios[level] * 100d;
     }
 
     public void heal(){
@@ -52,7 +63,7 @@ public class SpiritMeridians implements Tickable {
     }
 
     private void check(){
-        if(this.level < 9 && this.curEx >= ratios[this.level+1]*1e2)
+        if(this.level < 9 && this.curEx >= this.maxEx)
             this.upgrade();
         if(this.curSpirit>this.maxSpirit)
             this.curSpirit = this.maxSpirit;
@@ -80,15 +91,23 @@ public class SpiritMeridians implements Tickable {
         return curEx;
     }
 
+    public double getMaxEx() {
+        return maxEx;
+    }
+
     CompoundTag toTag(){
         CompoundTag tag = new CompoundTag();
         tag.putShort("level", this.level);
         tag.putDouble("cur_spirit",this.curSpirit);
+        tag.putDouble("cur_ex", this.curEx);
         return tag;
     }
 
     static SpiritMeridians fromTag(SpiritPropertyType type, CompoundTag tag){
-        return new SpiritMeridians(type, tag.getShort("level"), tag.getDouble("cur_spirit"));
+        return new SpiritMeridians(type,
+                tag.getShort("level"),
+                tag.getDouble("cur_spirit"),
+                tag.getDouble("cur_ex"));
     }
 
     @Override

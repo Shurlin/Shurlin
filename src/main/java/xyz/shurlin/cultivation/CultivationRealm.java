@@ -2,6 +2,11 @@ package xyz.shurlin.cultivation;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 
+import java.util.Random;
+
+import static xyz.shurlin.cultivation.SpiritMeridians.getMaxExs;
+import static xyz.shurlin.cultivation.SpiritMeridians.getMaxSpirits;
+
 public class CultivationRealm {
     private CultivationRealms realm;
     private short rank;
@@ -15,6 +20,21 @@ public class CultivationRealm {
         }
 
     }
+
+    public CultivationRealm temp(){
+        this.realm = CultivationRealms.KING;
+        this.upgrade();
+        Random random = new Random();
+        int i = random.nextInt(6) +1;
+        for(SpiritPropertyType type: SpiritPropertyType.GROUPS){
+            this.putMeridians(type, new SpiritMeridians(type,
+                    (short)i,
+                    random.nextInt((int)getMaxSpirits(i)),
+                    random.nextInt((int)getMaxExs(i))));
+        }
+        return this;
+    }
+
 
     public CultivationRealm(CultivationRealms realm, short rank) {
         this.realm = realm;

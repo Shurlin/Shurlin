@@ -34,11 +34,11 @@ public class CultivationManager {
         return tag;
     }
     
-    public void fromTag(CompoundTag tags){
+    public void fromTag(CompoundTag tags, UUID uuid){
         CompoundTag tag = tags.getCompound("cul");
         if(!tag.getBoolean("isCultivated"))
             return;
-        UUID uuid = tags.getUuid("UUID");
+//        UUID uuid = tags.getUuid("UUID");
         short gradation = tag.getShort("gradation");
         short rank = tag.getShort("rank");
         id_map.add(uuid);
@@ -49,8 +49,6 @@ public class CultivationManager {
             CompoundTag tag1 = sm_tag.getCompound(String.valueOf(sm_cnt++));
             realm.putMeridians(type, SpiritMeridians.fromTag(type, tag1));
         }
-        if(id_map.contains(uuid))
-            cul_map.set(id_map.indexOf(uuid), realm);
         cul_map.add(realm);
     }
 

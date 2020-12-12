@@ -16,7 +16,7 @@ public class CultivationScreenHandler extends ScreenHandler {
     }
 
     public CultivationScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId,CultivationManager.INSTANCE.getCultivationRealmByEntity(playerInventory.player));
+        this(syncId,CultivationManager.INSTANCE.getCultivationRealmByEntity(playerInventory.player).temp());
     }
 
     @Override
