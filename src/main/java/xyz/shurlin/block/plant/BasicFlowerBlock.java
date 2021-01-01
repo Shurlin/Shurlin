@@ -1,4 +1,4 @@
-package xyz.shurlin.block;
+package xyz.shurlin.block.plant;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.FlowerBlock;

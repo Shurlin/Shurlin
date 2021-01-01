@@ -11,6 +11,7 @@ import xyz.shurlin.Shurlin;
 public class Biomes {
     public static final Biome PEAR_FOREST;
     public static final Biome PARASOL_ANCIENT_FOREST;
+    public static final Biome FIRE_LAND;
 
     private static Biome register(String registryName, Biome biome){
         return Registry.register(Registry.BIOME, new Identifier(Shurlin.MODID, registryName), biome);
@@ -28,5 +29,6 @@ public class Biomes {
     static {
         PEAR_FOREST = register("pear_forest", new PearForestBiome());
         PARASOL_ANCIENT_FOREST = register("parasol_ancient_forest", new ParasolAncientForestBiome());
+        FIRE_LAND = register("fire_land", new FireLandBiome());
     }
 }

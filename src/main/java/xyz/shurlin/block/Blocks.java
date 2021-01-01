@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.coral.*;
+import xyz.shurlin.block.plant.BasicSaplingBlock;
 import xyz.shurlin.block.worker.BreakerBlock;
 import xyz.shurlin.block.worker.CollectorBlock;
 import xyz.shurlin.block.worker.ConcentratorBlock;
@@ -56,6 +57,9 @@ public class Blocks {
     public static final Block LEAVE_CORAL_WALL_FAN;
     public static final Block DEAD_LEAVE_CORAL_BLOCK;
     public static final Block LEAVE_CORAL_BLOCK;
+
+    public static final Block HOT_FIRE_STONE;
+    public static final Block HOT_FIRE_DIRT;
 
     public static final Block TENUOUS_METAL_SPIRIT_ORE_BLOCK;
     public static final Block TENUOUS_WOOD_SPIRIT_ORE_BLOCK;
@@ -129,6 +133,8 @@ public class Blocks {
         DEAD_LEAVE_CORAL_BLOCK = register("dead_leave_coral_block",new Block(BlockSettings.DEAD_CORAL_BLOCK));
         LEAVE_CORAL_BLOCK = register("leave_coral_block", new LeaveCoralBlockBlock(DEAD_LEAVE_CORAL_BLOCK, BlockSettings.CORAL_BLOCK));
 
+        HOT_FIRE_STONE = register("hot_fire_block", BlockSettings.STONE);
+        HOT_FIRE_DIRT = register("hot_fire_dirt", BlockSettings.DIRT);
 
         TENUOUS_METAL_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_metal_spirit_ore_block");
         TENUOUS_WOOD_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_wood_spirit_ore_block");
@@ -147,6 +153,8 @@ public class Blocks {
 
     private static class BlockSettings{
         private static final FabricBlockSettings ORE;
+        private static final FabricBlockSettings STONE;
+        private static final FabricBlockSettings DIRT;
         private static final FabricBlockSettings LOG;
         private static final FabricBlockSettings LEAVES;
         private static final FabricBlockSettings PLANKS;
@@ -170,6 +178,8 @@ public class Blocks {
             DEAD_CORAL_BLOCK = FabricBlockSettings.of(Material.STONE, MaterialColor.GRAY).requiresTool().strength(1.5F, 6.0F);
             OBSIDIAN = FabricBlockSettings.of(Material.STONE).requiresTool().strength(60.0F, 1200.0F);
             WORKER = FabricBlockSettings.of(Material.STONE).strength(10.0f, 10.0f);
+            STONE = FabricBlockSettings.of(Material.STONE, MaterialColor.STONE).requiresTool().strength(1.5F, 6.0F);
+            DIRT = FabricBlockSettings.of(Material.SOIL, MaterialColor.DIRT).strength(0.5F).sounds(BlockSoundGroup.GRAVEL);
         }
 
     }

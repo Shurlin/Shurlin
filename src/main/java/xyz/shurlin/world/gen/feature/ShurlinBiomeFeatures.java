@@ -5,10 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
-import net.minecraft.world.gen.decorator.CountDecoratorConfig;
-import net.minecraft.world.gen.decorator.CountExtraChanceDecoratorConfig;
-import net.minecraft.world.gen.decorator.Decorator;
+import net.minecraft.world.gen.decorator.*;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.ThreeLayersFeatureSize;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
@@ -35,6 +32,7 @@ public class ShurlinBiomeFeatures {
     public static final RandomPatchFeatureConfig SMALL_BUD_CONFIG;
     public static final RandomPatchFeatureConfig PLATYCODON_GRANDIFLORUS_CONFIG;
     public static final ConfiguredFeature<TreeFeatureConfig, ?> PEAR_TREE_CONFIG;
+//    public static final ConfiguredFeature<TreeFeatureConfig, ?> ORANGE_TREE_CONFIG;
     public static final ConfiguredFeature<TreeFeatureConfig, ?> PHOENIX_TREE_CONFIG;
     public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_OAK_TREE;
     public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_BIRCH_TREE;
@@ -87,6 +85,10 @@ public class ShurlinBiomeFeatures {
 
     private static RandomPatchFeatureConfig getConfig(BlockState state, int tries){
         return (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(state), SimpleBlockPlacer.field_24871)).tries(tries).build();
+    }
+
+    public static void addHotSprings(Biome biome) {
+        biome.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, net.minecraft.world.gen.feature.Feature.SPRING_FEATURE.configure(DefaultBiomeFeatures.LAVA_SPRING_CONFIG).createDecoratedFeature(Decorator.COUNT_VERY_BIASED_RANGE.configure(new RangeDecoratorConfig(50, 8, 16, 256))));
     }
 
     static {

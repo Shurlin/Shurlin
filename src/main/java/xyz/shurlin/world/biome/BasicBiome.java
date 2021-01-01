@@ -7,7 +7,7 @@ import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilder.SurfaceConfig;
 
 class  BasicBiome extends Biome {
-    private <SC extends SurfaceConfig> BasicBiome(SurfaceBuilder<SC> surfaceBuilder, SC config, Precipitation precipitation, Biome.Category category, float depth, float scale, float temperature, float downfall, int waterColor, int waterFogColor, int fogColor, BiomeMoodSound sound) {
+     <SC extends SurfaceConfig> BasicBiome(SurfaceBuilder<SC> surfaceBuilder, SC config, Precipitation precipitation, Biome.Category category, float depth, float scale, float temperature, float downfall, int waterColor, int waterFogColor, int fogColor, BiomeMoodSound sound) {
         super(new Settings()
                 .configureSurfaceBuilder(surfaceBuilder, config)
                 .precipitation(precipitation)

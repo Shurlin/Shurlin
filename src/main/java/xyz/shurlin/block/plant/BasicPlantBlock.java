@@ -1,4 +1,4 @@
-package xyz.shurlin.block;
+package xyz.shurlin.block.plant;
 
 import net.minecraft.block.PlantBlock;
 

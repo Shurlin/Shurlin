@@ -4,11 +4,15 @@
     "type": "minecraft:noise",
     "seed": 7830,
     "settings": "minecraft:overworld",
-    "biome_source": {
+    "biome_source": [{
       "seed": 7830,
       "type": "minecraft:fixed",
       "biome": "shurlin:pear_forest"
-    }
+    },{
+      "seed": 7831,
+      "type": "minecraft:fixed",
+      "biome": "shurlin:fire_land"
+    }]
   }
 
 }
