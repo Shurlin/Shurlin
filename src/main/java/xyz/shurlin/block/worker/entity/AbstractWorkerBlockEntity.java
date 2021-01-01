@@ -3,23 +3,15 @@ package xyz.shurlin.block.worker.entity;
 import annotations.Nullable;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.recipe.AbstractCookingRecipe;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.screen.PropertyDelegate;
-import net.minecraft.screen.ScreenHandler;
 import net.minecraft.util.Tickable;
-import net.minecraft.util.collection.DefaultedList;
 import xyz.shurlin.block.entity.BasicBlockEntity;
 import xyz.shurlin.recipe.AbstractWorkerRecipe;
 import xyz.shurlin.util.ShurlinLevel;
-
-import java.util.Optional;
 
 public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity implements ShurlinLevel, Tickable {
     int workTime;

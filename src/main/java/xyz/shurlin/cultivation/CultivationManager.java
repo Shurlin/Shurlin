@@ -9,8 +9,8 @@ import java.util.Vector;
 
 public class CultivationManager {
     public static CultivationManager INSTANCE = new CultivationManager();
-    private Vector<UUID> id_map = new Vector<>();
-    private Vector<CultivationRealm> cul_map = new Vector<>();
+    private final Vector<UUID> id_map = new Vector<>();
+    private final Vector<CultivationRealm> cul_map = new Vector<>();
             
     private CultivationManager() {
     }

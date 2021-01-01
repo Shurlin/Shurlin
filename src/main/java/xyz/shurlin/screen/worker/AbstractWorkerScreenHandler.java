@@ -21,7 +21,7 @@ public abstract class AbstractWorkerScreenHandler extends AbstractRecipeScreenHa
     private final PlayerInventory playerInventory;
     final PropertyDelegate propertyDelegate;
     protected final World world;
-    private int size;
+    private final int size;
 
     AbstractWorkerScreenHandler(ScreenHandlerType<?> screenHandlerType, int syncId, Inventory inventory, PlayerInventory playerInventory, PropertyDelegate propertyDelegate, World world, ShurlinLevel shurlinLevel) {
         super(screenHandlerType, syncId);

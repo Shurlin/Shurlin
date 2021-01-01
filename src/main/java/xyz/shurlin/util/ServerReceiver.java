@@ -1,18 +1,15 @@
 package xyz.shurlin.util;
 
-import net.fabricmc.fabric.api.event.client.ClientTickCallback;
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import xyz.shurlin.block.HolyPearAltarBlock;
 import xyz.shurlin.cultivation.CultivationManager;
 import xyz.shurlin.cultivation.screen.CultivationUI;
-import xyz.shurlin.screen.ScreenHandlerTypes;
 
 public class ServerReceiver {
-    public ServerReceiver() {
+    public static void registerAll() {
         ServerSidePacketRegistry.INSTANCE.register(Utils.PACKET_ID_1, (packetContext, packetByteBuf) -> {
             BlockPos pos = packetByteBuf.readBlockPos();
             Block block  = packetContext.getPlayer().world.getBlockState(pos).getBlock();

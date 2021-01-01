@@ -5,11 +5,9 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
-import net.minecraft.util.collection.DefaultedList;
 import xyz.shurlin.Shurlin;
 
 import java.util.ArrayList;
-import java.util.Vector;
 
 public class ConnectiveInventory extends SimpleInventory {
     private PlayerEntity player;

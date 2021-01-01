@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.Slot;
 import xyz.shurlin.screen.slot.LockableSlot;
 
-public class BiggerContainerScreenHandler extends BasicScreenHandler {
+public class BiggerContainerScreenHandler extends BasicScreenHandler<Inventory> {
     public int slot;
 
     public BiggerContainerScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, int slot) {

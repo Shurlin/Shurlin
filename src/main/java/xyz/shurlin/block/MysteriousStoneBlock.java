@@ -2,8 +2,6 @@ package xyz.shurlin.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.ItemEntity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
@@ -35,7 +33,7 @@ public class MysteriousStoneBlock extends Block {
         if (state.get(TIMES) < 9) Utils.setRandomBlock(world, pos, 4, state.with(TIMES, state.get(TIMES) + 1));
         else {
                 inHand.decrement(1);
-                ItemStack result = new ItemStack(Items.MYSTERIOUS_SPIRIT_OF_PLANT, Shurlin.random.nextInt(2));
+                ItemStack result = new ItemStack(Items.MYSTERIOUS_SPIRIT_OF_PLANT, world.random.nextInt(2));
                 player.inventory.insertStack(result);
             }
 //            ItemEntity entity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), result);

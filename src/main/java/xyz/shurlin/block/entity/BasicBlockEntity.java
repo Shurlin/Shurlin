@@ -3,7 +3,6 @@ package xyz.shurlin.block.entity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.LockableContainerBlockEntity;
-import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
@@ -14,7 +13,7 @@ import net.minecraft.util.collection.DefaultedList;
 
 public abstract class BasicBlockEntity extends LockableContainerBlockEntity {
     protected DefaultedList<ItemStack> inventory;
-    private String containerName;
+    private final String containerName;
 
     public BasicBlockEntity(BlockEntityType<?> type, String containerName) {
         super(type);

@@ -9,6 +9,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import xyz.shurlin.Shurlin;
+import xyz.shurlin.entity.damage.ShurlinDamageSource;
 import xyz.shurlin.item.Items;
 import xyz.shurlin.util.Utils;
 
@@ -17,13 +18,20 @@ class SmallBudBlock extends FernBlock {
         super(settings);
     }
 
+    /**
+     * If player is in creative mode, it will no longer damage cuz of small bud.
+     * A brand new message is shown when dying.
+     * @author Garay Shurlin
+     * @author teddyxlandlee
+     * @since 0.1.2-beta
+     */
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        if(player.inventory.contains(new ItemStack(Items.SHURLIN_INGOT))){
-            Utils.spawnItem(world, pos, Items.PLANT_ESSENCE_PARTICLE, Shurlin.random.nextInt(3));
-        }else{
+        if (player.inventory.contains(new ItemStack(Items.SHURLIN_INGOT))){
+            Utils.spawnItem(world, pos, Items.PLANT_ESSENCE_PARTICLE, world.random.nextInt(3));
+        } else if (!player.abilities.creativeMode) {
             player.sendMessage(new TranslatableText("message.shurlin.small_bud"),false);
-            player.kill();
+            player.damage(ShurlinDamageSource.SMALL_BUD, 3.4028235E38F);
         }
     }
 }

@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+@Deprecated
 public class CustomOreFeatureConfig {
     public class CustomTarget{
 

@@ -11,7 +11,6 @@ import net.minecraft.screen.ScreenHandler;
 import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.item.ExtractantItem;
 import xyz.shurlin.recipe.RecipeTypes;
-import xyz.shurlin.screen.worker.BreakerScreenHandler;
 import xyz.shurlin.screen.worker.ExtractorScreenHandler;
 
 public class ExtractorBlockEntity extends AbstractWorkerBlockEntity {

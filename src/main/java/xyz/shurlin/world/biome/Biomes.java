@@ -17,7 +17,7 @@ public class Biomes {
         return Registry.register(Registry.BIOME, new Identifier(Shurlin.MODID, registryName), biome);
     }
 
-    public Biomes() {
+    public static void registerAll() {
         OverworldBiomes.addContinentalBiome(Biomes.PEAR_FOREST, OverworldClimate.TEMPERATE, 1D);
         OverworldBiomes.setRiverBiome(Biomes.PEAR_FOREST, net.minecraft.world.biome.Biomes.RIVER);
         OverworldBiomes.addContinentalBiome(Biomes.PARASOL_ANCIENT_FOREST, OverworldClimate.TEMPERATE, 0.6D);

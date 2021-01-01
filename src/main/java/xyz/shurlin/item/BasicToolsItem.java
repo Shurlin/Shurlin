@@ -1,14 +1,9 @@
 package xyz.shurlin.item;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.World;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.util.ShurlinLevel;
 
@@ -17,30 +12,30 @@ import static xyz.shurlin.item.ItemGroups.SHURLIN;
 
 
 public class BasicToolsItem {
-    private ToolMaterial material;
-    public SwordItem sword;
-    public PickaxeItem pickaxe;
-    public AxeItem axe;
-    public ShovelItem shovel;
-    public HoeItem hoe;
+    private final ToolMaterial material;
+    public final ShurlinSwordItem sword;
+    public final ShurlinPickaxeItem pickaxe;
+    public final ShurlinAxeItem axe;
+    public final ShurlinShovelItem shovel;
+    public final ShurlinHoeItem hoe;
 
     public BasicToolsItem(ToolMaterial material, String registryName, float shurlinLevel) {
         this.material = material;
-        sword = (SwordItem)register(registryName+"_sword",new SwordItem(shurlinLevel));
-        pickaxe = (PickaxeItem)register(registryName+"_pickaxe",new PickaxeItem());
-        axe = (AxeItem)register(registryName+"_axe",new AxeItem());
-        shovel = (ShovelItem)register(registryName+"_shovel",new ShovelItem());
-        hoe = (HoeItem)register(registryName+"_hoe",new HoeItem());
+        sword = (ShurlinSwordItem)register(registryName+"_sword",new ShurlinSwordItem(shurlinLevel));
+        pickaxe = (ShurlinPickaxeItem)register(registryName+"_pickaxe",new ShurlinPickaxeItem(shurlinLevel));
+        axe = (ShurlinAxeItem)register(registryName+"_axe",new ShurlinAxeItem(shurlinLevel));
+        shovel = (ShurlinShovelItem)register(registryName+"_shovel",new ShurlinShovelItem(shurlinLevel));
+        hoe = (ShurlinHoeItem)register(registryName+"_hoe",new ShurlinHoeItem(shurlinLevel));
     }
 
     private static Item register(String registryName, Item item){
         return Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID,registryName),item);
     }
 
-    private class SwordItem extends net.minecraft.item.SwordItem implements ShurlinLevel {
-        private float shurlinLevel;
+    class ShurlinSwordItem extends net.minecraft.item.SwordItem implements ShurlinLevel {
+        private final float shurlinLevel;
 
-        SwordItem(float shurlinLevel) {
+        ShurlinSwordItem(float shurlinLevel) {
             super(material, 3, -2.4f, new Item.Settings().group(SHURLIN));
             this.shurlinLevel = shurlinLevel;
         }
@@ -51,32 +46,60 @@ public class BasicToolsItem {
         }
     }
 
-    private class PickaxeItem extends net.minecraft.item.PickaxeItem {
-        @Override
-        public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-            return super.postMine(stack, world, state, pos, miner);
-        }
+    class ShurlinPickaxeItem extends net.minecraft.item.PickaxeItem implements ShurlinLevel {
+        private final float shurlinLevel;
 
-        PickaxeItem() {
+        ShurlinPickaxeItem(float shurlinLevel) {
             super(material, 1, -2.8f, new Item.Settings().group(SHURLIN));
+            this.shurlinLevel = shurlinLevel;
+        }
+
+        @Override
+        public float getShurlinLevel() {
+            return shurlinLevel;
         }
     }
 
-    private class AxeItem extends net.minecraft.item.AxeItem {
-        AxeItem() {
+    class ShurlinAxeItem extends net.minecraft.item.AxeItem implements ShurlinLevel {
+        private final float shurlinLevel;
+        ShurlinAxeItem(float shurlinLevel) {
             super(material, 6, -3.0f, new Item.Settings().group(SHURLIN));
+            this.shurlinLevel = shurlinLevel;
+        }
+
+        @Override
+        public float getShurlinLevel() {
+            return shurlinLevel;
         }
     }
 
-    private class ShovelItem extends net.minecraft.item.ShovelItem {
-        ShovelItem() {
+    class ShurlinShovelItem extends net.minecraft.item.ShovelItem implements ShurlinLevel {
+        private final float shurlinLevel;
+        ShurlinShovelItem(float shurlinLevel) {
             super(material, 1.5f, -3.0f, new Item.Settings().group(SHURLIN));
+            this.shurlinLevel = shurlinLevel;
+        }
+
+        @Override
+        public float getShurlinLevel() {
+            return shurlinLevel;
         }
     }
 
-    private class HoeItem extends net.minecraft.item.HoeItem {
-        HoeItem() {
+    class ShurlinHoeItem extends net.minecraft.item.HoeItem implements ShurlinLevel {
+        private final float shurlinLevel;
+        ShurlinHoeItem(float shurlinLevel) {
             super(material, (int)(0-material.getAttackDamage()), material.getAttackDamage()-3, new Item.Settings().group(SHURLIN));
+            this.shurlinLevel = shurlinLevel;
         }
+
+        @Override
+        public float getShurlinLevel() {
+            return shurlinLevel;
+        }
+    }
+
+    public ToolMaterial getMaterial() {
+        return material;
     }
 }

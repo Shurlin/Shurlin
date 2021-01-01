@@ -32,7 +32,7 @@ public class AncientTreeStructureFeature extends StructureFeature<DefaultFeature
 
     @Override
     protected boolean shouldStartAt(ChunkGenerator chunkGenerator, BiomeSource biomeSource, long l, ChunkRandom chunkRandom, int i, int j, Biome biome, ChunkPos chunkPos, DefaultFeatureConfig featureConfig) {
-        return Shurlin.random.nextInt(100) == 0;
+        return chunkRandom.nextInt(100) == 0;
     }
 
     @Override

@@ -5,7 +5,7 @@ import net.minecraft.server.command.CommandManager;
 import static net.minecraft.server.command.CommandManager.argument;
 
 public class Commands {
-    public Commands() {
+    public static void registerAll() {
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
             dispatcher.register(CommandManager.literal("shurlin")
                     .requires(serverCommandSource -> serverCommandSource.hasPermissionLevel(2))

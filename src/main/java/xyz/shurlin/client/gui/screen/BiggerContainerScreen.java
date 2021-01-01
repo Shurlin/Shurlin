@@ -1,6 +1,8 @@
 package xyz.shurlin.client.gui.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
@@ -11,6 +13,7 @@ import xyz.shurlin.screen.BiggerContainerScreenHandler;
 
 import java.util.Objects;
 
+@Environment(EnvType.CLIENT)
 public class BiggerContainerScreen extends HandledScreen<BiggerContainerScreenHandler> {
     private final Identifier TEXTURE = new Identifier(Shurlin.MODID, "textures/gui/bigger_container.png");
 

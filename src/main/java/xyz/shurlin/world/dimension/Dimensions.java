@@ -16,7 +16,7 @@ public class Dimensions {
         return RegistryKey.of(Registry.DIMENSION, new Identifier(Shurlin.MODID, name));
     }
 
-    public Dimensions() {
+    public static void registerAll() {
         FabricDimensions.registerDefaultPlacer(HOLY_FARMER, HolyFarmerChunkGenerator::placeEntityInVoid);
     }
 

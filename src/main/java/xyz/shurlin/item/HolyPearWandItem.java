@@ -1,7 +1,6 @@
 package xyz.shurlin.item;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.client.render.RenderPhase;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

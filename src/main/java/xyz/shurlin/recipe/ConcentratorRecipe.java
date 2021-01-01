@@ -22,7 +22,6 @@ import xyz.shurlin.util.Utils;
 
 import java.util.Vector;
 
-
 public class ConcentratorRecipe extends AbstractWorkerRecipe {
     private final ConcentrationIngredientVector concentrationIngredients;
 

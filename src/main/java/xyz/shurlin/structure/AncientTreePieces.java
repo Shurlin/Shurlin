@@ -2,11 +2,6 @@ package xyz.shurlin.structure;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.structure.StructureManager;
-import net.minecraft.structure.StructurePiece;
-import net.minecraft.structure.StructurePieceType;
-import net.minecraft.util.math.BlockPos;
-
-import java.util.List;
 
 class AncientTreePieces {
     static class OakPieces extends AncientTreePiece{

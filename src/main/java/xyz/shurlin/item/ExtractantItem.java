@@ -1,7 +1,7 @@
 package xyz.shurlin.item;
 
 public class ExtractantItem extends BasicItem {
-    private int extractant;
+    private final int extractant;
 
     public ExtractantItem(int extractant) {
         this.extractant = extractant;

@@ -4,9 +4,10 @@
   "package": "xyz.shurlin.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "CultivatedPlayerMixin"
   ],
   "client": [
-    "CultivatedPlayerMixin"
+    "SpiritGlintMixin"
   ],
   "injectors": {
     "defaultRequire": 1

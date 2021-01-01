@@ -4,30 +4,33 @@ import net.minecraft.item.Item;
 import net.minecraft.tag.Tag;
 
 public class ItemOrTag {
-    private Item item = null;
-    private Tag<Item> tag = null;
+
+    private final Object value;
+    private final boolean isItem;
 
     public ItemOrTag(Item item) {
-        this.item = item;
+        this.value = item;
+        this.isItem = true;
     }
 
-    public ItemOrTag(Tag<Item> tag) {
-        this.tag = tag;
+    public ItemOrTag(Tag<Item> itemTag) {
+        this.value = itemTag;
+        this.isItem = false;
     }
 
-    public boolean isItem(){
-        return item != null;
+    public boolean isItem() {
+        return isItem;
     }
 
     public Item getItem() {
-        return item;
+        return isItem ? (Item) value : null;
     }
 
     public Tag<Item> getTag() {
-        return tag;
+        return !isItem ? (Tag<Item>) value : null;
     }
 
-    public boolean contains(Item item){
-        return isItem()? this.item.equals(item) : this.tag.contains(item);
+    public boolean contains(Item item) {
+        return isItem() ? this.value.equals(item) : ((Tag<Item>) this.value).contains(item);
     }
 }

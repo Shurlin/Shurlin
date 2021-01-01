@@ -14,9 +14,9 @@ public enum CultivationRealms {
     EMPEROR("emperor", 11, 9),
     SAGE("sage", 12, 18);
 
-    private String name;
-    private short gradation;
-    private short maxRank;
+    private final String name;
+    private final short gradation;
+    private final short maxRank;
 
     CultivationRealms(String name, int gradation, int maxRank) {
         this.name = name;
@@ -40,6 +40,7 @@ public enum CultivationRealms {
         return gradation;
     }
 
+    @annotations.Nullable
     public static CultivationRealms getRealmByGradation(short gradation){
         switch (gradation){
             case 1:

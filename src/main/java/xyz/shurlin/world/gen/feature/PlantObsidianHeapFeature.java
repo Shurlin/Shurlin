@@ -22,7 +22,7 @@ public class PlantObsidianHeapFeature extends Feature<DefaultFeatureConfig> {
 
     @Override
     public boolean generate(ServerWorldAccess serverWorldAccess, StructureAccessor accessor, ChunkGenerator generator, Random random, BlockPos pos, DefaultFeatureConfig config) {
-        pos = pos.north(Shurlin.random.nextInt(16)).east(Shurlin.random.nextInt(16));
+        pos = pos.north(random.nextInt(16)).east(Shurlin.random.nextInt(16));
 //        int x = pos.getX();
 //        int z = pos.getZ();
 //        int y = serverWorldAccess.getTopY(Heightmap.Type.WORLD_SURFACE_WG, x, z);

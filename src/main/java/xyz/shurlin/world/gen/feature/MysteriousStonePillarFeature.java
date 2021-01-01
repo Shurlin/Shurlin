@@ -1,24 +1,14 @@
 package xyz.shurlin.world.gen.feature;
 
 import com.mojang.serialization.Codec;
-import it.unimi.dsi.fastutil.bytes.Byte2ObjectOpenCustomHashMap;
 import net.minecraft.block.BlockState;
-import net.minecraft.structure.StructureManager;
-import net.minecraft.structure.StructureStart;
-import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.ServerWorldAccess;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.source.BiomeSource;
-import net.minecraft.world.gen.ChunkRandom;
-import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.StructureAccessor;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.StructureFeature;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.Blocks;
 
@@ -31,7 +21,7 @@ public class MysteriousStonePillarFeature extends Feature<DefaultFeatureConfig> 
 
     @Override
     public boolean generate(ServerWorldAccess serverWorldAccess, StructureAccessor accessor, ChunkGenerator generator, Random random, BlockPos pos, DefaultFeatureConfig config) {
-        pos = pos.north(Shurlin.random.nextInt(16)).east(Shurlin.random.nextInt(16));
+        pos = pos.north(random.nextInt(16)).east(random.nextInt(16));
 //        int y = serverWorldAccess.getTopY(Heightmap.Type.WORLD_SURFACE_WG, pos.getX(), pos.getZ());
 //        pos = pos.down(pos.getY() - y);
         pos = serverWorldAccess.getTopPosition(Heightmap.Type.WORLD_SURFACE_WG, pos);

@@ -7,7 +7,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 
 public class PortableInventory extends SimpleInventory {
-    private ItemStack itemStack;
+    private final ItemStack itemStack;
 
     public PortableInventory(int size, ItemStack itemStack){
         super(size);
