@@ -11,6 +11,7 @@ public class RecipeSerializers {
     public static final WorkerRecipeSerializer<CollectorRecipe> COLLECTING = new WorkerRecipeSerializer<>(CollectorRecipe::new);
     public static final ConcentratorRecipe.ConcentratorRecipeSerializer CONCENTRATING = new ConcentratorRecipe.ConcentratorRecipeSerializer(ConcentratorRecipe::new);
     public static final WorkerRecipeSerializer<ExtractorRecipe> EXTRACTING = new WorkerRecipeSerializer<>(ExtractorRecipe::new);
+    public static final WorkerRecipeSerializer<HMPRecipe> ALCHEMY = new WorkerRecipeSerializer<>(HMPRecipe::new);
 
     private static <S extends RecipeSerializer<T>, T extends Recipe<?>> void register(String registryName, S serializer) {
         Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(Shurlin.MODID, registryName), serializer);

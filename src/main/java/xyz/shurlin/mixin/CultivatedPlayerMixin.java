@@ -12,10 +12,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import xyz.shurlin.cultivation.CultivationManager;
 
-import java.util.UUID;
-
-import static net.minecraft.entity.player.PlayerEntity.getOfflinePlayerUuid;
-
 @Mixin(PlayerEntity.class)
 public abstract class CultivatedPlayerMixin {
 

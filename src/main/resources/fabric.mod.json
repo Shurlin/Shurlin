@@ -24,6 +24,8 @@
       "xyz.shurlin.Shurlin"
     ],"client": [
       "xyz.shurlin.ShurlinClient"
+    ], "sweet_potato": [
+      "io.github.teddyxlandlee.sweet_potato.linkage.ShurlinSPMLinkage"
     ]
   },
   "mixins": [
