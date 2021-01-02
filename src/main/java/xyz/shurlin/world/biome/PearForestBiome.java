@@ -8,7 +8,7 @@ import xyz.shurlin.world.gen.feature.ShurlinBiomeFeatures;
 class PearForestBiome extends BasicBiome {
     PearForestBiome() {
         super(Category.FOREST, 0.1f, 0.2f, 0.7f, 0.3f);
-        DefaultBiomeFeatures.method_28440(this);
+        DefaultBiomeFeatures.addDefaultUndergroundStructures(this);
         this.addStructureFeature(DefaultBiomeFeatures.STANDARD_RUINED_PORTAL);
         this.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_PEAR_TREE);
         DefaultBiomeFeatures.addLandCarvers(this);

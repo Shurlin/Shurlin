@@ -8,7 +8,7 @@ import xyz.shurlin.world.gen.feature.ShurlinBiomeFeatures;
 class ParasolAncientForestBiome extends BasicBiome {
     ParasolAncientForestBiome() {
         super(Category.FOREST, 0.1f, 0.2f, 0.7f, 0.1f);
-        DefaultBiomeFeatures.method_28440(this);
+        DefaultBiomeFeatures.addDefaultUndergroundStructures(this);
         DefaultBiomeFeatures.addLandCarvers(this);
         DefaultBiomeFeatures.addDefaultLakes(this);
         DefaultBiomeFeatures.addDungeons(this);
