@@ -8,7 +8,7 @@ import xyz.shurlin.util.ShurlinLevel;
 
 public class HMPRecipe extends AbstractWorkerRecipe {
 
-    HMPRecipe(Identifier id, String group, Ingredient input, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
+    public HMPRecipe(Identifier id, String group, Ingredient input, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
         super(RecipeTypes.ALCHEMY, id, group, input, output, workTime, shurlinLevel);
     }
 

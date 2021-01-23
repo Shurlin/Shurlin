@@ -11,8 +11,7 @@ import net.minecraft.world.World;
 import xyz.shurlin.entity.projectile.BeanEntity;
 
 public class HolyPearWandItem extends BasicItem {
-
-    HolyPearWandItem() {
+    public HolyPearWandItem() {
         super(new Settings().group(ItemGroups.SHURLIN).maxDamage(2000));
     }
 

@@ -21,6 +21,10 @@ public class CultivationRealm {
 
     }
 
+    public CultivationRealm of() {
+        return new CultivationRealm();
+    }
+
     public CultivationRealm temp(){
         this.realm = CultivationRealms.KING;
         this.upgrade();

@@ -13,14 +13,15 @@ import xyz.shurlin.entity.damage.ShurlinDamageSource;
 import xyz.shurlin.item.Items;
 import xyz.shurlin.util.Utils;
 
-class SmallBudBlock extends FernBlock {
-    SmallBudBlock(Settings settings) {
+public class SmallBudBlock extends FernBlock {
+    public SmallBudBlock(Settings settings) {
         super(settings);
     }
 
     /**
-     * If player is in creative mode, it will no longer damage cuz of small bud.
-     * A brand new message is shown when dying.
+     * <p>If player is in creative mode, it will no longer
+     * damage cuz of small bud.</p><p>
+     * A brand new message is shown when dying.</p>
      * @author Garay Shurlin
      * @author teddyxlandlee
      * @since 0.1.2-beta

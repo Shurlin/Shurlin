@@ -2,12 +2,12 @@ package xyz.shurlin.item;
 
 import net.minecraft.item.Item;
 
-class BasicItem extends Item {
-    BasicItem() {
+public class BasicItem extends Item {
+    public BasicItem() {
         super(new Item.Settings().group(ItemGroups.SHURLIN));
     }
 
-    BasicItem(Settings settings) {
+    public BasicItem(Settings settings) {
         super(settings);
     }
 }

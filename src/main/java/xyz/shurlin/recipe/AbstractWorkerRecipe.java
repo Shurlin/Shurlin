@@ -19,7 +19,7 @@ public abstract class AbstractWorkerRecipe implements Recipe<Inventory> {
     protected final int workTime;
     protected final ShurlinLevel shurlinLevel;
 
-    AbstractWorkerRecipe(RecipeType<?> type, Identifier id, String group, Ingredient input, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
+    public AbstractWorkerRecipe(RecipeType<?> type, Identifier id, String group, Ingredient input, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
         this.type = type;
         this.id = id;
         this.group = group;

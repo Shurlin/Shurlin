@@ -7,7 +7,7 @@ import net.minecraft.util.Identifier;
 import xyz.shurlin.util.ShurlinLevel;
 
 public class CollectorRecipe extends AbstractWorkerRecipe {
-    CollectorRecipe(Identifier id, String group, Ingredient input, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
+    public CollectorRecipe(Identifier id, String group, Ingredient input, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
         super(RecipeTypes.COLLECTING, id, group, input, output, workTime, shurlinLevel);
     }
 

@@ -5,8 +5,8 @@ import net.minecraft.block.DoorBlock;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 
-class BasicDoorBlock extends DoorBlock {
-    BasicDoorBlock() {
+public class BasicDoorBlock extends DoorBlock {
+    public BasicDoorBlock() {
         this(FabricBlockSettings.of(Material.WOOD).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque());
     }
 

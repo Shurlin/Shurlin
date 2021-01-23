@@ -144,7 +144,8 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
         }
     }
 
-    int getWorkTimeTotal() {
+    public int getWorkTimeTotal() {
+        assert this.world != null;
         return this.world.getRecipeManager().getFirstMatch(this.recipeType, this, this.world).map(AbstractWorkerRecipe::getWorkTime).orElse(200);
     }
 
@@ -162,5 +163,17 @@ public abstract class AbstractWorkerBlockEntity extends BasicBlockEntity impleme
 
     protected int getOutputSlot(){
         return 1;
+    }
+
+    public int getWorkTime() {
+        return workTime;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public RecipeType<? extends AbstractWorkerRecipe> getRecipeType() {
+        return recipeType;
     }
 }

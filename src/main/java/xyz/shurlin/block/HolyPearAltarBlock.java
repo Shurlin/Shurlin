@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 public class HolyPearAltarBlock extends Block {
     private PlayerEntity owner;
 
-    HolyPearAltarBlock(Settings settings) {
+    public HolyPearAltarBlock(Settings settings) {
         super(settings);
     }
 

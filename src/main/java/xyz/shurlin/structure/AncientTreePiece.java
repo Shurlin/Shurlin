@@ -34,7 +34,7 @@ public class AncientTreePiece extends SimpleStructurePiece {
         this.initializeStructureData(manager);
     }
 
-    AncientTreePiece(StructurePieceType type, StructureManager manager, CompoundTag tag) {
+    public AncientTreePiece(StructurePieceType type, StructureManager manager, CompoundTag tag) {
         super(type, tag);
         this.template = new Identifier(tag.getString("Template"));
         this.rotation = BlockRotation.NONE;

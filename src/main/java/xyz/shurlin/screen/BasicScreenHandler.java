@@ -15,11 +15,11 @@ public class BasicScreenHandler<I extends Inventory> extends ScreenHandler {
     protected PlayerInventory playerInventory;
     private final ShurlinLevel shurlinLevel;
 
-    BasicScreenHandler(ScreenHandlerType<?> type, int syncId, I inventory, PlayerInventory playerInventory, int size) {
+    public BasicScreenHandler(ScreenHandlerType<?> type, int syncId, I inventory, PlayerInventory playerInventory, int size) {
         this(type, syncId, inventory, playerInventory, size, null);
     }
 
-    BasicScreenHandler(ScreenHandlerType<?> type, int syncId, I inventory, PlayerInventory playerInventory, int size, ShurlinLevel shurlinLevel) {
+    public BasicScreenHandler(ScreenHandlerType<?> type, int syncId, I inventory, PlayerInventory playerInventory, int size, ShurlinLevel shurlinLevel) {
         super(type, syncId);
         this.size = size;
         this.inventory = inventory;

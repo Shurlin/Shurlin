@@ -21,7 +21,7 @@ public class ChainMinerItem extends PickaxeItem {
     private final BlockPos[] poses = Utils.poses_of_all_directions;
     private final ArrayList<BlockPos> poses1 = new ArrayList<>();
 
-    ChainMinerItem() {
+    public ChainMinerItem() {
         super(ToolMaterials.PLANT_JADE, 1, 5f, new Item.Settings().group(ItemGroups.SHURLIN));
     }
 

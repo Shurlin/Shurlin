@@ -5,8 +5,8 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import xyz.shurlin.world.gen.feature.ShurlinBiomeFeatures;
 
-class ParasolAncientForestBiome extends BasicBiome {
-    ParasolAncientForestBiome() {
+public class ParasolAncientForestBiome extends BasicBiome {
+    public ParasolAncientForestBiome() {
         super(Category.FOREST, 0.1f, 0.2f, 0.7f, 0.1f);
         DefaultBiomeFeatures.addDefaultUndergroundStructures(this);
         DefaultBiomeFeatures.addLandCarvers(this);

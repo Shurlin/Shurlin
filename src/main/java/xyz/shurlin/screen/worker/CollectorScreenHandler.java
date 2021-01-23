@@ -13,7 +13,6 @@ import xyz.shurlin.util.ShurlinLevel;
 
 public class CollectorScreenHandler extends AbstractWorkerScreenHandler {
 
-
     public CollectorScreenHandler(int syncId, Inventory inventory, PlayerInventory playerInventory, PropertyDelegate propertyDelegate, World world, ShurlinLevel shurlinLevel) {
         super(ScreenHandlerTypes.COLLECTOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory,propertyDelegate,world, shurlinLevel);
         this.addSlot(new WorkerInputSlot(inventory, 0, 47,18, shurlinLevel));

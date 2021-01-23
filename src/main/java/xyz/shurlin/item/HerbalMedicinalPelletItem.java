@@ -18,12 +18,12 @@ public class HerbalMedicinalPelletItem extends Item {
     private SimpleLevels level;
     private String name;
 
-    HerbalMedicinalPelletItem(FoodComponent component, String name) {
+    public HerbalMedicinalPelletItem(FoodComponent component, String name) {
         super(new Item.Settings().maxCount(16).food(component));
         this.name = name;
     }
 
-    HerbalMedicinalPelletItem(String name){
+    public HerbalMedicinalPelletItem(String name){
         this(new FoodComponent.Builder().hunger(1).snack().saturationModifier(0.0f).build(), name);
     }
 

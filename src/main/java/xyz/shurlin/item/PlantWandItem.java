@@ -15,8 +15,8 @@ import xyz.shurlin.util.Utils;
 
 import java.util.Vector;
 
-class PlantWandItem extends Item {
-    PlantWandItem() {
+public class PlantWandItem extends Item {
+    public PlantWandItem() {
         super(new Settings().maxDamage(256).group(ItemGroups.SHURLIN));
     }
 

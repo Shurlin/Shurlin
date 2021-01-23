@@ -10,11 +10,11 @@ public class BasicBlock extends Block {
         this(FabricBlockSettings.copy(block));
     }
 
-    BasicBlock(Material material) {
+    public BasicBlock(Material material) {
         this(FabricBlockSettings.of(material));
     }
 
-    BasicBlock(Settings settings) {
+    public BasicBlock(Settings settings) {
         super(settings);
     }
 }
