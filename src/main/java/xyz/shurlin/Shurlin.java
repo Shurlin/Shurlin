@@ -8,6 +8,7 @@ import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.commend.Commands;
 import xyz.shurlin.item.Items;
+import xyz.shurlin.linkage.Linkage;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.screen.ScreenHandlerTypes;
 import xyz.shurlin.util.ServerReceiver;
@@ -41,5 +42,6 @@ public class Shurlin implements ModInitializer {
         Commands.registerAll();
 //        new Reflector();
 //        new DimensionOptions();
+        Linkage.init();
     }
 }
