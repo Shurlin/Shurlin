@@ -24,8 +24,6 @@
       "xyz.shurlin.Shurlin"
     ],"client": [
       "xyz.shurlin.ShurlinClient"
-    ],"___banned__sweet_potato$io$featurehouse$spm": [
-      "io.featurehouse.spm.linkage.shurlin.SPMShurlinLinkage"
     ]
   },
   "mixins": [
