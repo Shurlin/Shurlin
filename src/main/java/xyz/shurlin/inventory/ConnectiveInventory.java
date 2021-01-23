@@ -10,10 +10,10 @@ import xyz.shurlin.Shurlin;
 import java.util.ArrayList;
 
 public class ConnectiveInventory extends SimpleInventory {
-    private PlayerEntity player;
+    private final PlayerEntity player;
     private static ArrayList<ConnectiveInventory> connectiveInventories;
 
-    private ConnectiveInventory(int size, PlayerEntity player) {
+    protected ConnectiveInventory(int size, PlayerEntity player) {
         super(size);
         this.player = player;
     }

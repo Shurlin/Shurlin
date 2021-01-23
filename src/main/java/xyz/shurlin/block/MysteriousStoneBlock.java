@@ -19,7 +19,7 @@ import xyz.shurlin.util.Utils;
 public class MysteriousStoneBlock extends Block {
     private static final IntProperty TIMES;
 
-    MysteriousStoneBlock(Settings settings) {
+    public MysteriousStoneBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.getStateManager().getDefaultState().with(TIMES, 0));
     }

@@ -26,7 +26,7 @@ class BasicStatusEffect extends StatusEffect {
         return super.canApplyUpdateEffect(duration, amplifier);
     }
 
-    BasicStatusEffect(StatusEffectType type, int color) {
+    public BasicStatusEffect(StatusEffectType type, int color) {
         super(type, color);
     }
 }

@@ -7,7 +7,7 @@ import net.minecraft.util.Identifier;
 import xyz.shurlin.util.ShurlinLevel;
 
 public class ExtractorRecipe extends AbstractWorkerRecipe {
-    ExtractorRecipe(Identifier id, String group, Ingredient input, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
+    public ExtractorRecipe(Identifier id, String group, Ingredient input, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
         super(RecipeTypes.EXTRACTING, id, group, input, output, workTime, shurlinLevel);
     }
 

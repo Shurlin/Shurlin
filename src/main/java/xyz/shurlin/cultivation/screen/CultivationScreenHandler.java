@@ -23,4 +23,8 @@ public class CultivationScreenHandler extends ScreenHandler {
     public boolean canUse(PlayerEntity player) {
         return CultivationManager.INSTANCE.isCultivated(player);
     }
+
+    public CultivationRealm getRealm() {
+        return realm;
+    }
 }

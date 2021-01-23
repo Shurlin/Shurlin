@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class HolyPearSwordItem extends BasicItem {
 
-    HolyPearSwordItem() {
+    public HolyPearSwordItem() {
         super(new Item.Settings().group(ItemGroups.SHURLIN).maxDamage(2000));
     }
 

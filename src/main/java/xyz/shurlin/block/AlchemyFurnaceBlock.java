@@ -6,7 +6,7 @@ public class AlchemyFurnaceBlock extends BasicBlock{
 //        return ;
 //    }
 
-    AlchemyFurnaceBlock(Settings settings) {
+    public AlchemyFurnaceBlock(Settings settings) {
         super(settings);
     }
 }

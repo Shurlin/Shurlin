@@ -12,7 +12,7 @@ public class SpiritMeridians implements Tickable {
     private double maxEx;
     private static final double[] ratios = new double[]{0, 1d, 3d, 10d, 30d, 100d, 300d, 1e3, 3e3, 1e4};
 
-    SpiritMeridians(SpiritPropertyType type) {
+    public SpiritMeridians(SpiritPropertyType type) {
         this.type = type;
         this.level = 1;
         this.maxSpirit = getMaxSpirits(level);
@@ -20,7 +20,7 @@ public class SpiritMeridians implements Tickable {
         this.maxEx = getMaxExs(level);
     }
 
-    SpiritMeridians(SpiritPropertyType type, short level, double curSpirit, double curEx) {
+    public SpiritMeridians(SpiritPropertyType type, short level, double curSpirit, double curEx) {
         this.type = type;
         this.level = level;
         this.curSpirit = curSpirit;

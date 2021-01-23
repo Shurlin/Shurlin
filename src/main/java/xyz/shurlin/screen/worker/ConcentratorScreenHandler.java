@@ -16,7 +16,6 @@ import xyz.shurlin.util.ShurlinLevel;
 
 public class ConcentratorScreenHandler extends AbstractWorkerScreenHandler {
 
-
     public ConcentratorScreenHandler(int syncId, Inventory inventory, PlayerInventory playerInventory, PropertyDelegate propertyDelegate, World world, ShurlinLevel shurlinLevel) {
         super(ScreenHandlerTypes.CONCENTRATOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory,propertyDelegate,world, shurlinLevel);
         this.addSlot(new Slot(inventory, 3, 15,39));

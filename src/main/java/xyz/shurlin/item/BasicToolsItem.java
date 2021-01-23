@@ -32,7 +32,7 @@ public class BasicToolsItem {
         return Registry.register(Registry.ITEM, new Identifier(Shurlin.MODID,registryName),item);
     }
 
-    class ShurlinSwordItem extends net.minecraft.item.SwordItem implements ShurlinLevel {
+    protected class ShurlinSwordItem extends net.minecraft.item.SwordItem implements ShurlinLevel {
         private final float shurlinLevel;
 
         ShurlinSwordItem(float shurlinLevel) {
@@ -46,7 +46,7 @@ public class BasicToolsItem {
         }
     }
 
-    class ShurlinPickaxeItem extends net.minecraft.item.PickaxeItem implements ShurlinLevel {
+    protected class ShurlinPickaxeItem extends net.minecraft.item.PickaxeItem implements ShurlinLevel {
         private final float shurlinLevel;
 
         ShurlinPickaxeItem(float shurlinLevel) {
@@ -60,7 +60,7 @@ public class BasicToolsItem {
         }
     }
 
-    class ShurlinAxeItem extends net.minecraft.item.AxeItem implements ShurlinLevel {
+    protected class ShurlinAxeItem extends net.minecraft.item.AxeItem implements ShurlinLevel {
         private final float shurlinLevel;
         ShurlinAxeItem(float shurlinLevel) {
             super(material, 6, -3.0f, new Item.Settings().group(SHURLIN));
@@ -73,7 +73,7 @@ public class BasicToolsItem {
         }
     }
 
-    class ShurlinShovelItem extends net.minecraft.item.ShovelItem implements ShurlinLevel {
+    protected class ShurlinShovelItem extends net.minecraft.item.ShovelItem implements ShurlinLevel {
         private final float shurlinLevel;
         ShurlinShovelItem(float shurlinLevel) {
             super(material, 1.5f, -3.0f, new Item.Settings().group(SHURLIN));
@@ -86,7 +86,7 @@ public class BasicToolsItem {
         }
     }
 
-    class ShurlinHoeItem extends net.minecraft.item.HoeItem implements ShurlinLevel {
+    protected class ShurlinHoeItem extends net.minecraft.item.HoeItem implements ShurlinLevel {
         private final float shurlinLevel;
         ShurlinHoeItem(float shurlinLevel) {
             super(material, (int)(0-material.getAttackDamage()), material.getAttackDamage()-3, new Item.Settings().group(SHURLIN));

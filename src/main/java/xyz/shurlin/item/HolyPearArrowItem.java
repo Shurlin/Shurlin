@@ -9,12 +9,12 @@ import xyz.shurlin.entity.projectile.HolyPearArrowEntity;
 
 public class HolyPearArrowItem extends Item{
 
-    HolyPearArrowItem() {
+    public HolyPearArrowItem() {
         super(new Item.Settings().group(ItemGroups.SHURLIN));
     }
 
-    ProjectileEntity createArrow(World world, LivingEntity shooter, int level) {
-        return new HolyPearArrowEntity(shooter,world,level);
+    protected ProjectileEntity createArrow(World world, LivingEntity shooter, int level) {
+        return new HolyPearArrowEntity(shooter, world, level);
     }
 
 }

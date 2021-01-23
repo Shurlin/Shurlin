@@ -32,6 +32,7 @@ public class Utils {
     public static void createLightning(World world, BlockPos pos) {
         if (world instanceof ServerWorld) {
             LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(world);
+            assert lightningEntity != null;
             lightningEntity.method_29495(Vec3d.ofBottomCenter(pos));
             world.spawnEntity(lightningEntity);
         }

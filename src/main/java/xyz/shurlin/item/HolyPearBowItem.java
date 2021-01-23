@@ -10,11 +10,10 @@ import net.minecraft.world.World;
 
 import java.util.function.Predicate;
 
-class HolyPearBowItem extends BowItem {
+public class HolyPearBowItem extends BowItem {
     private static final Predicate<ItemStack> PEARS = (stack) -> stack.getItem() == Items.HOLY_PEAR;
 
-
-    HolyPearBowItem() {
+    public HolyPearBowItem() {
         super(new Item.Settings().group(ItemGroups.SHURLIN).maxDamage(1000));
     }
 

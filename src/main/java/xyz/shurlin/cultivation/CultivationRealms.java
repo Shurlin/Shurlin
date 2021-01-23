@@ -1,5 +1,8 @@
 package xyz.shurlin.cultivation;
 
+import annotations.Nullable;
+import it.unimi.dsi.fastutil.shorts.Short2ObjectOpenHashMap;
+
 public enum CultivationRealms {
     SOLDIER("soldier", 1, 3),
     EMISSARY("emissary", 2, 3),
@@ -22,6 +25,8 @@ public enum CultivationRealms {
         this.name = name;
         this.gradation = (short) gradation;
         this.maxRank = (short) maxRank;
+
+        Map.INSTANCE.put(this.gradation, this);
     }
 
     public String getName() {
@@ -40,34 +45,29 @@ public enum CultivationRealms {
         return gradation;
     }
 
-    @annotations.Nullable
-    public static CultivationRealms getRealmByGradation(short gradation){
-        switch (gradation){
-            case 1:
-                return SOLDIER;
-            case 2:
-                return EMISSARY;
-            case 3:
-                return TEACHER;
-            case 4:
-                return OVERLORD;
-            case 5:
-                return GENERAL;
-            case 6:
-                return MARQUIS;
-            case 7:
-                return SENIOR;
-            case 8:
-                return MASTER;
-            case 9:
-                return SOVEREIGN;
-            case 10:
-                return KING;
-            case 11:
-                return EMPEROR;
-            case 12:
-                return SAGE;
-        }
-        return null;
+    /**
+     * Simplified this method by putting a map.
+     * @author Garay Shurlin
+     * @author teddyxlandlee
+     * @since 0.1.2-beta
+     * @see xyz.shurlin.cultivation.CultivationRealms.Map
+     */
+    @Nullable
+    public static CultivationRealms getRealmByGradation(short gradation) {
+        return Map.INSTANCE.getOrDefault(gradation, null);
+    }
+
+    /**
+     * Simplified {@link #getRealmByGradation} method by putting a map.
+     * @author Garay Shurlin
+     * @author teddyxlandlee
+     * @since 0.1.2-beta
+     * @see it.unimi.dsi.fastutil.shorts.Short2ObjectMap
+     * @see it.unimi.dsi.fastutil.shorts.Short2ObjectOpenHashMap
+     * @see #getRealmByGradation(short)
+     */
+    static final class Map extends Short2ObjectOpenHashMap<CultivationRealms> {
+        static final Map INSTANCE = new Map();
+        private Map() {}
     }
 }

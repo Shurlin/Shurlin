@@ -17,7 +17,7 @@ import java.util.Objects;
 public class BiggerContainerScreen extends HandledScreen<BiggerContainerScreenHandler> {
     private final Identifier TEXTURE = new Identifier(Shurlin.MODID, "textures/gui/bigger_container.png");
 
-    BiggerContainerScreen(BiggerContainerScreenHandler handler, PlayerInventory inventory, Text title) {
+    public BiggerContainerScreen(BiggerContainerScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
         this.backgroundWidth = 256;
         this.backgroundHeight = 256;

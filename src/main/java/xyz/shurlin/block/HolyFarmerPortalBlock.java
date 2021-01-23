@@ -19,7 +19,7 @@ import xyz.shurlin.util.Utils;
 public class HolyFarmerPortalBlock extends BasicBlock {
     private static final VoxelShape SHAPE;
 
-    HolyFarmerPortalBlock(Settings settings) {
+    public HolyFarmerPortalBlock(Settings settings) {
         super(settings);
 //        NetherPortalBlock
     }

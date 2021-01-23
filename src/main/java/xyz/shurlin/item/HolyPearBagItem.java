@@ -21,7 +21,7 @@ public class HolyPearBagItem extends BasicItem {
     private static final int SIZE = 104;
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(SIZE, ItemStack.EMPTY);
 
-    HolyPearBagItem() {
+    public HolyPearBagItem() {
         super(new Item.Settings().group(ItemGroups.SHURLIN).maxCount(1));
     }
 
