@@ -22,5 +22,6 @@ public class MicroCraterBlock extends BasicBlock {
     }
     private void erupt(ServerWorld world){
 //        world.addFireworkParticle();
+
     }
 }

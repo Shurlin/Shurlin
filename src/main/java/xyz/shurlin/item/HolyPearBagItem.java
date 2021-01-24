@@ -1,5 +1,6 @@
 package xyz.shurlin.item;
 
+import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
@@ -36,7 +37,7 @@ public class HolyPearBagItem extends BasicItem {
             user.openHandledScreen(createScreenHandler(inventory, user.inventory.selectedSlot));
             user.incrementStat(Stats.OPEN_CHEST);
         }
-
+//        world.getClosestEntity(ZombieEntity.class,)
         return TypedActionResult.success(stack);
     }
 

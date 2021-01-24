@@ -45,6 +45,7 @@ public class Blocks {
     public static final Block HOLY_FARMER_PORTAL;
     public static final Block CULTIVATION_CRYSTAL;
     public static final Block SUCCULENT_BLOCK;
+    public static final Block LLANDUDNO;
 
     public static final Block PEAR_SAPLING;
     public static final Block PHOENIX_SAPLING;
@@ -120,6 +121,7 @@ public class Blocks {
         SUCCULENT_BLOCK = register("succulent_block", new SucculentBlock(FabricBlockSettings.of(Material.ORGANIC_PRODUCT, MaterialColor.GRASS).slipperiness(0.8F).sounds(BlockSoundGroup.SLIME).nonOpaque().lightLevel((state)->
             state.get(SucculentBlock.SHINING)?8:0
         )));
+        LLANDUDNO = register("llandudno_block",BlockSettings.LLANDUDNO);
 
         PEAR_SAPLING = register("pear_sapling", new BasicSaplingBlock(ShurlinBiomeFeatures.PEAR_TREE_CONFIG, BlockSettings.PLANT));
         PHOENIX_SAPLING = register("phoenix_sapling", new BasicSaplingBlock(ShurlinBiomeFeatures.PHOENIX_TREE_CONFIG, BlockSettings.PLANT));
@@ -165,6 +167,7 @@ public class Blocks {
         private static final FabricBlockSettings DEAD_CORAL_BLOCK;
         private static final FabricBlockSettings OBSIDIAN;
         private static final FabricBlockSettings WORKER;
+        private static final FabricBlockSettings LLANDUDNO;
 
         static {
             PLANT = FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().nonOpaque().sounds(BlockSoundGroup.GRASS);
@@ -180,6 +183,7 @@ public class Blocks {
             WORKER = FabricBlockSettings.of(Material.STONE).strength(10.0f, 10.0f);
             STONE = FabricBlockSettings.of(Material.STONE, MaterialColor.STONE).requiresTool().strength(1.5F, 6.0F);
             DIRT = FabricBlockSettings.of(Material.SOIL, MaterialColor.DIRT).strength(0.5F).sounds(BlockSoundGroup.GRAVEL);
+            LLANDUDNO = FabricBlockSettings.of(Material.METAL).strength(20.0f, 100.0f).requiresTool().sounds(BlockSoundGroup.METAL);
         }
 
     }

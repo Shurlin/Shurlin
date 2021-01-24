@@ -27,6 +27,9 @@ public class BlockEntityTypes {
     public static final BlockEntityType EXTRACTOR_BLOCK_ENTITY =
             register("extractor_block_entity", BlockEntityType.Builder.create(ExtractorBlockEntity::new, Blocks.EXTRACTOR_BLOCK).build(null));
 
+    public static final BlockEntityType LLANDUDNO_BLOCK_ENTITY =
+            register("llandudno_block_entity", BlockEntityType.Builder.create(LlandudnoBlockEntity::new, Blocks.LLANDUDNO).build(null));
+
 
     private static BlockEntityType register(String registryName, BlockEntityType<?> entry){
         return Registry.register(Registry.BLOCK_ENTITY_TYPE,

@@ -18,8 +18,5 @@ public class HerbalMedicinalPelletItem extends Item {
         super(new Item.Settings().maxCount(16).food(new FoodComponent.Builder().hunger(1).snack().saturationModifier(0.0f).build()));
     }
 
-    @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        return super.use(world, user, hand);
-    }
+
 }
