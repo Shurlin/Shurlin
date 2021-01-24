@@ -1,10 +1,8 @@
 package xyz.shurlin.block.worker.entity;
 
-import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import xyz.shurlin.Shurlin;
@@ -117,6 +115,6 @@ public class CollectorBlockEntity extends AbstractWorkerBlockEntity {
     }
 
     private boolean getCollected(){
-        return Shurlin.random.nextFloat() < (consistence / 100.0f);
+        return world.random.nextFloat() < (consistence / 100.0f);
     }
 }

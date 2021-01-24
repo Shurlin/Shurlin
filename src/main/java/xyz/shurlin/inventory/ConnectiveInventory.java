@@ -5,17 +5,15 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
-import net.minecraft.util.collection.DefaultedList;
 import xyz.shurlin.Shurlin;
 
 import java.util.ArrayList;
-import java.util.Vector;
 
 public class ConnectiveInventory extends SimpleInventory {
-    private PlayerEntity player;
+    private final PlayerEntity player;
     private static ArrayList<ConnectiveInventory> connectiveInventories;
 
-    private ConnectiveInventory(int size, PlayerEntity player) {
+    protected ConnectiveInventory(int size, PlayerEntity player) {
         super(size);
         this.player = player;
     }

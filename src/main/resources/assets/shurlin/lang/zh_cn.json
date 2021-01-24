@@ -215,5 +215,8 @@
   "type.shurlin.poison": "毒",
   "type.shurlin.lightning": "雷",
   "type.shurlin.ice": "冰",
-  "type.shurlin.time_space": "时空"
+  "type.shurlin.time_space": "时空",
+
+  "death.attack.shurlin.small_bud": "%1$s触犯了仙灵",
+  "death.attack.shurlin.small_bud.player": "%1$s在与%2$s战斗时触犯了仙灵"
 }

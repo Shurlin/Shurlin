@@ -2,14 +2,11 @@ package xyz.shurlin.block.worker.entity;
 
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.Recipe;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.recipe.ConcentratorRecipe;
 import xyz.shurlin.recipe.RecipeTypes;
-import xyz.shurlin.screen.worker.BreakerScreenHandler;
 import xyz.shurlin.screen.worker.ConcentratorScreenHandler;
 
 public class ConcentratorBlockEntity extends AbstractWorkerBlockEntity {

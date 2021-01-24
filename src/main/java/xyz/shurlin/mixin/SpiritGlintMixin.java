@@ -1,5 +1,7 @@
 package xyz.shurlin.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -12,6 +14,7 @@ import xyz.shurlin.client.render.ShurlinRenderLayer;
 import xyz.shurlin.item.BasicWeaponItem;
 
 @Mixin(ItemRenderer.class)
+@Environment(EnvType.CLIENT)
 public abstract class SpiritGlintMixin {
     @Redirect(at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/render/item/ItemRenderer;method_29711(Lnet/minecraft/client/render/VertexConsumerProvider;Lnet/minecraft/client/render/RenderLayer;ZZ)Lnet/minecraft/client/render/VertexConsumer;"),

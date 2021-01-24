@@ -16,7 +16,6 @@ import xyz.shurlin.util.ShurlinLevel;
 
 public class ExtractorScreenHandler extends AbstractWorkerScreenHandler {
 
-
     public ExtractorScreenHandler(int syncId, Inventory inventory, PlayerInventory playerInventory, PropertyDelegate propertyDelegate, World world, ShurlinLevel shurlinLevel) {
         super(ScreenHandlerTypes.EXTRACTOR_SCREEN_HANDLER_TYPE, syncId, inventory, playerInventory,propertyDelegate,world, shurlinLevel);
         this.addSlot(new WorkerInputSlot(inventory, 0, 44,42, shurlinLevel));

@@ -10,7 +10,7 @@ import static xyz.shurlin.cultivation.SpiritMeridians.getMaxSpirits;
 public class CultivationRealm {
     private CultivationRealms realm;
     private short rank;
-    private Object2ObjectArrayMap<SpiritPropertyType, SpiritMeridians> meridians = new Object2ObjectArrayMap<>();
+    private final Object2ObjectArrayMap<SpiritPropertyType, SpiritMeridians> meridians = new Object2ObjectArrayMap<>();
 
     CultivationRealm() {
         this.realm = CultivationRealms.SOLDIER;
@@ -19,6 +19,10 @@ public class CultivationRealm {
             this.meridians.put(type, new SpiritMeridians(type));
         }
 
+    }
+
+    public CultivationRealm of() {
+        return new CultivationRealm();
     }
 
     public CultivationRealm temp(){

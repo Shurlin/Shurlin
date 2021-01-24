@@ -1,15 +1,12 @@
 package xyz.shurlin.block;
 
-
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -22,7 +19,7 @@ import xyz.shurlin.util.Utils;
 public class HolyFarmerPortalBlock extends BasicBlock {
     private static final VoxelShape SHAPE;
 
-    HolyFarmerPortalBlock(Settings settings) {
+    public HolyFarmerPortalBlock(Settings settings) {
         super(settings);
 //        NetherPortalBlock
     }

@@ -1,13 +1,11 @@
 package xyz.shurlin.item;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.UseAction;
@@ -15,9 +13,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import xyz.shurlin.entity.projectile.LightningArrowEntity;
 
-
 public class ShurlinPowerfulAxeItem extends Item {
-    private static float miningSpeed = (float) 1e8;
+    private static final float miningSpeed = (float) 1e8;
 
     ShurlinPowerfulAxeItem() {
         super(new Item.Settings().group(ItemGroups.SHURLIN).maxCount(1).fireproof());

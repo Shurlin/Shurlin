@@ -1,7 +1,6 @@
 package xyz.shurlin.item;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.client.render.RenderPhase;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,8 +11,7 @@ import net.minecraft.world.World;
 import xyz.shurlin.entity.projectile.BeanEntity;
 
 public class HolyPearWandItem extends BasicItem {
-
-    HolyPearWandItem() {
+    public HolyPearWandItem() {
         super(new Settings().group(ItemGroups.SHURLIN).maxDamage(2000));
     }
 

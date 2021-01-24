@@ -9,7 +9,7 @@ import java.util.Random;
 public class MicroCraterBlock extends BasicBlock {
     private boolean working;
 
-    MicroCraterBlock(Settings settings) {
+    public MicroCraterBlock(Settings settings) {
         super(settings);
     }
 

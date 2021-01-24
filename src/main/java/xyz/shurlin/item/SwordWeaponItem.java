@@ -2,7 +2,6 @@ package xyz.shurlin.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
@@ -10,8 +9,6 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.cultivation.WeaponLevels;
 
 public class SwordWeaponItem extends BasicWeaponItem {

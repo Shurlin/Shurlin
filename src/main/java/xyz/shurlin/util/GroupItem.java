@@ -11,7 +11,7 @@ public enum GroupItem {
 
     );
 
-    private ArrayList<Item> itemList = new ArrayList<>();
+    private final ArrayList<Item> itemList = new ArrayList<>();
 //    private ArrayList<Tag> tagList = new ArrayList<>();
 
     GroupItem(Item... items){

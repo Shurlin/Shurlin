@@ -188,5 +188,8 @@
   "type.shurlin.poison": "Poison",
   "type.shurlin.lightning": "Lightning",
   "type.shurlin.ice": "Ice",
-  "type.shurlin.time_space": "Time Space"
+  "type.shurlin.time_space": "Time Space",
+
+  "death.attack.shurlin.small_bud": "%1$s violates Shurlin",
+  "death.attack.shurlin.small_bud.player": "%1$s violates Shurlin whilst %2$s"
 }

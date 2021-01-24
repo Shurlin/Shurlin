@@ -8,11 +8,14 @@
   "authors": [
     "Garay Shurlin"
   ],
+  "contributors": [
+    "teddyxlandlee"
+  ],
   "contact": {
     "homepage": "https://shurlin.xyz/"
   },
 
-  "license": "CC0-1.0",
+  "license": "LGPL-2.1",
   "icon": "assets/shurlin/icon.png",
 
   "environment": "*",
@@ -28,11 +31,11 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.7.4",
+    "fabricloader": ">=0.9.0",
     "fabric": "*",
     "minecraft": "1.16.x"
   },
   "suggests": {
-    "flamingo": "*"
+    "sweet_potato": ">1.0.3"
   }
 }

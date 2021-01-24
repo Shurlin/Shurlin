@@ -1,15 +1,15 @@
 package xyz.shurlin;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import xyz.shurlin.block.Blocks;
 import xyz.shurlin.client.gui.screen.HandledScreens;
-import xyz.shurlin.entity.EntityTypes;
-import xyz.shurlin.entity.projectile.BeanEntityRender;
-import xyz.shurlin.entity.projectile.HolyPearArrowEntityRender;
+import xyz.shurlin.linkage.Linkage;
 
+@Environment(EnvType.CLIENT)
 public class ShurlinClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
@@ -31,6 +31,7 @@ public class ShurlinClient implements ClientModInitializer {
                 Blocks.CULTIVATION_CRYSTAL);
 //        EntityRendererRegistry.INSTANCE.register(EntityTypes.BEAN_ENTITY_TYPE, BeanEntityRender::new);
 //        EntityRendererRegistry.INSTANCE.register(EntityTypes.HOLY_PEAR_ARROW_ENTITY_TYPE, HolyPearArrowEntityRender::new);
-        new HandledScreens();
+        HandledScreens.registerAll();
+        Linkage.initClient();
     }
 }

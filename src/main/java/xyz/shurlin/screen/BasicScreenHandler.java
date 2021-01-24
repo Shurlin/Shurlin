@@ -10,16 +10,16 @@ import net.minecraft.screen.slot.Slot;
 import xyz.shurlin.util.ShurlinLevel;
 
 public class BasicScreenHandler<I extends Inventory> extends ScreenHandler {
-    private int size;
+    private final int size;
     protected I inventory;
     protected PlayerInventory playerInventory;
-    private ShurlinLevel shurlinLevel;
+    private final ShurlinLevel shurlinLevel;
 
-    BasicScreenHandler(ScreenHandlerType<?> type, int syncId, I inventory, PlayerInventory playerInventory, int size) {
+    public BasicScreenHandler(ScreenHandlerType<?> type, int syncId, I inventory, PlayerInventory playerInventory, int size) {
         this(type, syncId, inventory, playerInventory, size, null);
     }
 
-    BasicScreenHandler(ScreenHandlerType<?> type, int syncId, I inventory, PlayerInventory playerInventory, int size, ShurlinLevel shurlinLevel) {
+    public BasicScreenHandler(ScreenHandlerType<?> type, int syncId, I inventory, PlayerInventory playerInventory, int size, ShurlinLevel shurlinLevel) {
         super(type, syncId);
         this.size = size;
         this.inventory = inventory;
@@ -29,9 +29,9 @@ public class BasicScreenHandler<I extends Inventory> extends ScreenHandler {
         inventory.onOpen(playerInventory.player);
     }
 
-    BasicScreenHandler(ScreenHandlerType<?> type, int syncId) {
-        super(type, syncId);
-    }
+    //BasicScreenHandler(ScreenHandlerType<?> type, int syncId) {
+    //    super(type, syncId);
+    //}
 
     @Override
     public boolean canUse(PlayerEntity player) {
@@ -103,4 +103,7 @@ public class BasicScreenHandler<I extends Inventory> extends ScreenHandler {
         this.inventory.onClose(player);
     }
 
+    protected ShurlinLevel getShurlinLevel() {
+        return shurlinLevel;
+    }
 }

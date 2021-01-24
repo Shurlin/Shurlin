@@ -1,10 +1,12 @@
 package xyz.shurlin.client.render;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.*;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import xyz.shurlin.Shurlin;
 
+@Environment(EnvType.CLIENT)
 public class ShurlinRenderLayer extends RenderPhase {
     private static final Identifier WITH_SPIRIT_ITEM_GLINT = new Identifier(Shurlin.MODID, "textures/misc/with_spirit_item_glint.png");
 

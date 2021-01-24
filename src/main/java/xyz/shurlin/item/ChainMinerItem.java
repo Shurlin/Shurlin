@@ -5,24 +5,23 @@ import net.minecraft.block.OreBlock;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
-import net.minecraft.util.ActionResult;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import xyz.shurlin.util.Utils;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ChainMinerItem extends PickaxeItem {
     private World world;
-    private BlockPos[] poses = Utils.poses_of_all_directions;
-    private ArrayList<BlockPos> poses1 = new ArrayList<>();
+    private final BlockPos[] poses = Utils.poses_of_all_directions;
+    private final ArrayList<BlockPos> poses1 = new ArrayList<>();
 
-    ChainMinerItem() {
+    public ChainMinerItem() {
         super(ToolMaterials.PLANT_JADE, 1, 5f, new Item.Settings().group(ItemGroups.SHURLIN));
     }
 

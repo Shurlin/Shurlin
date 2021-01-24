@@ -7,11 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import xyz.shurlin.block.Blocks;
 import xyz.shurlin.block.HolyFarmerPortalBlock;
@@ -19,8 +15,8 @@ import xyz.shurlin.util.Utils;
 
 import java.util.Vector;
 
-class PlantWandItem extends Item {
-    PlantWandItem() {
+public class PlantWandItem extends Item {
+    public PlantWandItem() {
         super(new Settings().maxDamage(256).group(ItemGroups.SHURLIN));
     }
 

@@ -4,37 +4,26 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
 public enum SpiritPropertyType {
-    METAL("metal"),
-    WOOD("wood"),
-    WATER("water"),
-    FIRE("fire"),
-    EARTH("earth"),
-    WIND("wind"),
-    LIGHT("light"),
-    DARKNESS("darkness"),
-    POISON("poison"),
-    LIGHTNING("lightning"),
-    ICE("ice"),
-    TIME_SPACE("time_space");
+    METAL("metal", 1),
+    WOOD("wood", 2),
+    WATER("water", 3),
+    FIRE("fire", 4),
+    EARTH("earth", 5),
+    WIND("wind", 6),
+    LIGHT("light", 7),
+    DARKNESS("darkness", 8),
+    POISON("poison", 9),
+    LIGHTNING("lightning", 10),
+    ICE("ice", 11),
+    TIME_SPACE("time_space", 12);
 
     private final String name;
-    public static final SpiritPropertyType[] GROUPS = new SpiritPropertyType[]{
-            METAL,
-            WOOD,
-            WATER,
-            FIRE,
-            EARTH,
-            WIND,
-            LIGHT,
-            DARKNESS,
-            POISON,
-            LIGHTNING,
-            ICE,
-            TIME_SPACE
-    };
+    private final int id;
+    public static final SpiritPropertyType[] GROUPS = values();
 
-    SpiritPropertyType(String name) {
+    SpiritPropertyType(String name, int id) {
         this.name = name;
+        this.id = id;
     }
 
     public String getTranslation(){
@@ -43,34 +32,7 @@ public enum SpiritPropertyType {
 
     @Environment(EnvType.CLIENT)
     public int getId() {
-        switch (this) {
-            case METAL:
-                return 1;
-            case WOOD:
-                return 2;
-            case WATER:
-                return 3;
-            case FIRE:
-                return 4;
-            case EARTH:
-                return 5;
-            case WIND:
-                return 6;
-            case LIGHT:
-                return 7;
-            case DARKNESS:
-                return 8;
-            case POISON:
-                return 9;
-            case LIGHTNING:
-                return 10;
-            case ICE:
-                return 11;
-            case TIME_SPACE:
-                return 12;
-            default:
-                return 0;
-        }
+        return this.id;
     }
 
     /*

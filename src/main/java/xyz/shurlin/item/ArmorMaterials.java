@@ -4,7 +4,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -13,7 +12,7 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum ArmorMaterials implements ArmorMaterial {
-    PLANT_IRON("plant_iron", 21, new int[]{3,6,8,3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0f, 0.0f, ()->{
+    PLANT_IRON("plant_iron", 21, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0f, 0.0f, ()->{
         return Ingredient.ofItems(Items.PLANT_IRON_INGOT);
     }),
     PLANT_GOLD("plant_gold", 12, new int[]{2, 5, 6, 2}, 28, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.5F, 0.0F, () -> {
@@ -33,7 +32,7 @@ public enum ArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Lazy<Ingredient> repairIngredientSupplier;
 
-    private ArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> supplier) {
+    ArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> supplier) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;
@@ -41,7 +40,7 @@ public enum ArmorMaterials implements ArmorMaterial {
         this.equipSound = equipSound;
         this.toughness = toughness;
         this.knockbackResistance = knockbackResistance;
-        this.repairIngredientSupplier = new Lazy(supplier);
+        this.repairIngredientSupplier = new Lazy<>(supplier);
     }
 
     public int getDurability(EquipmentSlot slot) {

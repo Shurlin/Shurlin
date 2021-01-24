@@ -19,7 +19,7 @@ import xyz.shurlin.cultivation.CultivationManager;
 import xyz.shurlin.cultivation.CultivationRealm;
 
 public class CultivationCrystalBlock extends BlockWithEntity {
-    private static CultivationManager manager = CultivationManager.INSTANCE;
+    private static final CultivationManager manager = CultivationManager.INSTANCE;
     private static final VoxelShape SHAPE = Block.createCuboidShape(4, 4, 4, 12,12, 12);
 
 

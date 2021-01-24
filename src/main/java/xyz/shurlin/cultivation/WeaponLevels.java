@@ -12,17 +12,17 @@ public enum WeaponLevels {
     SUPER_HOLY_WEAPON(9),
     HOLY_SPIRIT_WEAPON(10);
 
-    private int lv;
+    private final int lvl;
 
-    WeaponLevels(int lv) {
-        this.lv = lv;
+    WeaponLevels(int lvl) {
+        this.lvl = lvl;
     }
 
     public boolean unbreakable(){
-        return this.lv >= 8;
+        return this.lvl >= 8;
     }
 
     public int getLevel() {
-        return lv;
+        return lvl;
     }
 }

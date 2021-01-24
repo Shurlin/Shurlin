@@ -3,7 +3,6 @@ package xyz.shurlin.block.plant;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 import java.util.Random;
@@ -13,8 +12,8 @@ public class BasicSaplingBlock extends SaplingBlock {
         super(new Generator(treeFeatureConfig), settings);
     }
 
-    private static class Generator extends SaplingGenerator{
-        private ConfiguredFeature<TreeFeatureConfig, ?> treeFeatureConfig;
+    static class Generator extends SaplingGenerator{
+        private final ConfiguredFeature<TreeFeatureConfig, ?> treeFeatureConfig;
 
         Generator(ConfiguredFeature<TreeFeatureConfig, ?> treeFeatureConfig) {
             this.treeFeatureConfig = treeFeatureConfig;

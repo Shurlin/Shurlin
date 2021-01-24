@@ -10,7 +10,7 @@ import xyz.shurlin.screen.worker.CollectorScreenHandler;
 
 @Environment(EnvType.CLIENT)
 public class CollectorScreen extends AbstractWorkerScreen<CollectorScreenHandler> {
-    private final int consistenceHeightTotal = 50;
+    protected final int consistenceHeightTotal = 50;
 
     public CollectorScreen(CollectorScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory,title, handler.getName());

@@ -18,7 +18,7 @@ public abstract class AbstractWorkerScreen<T extends AbstractWorkerScreenHandler
     private final Identifier TEXTURE;
     protected int progressLength;
 
-    AbstractWorkerScreen(T handler, PlayerInventory inventory, Text title, String name) {
+    public AbstractWorkerScreen(T handler, PlayerInventory inventory, Text title, String name) {
         super(handler, inventory, title);
         TEXTURE = new Identifier(Shurlin.MODID, "textures/gui/" + name + ".png");
     }

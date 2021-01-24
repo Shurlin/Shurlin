@@ -2,21 +2,18 @@ package xyz.shurlin.item;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
 import java.util.function.Predicate;
 
-class HolyPearBowItem extends BowItem {
+public class HolyPearBowItem extends BowItem {
     private static final Predicate<ItemStack> PEARS = (stack) -> stack.getItem() == Items.HOLY_PEAR;
 
-
-    HolyPearBowItem() {
+    public HolyPearBowItem() {
         super(new Item.Settings().group(ItemGroups.SHURLIN).maxDamage(1000));
     }
 

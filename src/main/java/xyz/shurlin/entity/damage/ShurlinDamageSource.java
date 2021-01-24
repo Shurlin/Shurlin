@@ -3,7 +3,9 @@ package xyz.shurlin.entity.damage;
 import net.minecraft.entity.damage.DamageSource;
 
 public class ShurlinDamageSource extends DamageSource {
-    protected ShurlinDamageSource(String name) {
+    public static ShurlinDamageSource SMALL_BUD = new ShurlinDamageSource("shurlin.small_bud");
+
+    public ShurlinDamageSource(String name) {
         super(name);
     }
 }

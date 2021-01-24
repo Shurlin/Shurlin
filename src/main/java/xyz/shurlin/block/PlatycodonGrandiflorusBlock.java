@@ -13,8 +13,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import xyz.shurlin.item.Items;
 
-class PlatycodonGrandiflorusBlock extends FlowerBlock {
-    PlatycodonGrandiflorusBlock(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
+public class PlatycodonGrandiflorusBlock extends FlowerBlock {
+    public PlatycodonGrandiflorusBlock(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
         super(suspiciousStewEffect, effectDuration, settings);
     }
 

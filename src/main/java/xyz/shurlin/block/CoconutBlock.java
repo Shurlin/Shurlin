@@ -1,9 +1,7 @@
 package xyz.shurlin.block;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.FallingBlock;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;

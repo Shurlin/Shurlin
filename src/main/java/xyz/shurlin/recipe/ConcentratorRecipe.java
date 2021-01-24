@@ -22,11 +22,10 @@ import xyz.shurlin.util.Utils;
 
 import java.util.Vector;
 
-
 public class ConcentratorRecipe extends AbstractWorkerRecipe {
     private final ConcentrationIngredientVector concentrationIngredients;
 
-    ConcentratorRecipe(Identifier id, String group, ConcentrationIngredientVector concentrationIngredients, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
+    public ConcentratorRecipe(Identifier id, String group, ConcentrationIngredientVector concentrationIngredients, ItemStack output, int workTime, ShurlinLevel shurlinLevel) {
         super(RecipeTypes.CONCENTRATING, id, group, null, output, workTime, shurlinLevel);
         this.concentrationIngredients = concentrationIngredients;
     }
@@ -55,7 +54,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
     public static class ConcentratorRecipeSerializer implements RecipeSerializer<ConcentratorRecipe> {
         private final ConcentratorRecipeSerializer.RecipeFactory<ConcentratorRecipe> recipeFactory;
 
-        ConcentratorRecipeSerializer(RecipeFactory<ConcentratorRecipe> recipeFactory) {
+        public ConcentratorRecipeSerializer(RecipeFactory<ConcentratorRecipe> recipeFactory) {
             this.recipeFactory = recipeFactory;
         }
 
@@ -151,12 +150,12 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             return count;
         }
 
-        ConcentrationIngredient(ItemOrTag itemOrTag, int count) {
+        public ConcentrationIngredient(ItemOrTag itemOrTag, int count) {
             this.itemOrTag = itemOrTag;
             this.count = count;
         }
 
-        ConcentrationIngredient(JsonObject object) {
+        public ConcentrationIngredient(JsonObject object) {
             Identifier identifier;
             if(object.has("item")){
                 identifier = new Identifier(JsonHelper.getString(object, "item"));

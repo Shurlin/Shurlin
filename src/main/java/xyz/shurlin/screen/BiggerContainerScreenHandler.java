@@ -1,14 +1,11 @@
 package xyz.shurlin.screen;
 
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.screen.slot.Slot;
 import xyz.shurlin.screen.slot.LockableSlot;
 
-public class BiggerContainerScreenHandler extends BasicScreenHandler {
+public class BiggerContainerScreenHandler extends BasicScreenHandler<Inventory> {
     public int slot;
 
     public BiggerContainerScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, int slot) {
@@ -18,7 +15,7 @@ public class BiggerContainerScreenHandler extends BasicScreenHandler {
         this.addPlayerInventorySlots(48, 174);
     }
 
-    BiggerContainerScreenHandler(int syncId, PlayerInventory playerInventory) {
+    public BiggerContainerScreenHandler(int syncId, PlayerInventory playerInventory) {
         this(syncId, playerInventory, new SimpleInventory(104), 0);
     }
 

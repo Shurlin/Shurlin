@@ -7,20 +7,16 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
-import xyz.shurlin.Shurlin;
 import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.item.Items;
 import xyz.shurlin.util.Utils;
@@ -30,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 public class HolyPearAltarBlock extends Block {
     private PlayerEntity owner;
 
-    HolyPearAltarBlock(Settings settings) {
+    public HolyPearAltarBlock(Settings settings) {
         super(settings);
     }
 
@@ -50,7 +46,7 @@ public class HolyPearAltarBlock extends Block {
                         break;
                     player.inventory.insertStack(new ItemStack(Items.HOLY_PEAR));
                     Utils.createLightning(world, player.getBlockPos());
-                    TimeUnit.SECONDS.sleep(Shurlin.random.nextInt(3) + 1);
+                    TimeUnit.SECONDS.sleep(world.random.nextInt(3) + 1);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -65,7 +61,7 @@ public class HolyPearAltarBlock extends Block {
         if(entity instanceof PlayerEntity){
             ((PlayerEntity) entity).addExperience(1);
             if(!((PlayerEntity) entity).abilities.creativeMode)
-                if(Shurlin.random.nextFloat() < 0.1)
+                if(world.random.nextFloat() < 0.1)
                     entity.setFireTicks(200);
             if(world.isClient){
                 if(KeyBindings.keyBinding_j.isPressed()){
@@ -86,7 +82,7 @@ public class HolyPearAltarBlock extends Block {
             int flag = item.equals(Items.PLANT_IRON_INGOT) ? 1 : (item.equals(Items.PLANT_GOLD_INGOT) ? 2 : (item.equals(Items.PLANT_JADE) ? 8 : 0));
             if (flag > 0) {
                 int cnt = stack.getCount();
-                if (Shurlin.random.nextInt(64 / flag) < cnt)
+                if (entity.world.random.nextInt(64 / flag) < cnt)
                     this.owner.inventory.insertStack(new ItemStack(Items.SHURLIN_INGOT));
                 entity.remove();
             }

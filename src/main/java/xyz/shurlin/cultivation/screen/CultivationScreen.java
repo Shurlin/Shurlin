@@ -2,11 +2,11 @@ package xyz.shurlin.cultivation.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
-import net.minecraft.client.gui.screen.TickableElement;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.text.StringRenderable;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
@@ -20,10 +20,11 @@ import java.util.Objects;
 import static net.minecraft.util.math.MathHelper.abs;
 import static net.minecraft.util.math.MathHelper.floor;
 
+@Environment(EnvType.CLIENT)
 public class CultivationScreen extends HandledScreen<CultivationScreenHandler> {
     private final Identifier TEXTURE = new Identifier(Shurlin.MODID, "textures/gui/cultivation_ui.png");
-    private CultivationRealm realm = handler.realm;
-    private Object2ObjectArrayMap<SpiritPropertyType, SpiritMeridians> meridians = realm.getMeridians();
+    private final CultivationRealm realm = handler.realm;
+    private final Object2ObjectArrayMap<SpiritPropertyType, SpiritMeridians> meridians = realm.getMeridians();
     private static final int COLOR = 4210752;
 
     public CultivationScreen(CultivationScreenHandler handler, PlayerInventory inventory, Text title) {

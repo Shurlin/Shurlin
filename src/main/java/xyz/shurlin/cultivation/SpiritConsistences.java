@@ -11,5 +11,4 @@ public class SpiritConsistences {
     public static final double STANDARD_CRYSTAL = 1e5;
     public static final double QUALITY_CRYSTAL = 1e6;
     public static final double BEST_CRYSTAL = 1e7;
-
 }

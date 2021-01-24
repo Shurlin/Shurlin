@@ -8,6 +8,7 @@ import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.commend.Commands;
 import xyz.shurlin.item.Items;
+import xyz.shurlin.linkage.Linkage;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.screen.ScreenHandlerTypes;
 import xyz.shurlin.util.ServerReceiver;
@@ -26,21 +27,21 @@ public class Shurlin implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        new BlockEntityTypes();
+        BlockEntityTypes.registerAll();
         new Items();
 //        new Features();
-        new RecipeSerializers();
-        new Biomes();
-        new BiomeGenerator();
-        new ServerReceiver();
+        RecipeSerializers.registerAll();
+        Biomes.registerAll();
+        BiomeGenerator.registerAll();
+        ServerReceiver.registerAll();
         new ScreenHandlerTypes();
-        new ChunkGeneratorTypes();
-        new Dimensions();
+        ChunkGeneratorTypes.registerAll();
+        Dimensions.registerAll();
         new DimensionTypes();
-        new KeyBindings();
-        new Commands();
+        KeyBindings.registerAll();
+        Commands.registerAll();
 //        new Reflector();
-//        new DimensionTypes();
 //        new DimensionOptions();
+        Linkage.init();
     }
 }

@@ -7,7 +7,7 @@ import xyz.shurlin.Shurlin;
 import xyz.shurlin.screen.BiggerContainerScreenHandler;
 
 public class LockableSlot<T extends BiggerContainerScreenHandler> extends Slot {
-    private T handler;
+    private final T handler;
     private final int index;
 
     public LockableSlot(Inventory inventory, int index, int x, int y, T handler) {
