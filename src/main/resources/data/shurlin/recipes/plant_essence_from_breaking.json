@@ -1,0 +1,9 @@
+{
+  "type": "shurlin:breaking",
+  "ingredient": {
+    "item": "shurlin:plant_essence_ingot"
+  },
+  "result": "shurlin:plant_essence",
+  "count": 6,
+  "workingTime": 30
+}

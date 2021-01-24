@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "shurlin:block/leave_coral_wall_fan",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "shurlin:block/leave_coral_wall_fan"
+    },
+    "facing=south": {
+      "model": "shurlin:block/leave_coral_wall_fan",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "shurlin:block/leave_coral_wall_fan",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "shurlin:shurlin/root",
+  "display": {
+    "icon": {
+      "item": "shurlin:plant_iron_ingot"
+    },
+    "title": {
+      "translate": "advancements.shurlin.ore_of_plant.title"
+    },
+    "description": {
+      "translate": "advancements.shurlin.ore_of_plant.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "plant_iron_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "shurlin:plant_iron_ingot"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "plant_iron_ingot"
+    ]
+  ]
+}

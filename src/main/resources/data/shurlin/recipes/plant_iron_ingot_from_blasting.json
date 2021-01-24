@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "shurlin:plant_iron_ore_block"
+  },
+  "result": "shurlin:plant_iron_ingot",
+  "experience": 0.9,
+  "cookingtime": 100
+}

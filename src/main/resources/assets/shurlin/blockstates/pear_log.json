@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":    { "model": "shurlin:block/pear_log" },
+        "axis=z":     { "model": "shurlin:block/pear_log", "x": 90 },
+        "axis=x":     { "model": "shurlin:block/pear_log", "x": 90, "y": 90 }
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "xyz.shurlin.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "CultivatedPlayerMixin"
+  ],
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

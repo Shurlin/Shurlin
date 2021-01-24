@@ -1,0 +1,6 @@
+{
+  "parent": "block/tinted_cross",
+  "textures": {
+    "cross": "shurlin:block/platycodon_grandiflorus"
+  }
+}

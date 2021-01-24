@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "chain_miner",
+  "ingredients": [
+    {
+      "item": "shurlin:plant_jade_pickaxe"
+    },
+    {
+      "item": "shurlin:plant_essence"
+    }
+  ],
+  "result": {
+    "item": "shurlin:chain_miner"
+  }
+}

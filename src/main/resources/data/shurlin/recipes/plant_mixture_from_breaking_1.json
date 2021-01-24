@@ -1,0 +1,8 @@
+{
+  "type": "shurlin:breaking",
+  "ingredient": {
+    "tag": "minecraft:leaves"
+  },
+  "result": "shurlin:plant_mixture",
+  "workingTime": 20
+}

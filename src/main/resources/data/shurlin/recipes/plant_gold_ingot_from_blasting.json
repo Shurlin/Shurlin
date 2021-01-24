@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "shurlin:plant_gold_ore_block"
+  },
+  "result": "shurlin:plant_gold_ingot",
+  "experience": 1.2,
+  "cookingtime": 100
+}

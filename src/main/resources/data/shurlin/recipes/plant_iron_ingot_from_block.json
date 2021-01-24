@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "plant_iron_ingot",
+  "ingredients": [
+    {
+      "item": "shurlin:plant_iron_block"
+    }
+  ],
+  "result": {
+    "item": "shurlin:plant_iron_ingot",
+    "count": 9
+  }
+}

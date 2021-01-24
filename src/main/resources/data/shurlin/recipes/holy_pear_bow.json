@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " p ",
+    "p  ",
+    " p "
+  ],
+  "key": {
+    "p": {
+      "item": "shurlin:holy_pear"
+    }
+  },
+  "result": {
+    "item": "shurlin:holy_pear_bow"
+  }
+}

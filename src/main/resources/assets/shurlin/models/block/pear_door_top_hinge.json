@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_rh",
+  "textures": {
+    "top": "shurlin:block/pear_door_top",
+    "bottom": "shurlin:block/pear_door_bottom"
+  }
+}

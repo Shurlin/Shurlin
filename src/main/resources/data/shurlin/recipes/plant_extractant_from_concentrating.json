@@ -1,0 +1,18 @@
+{
+  "type": "shurlin:concentrating",
+  "ingredients": [
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "item": "shurlin:plant_gold_nugget",
+      "count": 4
+    },
+    {
+      "item": "shurlin:plant_iron_nugget",
+      "count": 4
+    }
+  ],
+  "result": "shurlin:plant_extractant",
+  "workingTime": 200
+}

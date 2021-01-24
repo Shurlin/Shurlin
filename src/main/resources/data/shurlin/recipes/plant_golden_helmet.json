@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "shurlin:plant_gold_ingot"
+    }
+  },
+  "result": {
+    "item": "shurlin:plant_golden_helmet"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sj ",
+    "jag",
+    " l "
+  ],
+  "key": {
+    "s": {
+      "item": "shurlin:shurlin_ingot"
+    },
+    "j": {
+      "item": "shurlin:plant_jade"
+    },
+    "g": {
+      "item": "shurlin:plant_gold_ingot"
+    },
+    "a": {
+      "item": "shurlin:holy_pear_altar"
+    },
+    "l": {
+      "item": "shurlin:pear_log"
+    }
+  },
+  "result": {
+    "item": "shurlin:shurlin_powerful_axe"
+  }
+}

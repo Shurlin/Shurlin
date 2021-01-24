@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "shurlin:block/tenuous_lightning_spirit_ore_block"
+  }
+}

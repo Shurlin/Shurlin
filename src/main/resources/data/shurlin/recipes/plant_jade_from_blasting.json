@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "shurlin:plant_jade_ore_block"
+  },
+  "result": "shurlin:plant_jade",
+  "experience": 1.8,
+  "cookingtime": 100
+}

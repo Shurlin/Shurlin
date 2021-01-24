@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "coral_amulet",
+  "ingredients": [
+    {
+      "item": "minecraft:fire_coral_block"
+    },
+    {
+      "item": "minecraft:brain_coral_block"
+    },
+    {
+      "item": "minecraft:horn_coral_block"
+    },
+    {
+      "item": "minecraft:tube_coral_block"
+    },
+    {
+      "item": "minecraft:bubble_coral_block"
+    },
+    {
+      "item": "shurlin:leave_coral_block"
+    }
+  ],
+  "result": {
+    "item": "shurlin:coral_amulet"
+  }
+}
