@@ -24,8 +24,6 @@
       "xyz.shurlin.Shurlin"
     ],"client": [
       "xyz.shurlin.ShurlinClient"
-    ], "sweet_potato": [
-      "io.github.teddyxlandlee.sweet_potato.linkage.ShurlinSPMLinkage"
     ]
   },
   "mixins": [
@@ -38,6 +36,6 @@
     "minecraft": "1.16.x"
   },
   "suggests": {
-    "sweet_potato": "*"
+    "sweet_potato": ">1.0.3"
   }
 }
