@@ -27,17 +27,17 @@ public class Shurlin implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        BlockEntityTypes.registerAll();
-        new Items();
+        BlockEntityTypes.load();
+        Items.load();
 //        new Features();
         RecipeSerializers.registerAll();
         Biomes.registerAll();
         BiomeGenerator.registerAll();
         ServerReceiver.registerAll();
-        new ScreenHandlerTypes();
+        ScreenHandlerTypes.load();
         ChunkGeneratorTypes.registerAll();
         Dimensions.registerAll();
-        new DimensionTypes();
+        DimensionTypes.load();
         KeyBindings.registerAll();
         Commands.registerAll();
 //        new Reflector();
