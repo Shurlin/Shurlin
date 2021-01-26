@@ -37,5 +37,12 @@
   },
   "suggests": {
     "sweet_potato": ">1.0.3"
+  },
+  "custom": {
+    "Pigeonia Linkage Standard": {
+      "url": "https://featurehoues.github.io/pigeonia-linkage-standard/v1.0.0/STANDARD.txt",
+      "version": "v1.0.0",
+      "strict": false
+    }
   }
 }
