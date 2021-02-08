@@ -11,7 +11,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.tag.Tag;
-import net.minecraft.tag.TagContainers;
+import net.minecraft.tag.ServerTagManagerHolder;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
@@ -109,7 +109,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
                 CompoundTag tag = new CompoundTag();
                 ItemOrTag itemOrTag = ingredient.itemOrTag;
                 boolean b = itemOrTag.isItem();
-                String id = b?itemOrTag.getItem().getTranslationKey():TagContainers.instance().items().checkId(itemOrTag.getTag()).toString();
+                String id = b?itemOrTag.getItem().getTranslationKey():ServerTagManagerHolder.getTagManager().getItems().getTagId(itemOrTag.getTag()).toString();
                 tag.putBoolean("isItem", b);
                 tag.putString("id", id);
                 tag.putInt("count", ingredient.count);
@@ -131,7 +131,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
                     if(b)
                         itemOrTag = new ItemOrTag(Registry.ITEM.get(id));
                     else
-                        itemOrTag = new ItemOrTag(TagContainers.instance().items().get(id));
+                        itemOrTag = new ItemOrTag(ServerTagManagerHolder.getTagManager().getItems().getTag(id));
                     int count = tag.getInt("count");
                     ConcentrationIngredient concentrationIngredient = new ConcentrationIngredient(itemOrTag, count);
                     concentrationIngredients.add(concentrationIngredient);
@@ -163,7 +163,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
                 itemOrTag = new ItemOrTag(item);
             }else if(object.has("tag")){
                 identifier = new Identifier(JsonHelper.getString(object, "tag"));
-                Tag<Item> tag = TagContainers.instance().items().get(identifier);
+                Tag<Item> tag = ServerTagManagerHolder.getTagManager().getItems().getTag(identifier);
                 if (tag == null) {
                     throw new JsonSyntaxException("Unknown item tag '" + identifier + "'");
                 }

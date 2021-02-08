@@ -2,6 +2,7 @@ package xyz.shurlin.screen.worker;
 
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.recipe.book.RecipeBookCategory;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.world.World;

@@ -6,6 +6,7 @@ import net.minecraft.structure.StructureStart;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.registry.DynamicRegistryManager;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.BiomeSource;
 import net.minecraft.world.gen.ChunkRandom;
@@ -26,7 +27,7 @@ public class AncientTreeStructureFeature extends StructureFeature<DefaultFeature
     }
 
     @Override
-    public GenerationStep.Feature method_28663() {
+    public GenerationStep.Feature getGenerationStep() {
         return GenerationStep.Feature.SURFACE_STRUCTURES;
     }
 
@@ -47,11 +48,11 @@ public class AncientTreeStructureFeature extends StructureFeature<DefaultFeature
         }
 
         @Override
-        public void init(ChunkGenerator chunkGenerator, StructureManager structureManager, int x, int z, Biome biome, DefaultFeatureConfig DefaultFeatureConfig) {
-            int i = x * 16;
-            int j = z * 16;
+        public void init(DynamicRegistryManager registryManager, ChunkGenerator chunkGenerator, StructureManager manager, int chunkX, int chunkZ, Biome biome, DefaultFeatureConfig config) {
+            int i = chunkX * 16;
+            int j = chunkZ * 16;
             BlockPos blockPos = new BlockPos(i, 0, j);
-            AncientTreePiece.addPieces(structureManager, blockPos, this.children, AncientTreeStructureFeature.this.data);
+            AncientTreePiece.addPieces(manager, blockPos, this.children, AncientTreeStructureFeature.this.data);
             this.setBoundingBoxFromChildren();
         }
     }

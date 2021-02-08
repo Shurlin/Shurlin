@@ -6,13 +6,8 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.PassiveEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
-import xyz.shurlin.cultivation.SpiritPropertyType;
-import xyz.shurlin.entity.EntityTypes;
 
 public class RoamingSpiritEntity extends PassiveEntity {
 //    private SpiritPropertyType type;
@@ -20,6 +15,11 @@ public class RoamingSpiritEntity extends PassiveEntity {
     public RoamingSpiritEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
 //        this.type = type;
+    }
+
+    @Override
+    public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
+        return null;
     }
 
     public static DefaultAttributeContainer.Builder createCowAttributes() {
@@ -31,8 +31,5 @@ public class RoamingSpiritEntity extends PassiveEntity {
         this.goalSelector.add(0, new EscapeDangerGoal(this, 2.0D));
     }
 
-    @Override
-    public @Nullable PassiveEntity createChild(PassiveEntity mate) {
-        return null;
-    }
+
 }

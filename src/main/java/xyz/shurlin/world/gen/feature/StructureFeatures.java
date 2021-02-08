@@ -1,5 +1,6 @@
 package xyz.shurlin.world.gen.feature;
 
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
@@ -16,17 +17,17 @@ public class StructureFeatures {
     public static final StructureFeature<DefaultFeatureConfig> ANCIENT_JUNGLE_TREE;
     public static final StructureFeature<DefaultFeatureConfig> ANCIENT_PEAR_TREE;
 
-    private static <F extends StructureFeature<?>> F register(String name, F structureFeature) {
-        return Registry.register(Registry.STRUCTURE_FEATURE, name.toLowerCase(Locale.ROOT), structureFeature);
+    private static <F extends StructureFeature<?>> F register(Identifier id, F structureFeature) {
+        return Registry.register(Registry.STRUCTURE_FEATURE, id, structureFeature);
     }
 
     static {
-        ANCIENT_OAK_TREE = register("ancient_oak_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.OAK));
-        ANCIENT_BIRCH_TREE = register("ancient_birch_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.BIRCH));
-        ANCIENT_DARK_OAK_TREE = register("ancient_dark_oak_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.DARK_OAK));
-        ANCIENT_ACACIA_TREE = register("ancient_acacia_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.ACACIA));
-        ANCIENT_SPRUCE_TREE = register("ancient_spruce_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.SPRUCE));
-        ANCIENT_JUNGLE_TREE = register("ancient_jungle_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.JUNGLE));
-        ANCIENT_PEAR_TREE = register("ancient_pear_tree", new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.PEAR));
+        ANCIENT_OAK_TREE = register(FeatureKeys.ANCIENT_OAK_TREE_KEY.getValue(), new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.OAK));
+        ANCIENT_BIRCH_TREE = register(FeatureKeys.ANCIENT_BIRCH_TREE_KEY.getValue(), new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.BIRCH));
+        ANCIENT_DARK_OAK_TREE = register(FeatureKeys.ANCIENT_DARK_OAK_TREE_KEY.getValue(), new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.DARK_OAK));
+        ANCIENT_ACACIA_TREE = register(FeatureKeys.ANCIENT_ACACIA_TREE_KEY.getValue(), new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.ACACIA));
+        ANCIENT_SPRUCE_TREE = register(FeatureKeys.ANCIENT_SPRUCE_TREE_KEY.getValue(), new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.SPRUCE));
+        ANCIENT_JUNGLE_TREE = register(FeatureKeys.ANCIENT_JUNGLE_TREE_KEY.getValue(), new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.JUNGLE));
+        ANCIENT_PEAR_TREE = register(FeatureKeys.ANCIENT_PEAR_TREE_KEY.getValue(), new AncientTreeStructureFeature(DefaultFeatureConfig.CODEC, AncientTreeData.PEAR));
     }
 }

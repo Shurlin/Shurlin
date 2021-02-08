@@ -1,6 +1,6 @@
 package xyz.shurlin.item;
 
-import net.minecraft.command.arguments.EntityAnchorArgumentType;
+import net.minecraft.command.argument.EntityAnchorArgumentType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

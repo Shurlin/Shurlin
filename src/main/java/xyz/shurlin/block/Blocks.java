@@ -15,6 +15,7 @@ import xyz.shurlin.block.worker.CollectorBlock;
 import xyz.shurlin.block.worker.ConcentratorBlock;
 import xyz.shurlin.block.worker.ExtractorBlock;
 import xyz.shurlin.world.gen.feature.ShurlinBiomeFeatures;
+import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {
 
@@ -123,8 +124,8 @@ public class Blocks {
         )));
         LLANDUDNO = register("llandudno_block",BlockSettings.LLANDUDNO);
 
-        PEAR_SAPLING = register("pear_sapling", new BasicSaplingBlock(ShurlinBiomeFeatures.PEAR_TREE_CONFIG, BlockSettings.PLANT));
-        PHOENIX_SAPLING = register("phoenix_sapling", new BasicSaplingBlock(ShurlinBiomeFeatures.PHOENIX_TREE_CONFIG, BlockSettings.PLANT));
+        PEAR_SAPLING = register("pear_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PEAR_TREE, BlockSettings.PLANT));
+        PHOENIX_SAPLING = register("phoenix_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PHOENIX_TREE, BlockSettings.PLANT));
 
         DEAD_LEAVE_CORAL = register("dead_leave_coral",new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL));
         LEAVE_CORAL = register("leave_coral",new LeaveCoralBlock(DEAD_LEAVE_CORAL, BlockSettings.CORAL));

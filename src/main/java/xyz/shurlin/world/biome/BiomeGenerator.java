@@ -1,9 +1,14 @@
 package xyz.shurlin.world.biome;
 
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.block.Block;
+import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
@@ -11,7 +16,10 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import xyz.shurlin.block.Blocks;
 import xyz.shurlin.world.gen.feature.ShurlinBiomeFeatures;
+import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 import xyz.shurlin.world.gen.feature.StructureFeatures;
+
+import java.util.List;
 
 import static net.minecraft.world.gen.feature.StructureFeature.STRUCTURES;
 
@@ -24,74 +32,77 @@ public class BiomeGenerator {
         STRUCTURES.put("ancient_spruce_tree",  StructureFeatures.ANCIENT_SPRUCE_TREE);
         STRUCTURES.put("ancient_jungle_tree",  StructureFeatures.ANCIENT_JUNGLE_TREE);
         STRUCTURES.put("ancient_pear_tree", StructureFeatures.ANCIENT_PEAR_TREE);
-        Registry.BIOME.forEach(BiomeGenerator::handleBiome);
-        Biomes.FOREST.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_OAK_TREE);
+        BuiltinRegistries.BIOME.forEach(BiomeGenerator::handleBiome);
+
     }
 
     private static void handleBiome(Biome biome){
-        if(biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
-            addOres(biome, Blocks.PLANT_IRON_ORE_BLOCK, 6, 6, 32);
-            addOres(biome, Blocks.PLANT_GOLD_ORE_BLOCK, 4, 4, 24);
-            addOres(biome, Blocks.PLANT_JADE_ORE_BLOCK, 4, 2, 16);
-
+        RegistryKey<Biome> key = BuiltinRegistries.BIOME.getKey(biome).get();
+        if(key.equals(BiomeKeys.FOREST)){
+            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_OAK_TREE);
+        } else if(key.equals(BiomeKeys.BIRCH_FOREST)){
+            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_BIRCH_TREE);
+        }else if(key.equals(BiomeKeys.DARK_FOREST)){
+            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_DARK_OAK_TREE);
+        }else if(key.equals(BiomeKeys.SAVANNA_PLATEAU)){
+            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_ACACIA_TREE);
+        } else if(key.equals(BiomeKeys.MOUNTAINS)){
+            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_SPRUCE_TREE);
+        } else if(key.equals(BiomeKeys.JUNGLE)){
+            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_JUNGLE_TREE);
         }
-        if(biome.getCategory() == Biome.Category.NETHER){
-            addOres(biome, OreFeatureConfig.Target.NETHERRACK, Blocks.TENUOUS_METAL_SPIRIT_ORE_BLOCK, 2, 2, 16);
-            addOres(biome, OreFeatureConfig.Target.NETHERRACK, Blocks.TENUOUS_FIRE_SPIRIT_ORE_BLOCK, 2, 2, 16);
-        }else if(biome.getCategory() == Biome.Category.JUNGLE){
-            addOres(biome, Blocks.TENUOUS_WOOD_SPIRIT_ORE_BLOCK, 4, 4, 16);
-        }else if(biome.getCategory() == Biome.Category.OCEAN){
-            addOres(biome, Blocks.TENUOUS_WATER_SPIRIT_ORE_BLOCK, 2, 3, 16);
-        }else if(biome.getCategory() == Biome.Category.EXTREME_HILLS){
-            addOres(biome, Blocks.TENUOUS_EARTH_SPIRIT_ORE_BLOCK, 4, 2, 16);
-        }else if(biome.getCategory() == Biome.Category.PLAINS){
-            addOres(biome, Blocks.TENUOUS_WIND_SPIRIT_ORE_BLOCK, 2, 2, 16);
-        }else if(biome.getCategory() == Biome.Category.DESERT){
-            addOres(biome, Blocks.TENUOUS_LIGHT_SPIRIT_ORE_BLOCK, 4, 2, 16);
-        }
-//        else if(biome.getCategory() == Biome.Category.THEEND){
-//            addOres(biome, Blocks.TENUOUS_WOOD_SPIRIT_ORE_BLOCK, 4, 4, 16);
-//            addOres(biome, Blocks.TENUOUS_WOOD_SPIRIT_ORE_BLOCK, 4, 4, 16);
+//        biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_OAK_TREE);
+//        if(biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
+//            addOres(biome, Blocks.PLANT_IRON_ORE_BLOCK, 6, 6, 32);
+//            addOres(biome, Blocks.PLANT_GOLD_ORE_BLOCK, 4, 4, 24);
+//            addOres(biome, Blocks.PLANT_JADE_ORE_BLOCK, 4, 2, 16);
+//
 //        }
-        else if(biome.getCategory() == Biome.Category.SWAMP){
-            addOres(biome, Blocks.TENUOUS_POISON_SPIRIT_ORE_BLOCK, 4, 2, 16);
-        }
+//        if(biome.getCategory() == Biome.Category.NETHER){
+//            addOres(biome, OreFeatureConfig.Target.NETHERRACK, Blocks.TENUOUS_METAL_SPIRIT_ORE_BLOCK, 2, 2, 16);
+//            addOres(biome, OreFeatureConfig.Target.NETHERRACK, Blocks.TENUOUS_FIRE_SPIRIT_ORE_BLOCK, 2, 2, 16);
+//        }else if(biome.getCategory() == Biome.Category.JUNGLE){
+//            addOres(biome, Blocks.TENUOUS_WOOD_SPIRIT_ORE_BLOCK, 4, 4, 16);
+//        }else if(biome.getCategory() == Biome.Category.OCEAN){
+//            addOres(biome, Blocks.TENUOUS_WATER_SPIRIT_ORE_BLOCK, 2, 3, 16);
+//        }else if(biome.getCategory() == Biome.Category.EXTREME_HILLS){
+//            addOres(biome, Blocks.TENUOUS_EARTH_SPIRIT_ORE_BLOCK, 4, 2, 16);
+//        }else if(biome.getCategory() == Biome.Category.PLAINS){
+//            addOres(biome, Blocks.TENUOUS_WIND_SPIRIT_ORE_BLOCK, 2, 2, 16);
+//        }else if(biome.getCategory() == Biome.Category.DESERT){
+//            addOres(biome, Blocks.TENUOUS_LIGHT_SPIRIT_ORE_BLOCK, 4, 2, 16);
+//        }
+////        else if(biome.getCategory() == Biome.Category.THEEND){
+////            addOres(biome, Blocks.TENUOUS_WOOD_SPIRIT_ORE_BLOCK, 4, 4, 16);
+////            addOres(biome, Blocks.TENUOUS_WOOD_SPIRIT_ORE_BLOCK, 4, 4, 16);
+////        }
+//        else if(biome.getCategory() == Biome.Category.SWAMP){
+//            addOres(biome, Blocks.TENUOUS_POISON_SPIRIT_ORE_BLOCK, 4, 2, 16);
+//        }
 
-        if(biome == Biomes.FOREST){
-//            biome.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_OAK_TREE);
-        } else if(biome == Biomes.BIRCH_FOREST || biome == Biomes.TALL_BIRCH_FOREST){
-            biome.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_BIRCH_TREE);
-        }else if(biome == Biomes.DARK_FOREST){
-            biome.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_DARK_OAK_TREE);
-        }else if(biome == Biomes.SAVANNA_PLATEAU){
-            biome.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_ACACIA_TREE);
-        } else if(biome == Biomes.MOUNTAINS){
-            biome.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_SPRUCE_TREE);
-        } else if(biome == Biomes.JUNGLE){
-            biome.addStructureFeature(ShurlinBiomeFeatures.ANCIENT_JUNGLE_TREE);
-        }
+
     }
 
-    private static void addOres(Biome biome, OreFeatureConfig.Target target,Block block, int size, int countPerChunk, int maximum){
-        biome.addFeature(
-                GenerationStep.Feature.UNDERGROUND_ORES,
-                Feature.ORE.configure(
-                        new OreFeatureConfig(
-                                target,
-                                block.getDefaultState(),
-                                size //Ore vein size
-                        )).createDecoratedFeature(
-                        Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
-                                countPerChunk, //Number of veins per chunk
-                                0, //Bottom Offset
-                                0, //Min y level
-                                maximum //Max y level
-                        ))));
-    }
-
-    private static void addOres(Biome biome, Block block, int size, int countPerChunk, int maximum){
-        addOres(biome,OreFeatureConfig.Target.NATURAL_STONE, block, size, countPerChunk, maximum);
-    }
+//    private static void addOres(Biome biome, OreFeatureConfig.Target target,Block block, int size, int countPerChunk, int maximum){
+//        biome.addFeature(
+//                GenerationStep.Feature.UNDERGROUND_ORES,
+//                Feature.ORE.configure(
+//                        new OreFeatureConfig(
+//                                target,
+//                                block.getDefaultState(),
+//                                size //Ore vein size
+//                        )).createDecoratedFeature(
+//                        Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(
+//                                countPerChunk, //Number of veins per chunk
+//                                0, //Bottom Offset
+//                                0, //Min y level
+//                                maximum //Max y level
+//                        ))));
+//    }
+//
+//    private static void addOres(Biome biome, Block block, int size, int countPerChunk, int maximum){
+//        addOres(biome,OreFeatureConfig.Target.NATURAL_STONE, block, size, countPerChunk, maximum);
+//    }
 
 //    private void addOres(Biome biome,Block block, int size, int countPerChunk, int maximum){
 //        biome.addFeature( //为对应的生物群系添加一个特征

@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeFinder;
 import net.minecraft.recipe.RecipeInputProvider;
+import net.minecraft.recipe.book.RecipeBookCategory;
 import net.minecraft.screen.AbstractRecipeScreenHandler;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandlerType;
@@ -117,6 +118,11 @@ public abstract class AbstractWorkerScreenHandler extends AbstractRecipeScreenHa
     @Environment(EnvType.CLIENT)
     public float getWorkProgress(){
         return this.propertyDelegate.get(0) / (float) (this.propertyDelegate.get(1) == 0 ? 20 : this.propertyDelegate.get(1));
+    }
+
+    @Override
+    public RecipeBookCategory getCategory() {
+        return null;
     }
 }
 

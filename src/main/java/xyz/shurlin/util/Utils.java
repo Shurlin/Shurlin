@@ -1,5 +1,6 @@
 package xyz.shurlin.util;
 
+import net.fabricmc.fabric.impl.dimension.FabricDimensionInternals;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -10,6 +11,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LightningEntity;
+import net.minecraft.entity.projectile.TridentEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
@@ -17,8 +19,10 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.Heightmap;
+import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.world.dimension.Dimensions;
@@ -33,7 +37,7 @@ public class Utils {
         if (world instanceof ServerWorld) {
             LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(world);
             assert lightningEntity != null;
-            lightningEntity.method_29495(Vec3d.ofBottomCenter(pos));
+            lightningEntity.setVelocity(Vec3d.ofBottomCenter(pos));//TODO
             world.spawnEntity(lightningEntity);
         }
     }
@@ -138,7 +142,8 @@ public class Utils {
         ServerWorld serverWorld = minecraftServer.getWorld(key);
         if(serverWorld != null && !entity.hasVehicle()){
             BlockPos pos = serverWorld.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, entity.getBlockPos());
-            entity.changeDimension(serverWorld);
+            FabricDimensionInternals.changeDimension(entity, serverWorld,
+                    new TeleportTarget(Vec3d.of(pos), Vec3d.ZERO, 0,0));
             entity.setPos(pos.getX(), pos.getY(), pos.getZ());
         }
     }

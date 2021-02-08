@@ -1,6 +1,7 @@
 package xyz.shurlin.world.dimension;
 
 import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
+import net.fabricmc.fabric.impl.dimension.FabricDimensionInternals;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
@@ -15,10 +16,11 @@ public class Dimensions {
     private static RegistryKey<World> register(String name){
         return RegistryKey.of(Registry.DIMENSION, new Identifier(Shurlin.MODID, name));
     }
-
-    public static void registerAll() {
-        FabricDimensions.registerDefaultPlacer(HOLY_FARMER, HolyFarmerChunkGenerator::placeEntityInVoid);
-    }
+//
+//    public static void registerAll() {
+//        FabricDimensions.registerDefaultPlacer(HOLY_FARMER, HolyFarmerChunkGenerator::placeEntityInVoid);
+//
+//    }
 
     static {
         HOLY_FARMER = register("holy_farmer");

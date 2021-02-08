@@ -36,7 +36,7 @@ public class Shurlin implements ModInitializer {
         ServerReceiver.registerAll();
         new ScreenHandlerTypes();
         ChunkGeneratorTypes.registerAll();
-        Dimensions.registerAll();
+//        Dimensions.registerAll();
         new DimensionTypes();
         KeyBindings.registerAll();
         Commands.registerAll();

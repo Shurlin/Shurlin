@@ -12,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.ServerWorldAccess;
+import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.StructureAccessor;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
@@ -51,22 +52,22 @@ public class AncientTreePiece extends SimpleStructurePiece {
     }
 
     @Override
-    public boolean generate(ServerWorldAccess serverWorldAccess, StructureAccessor structureAccessor, ChunkGenerator chunkGenerator, Random random, BlockBox boundingBox, ChunkPos chunkPos, BlockPos blockPos) {
-//            int yHeight = serverWorldAccess.getTopY(Heightmap.Type.WORLD_SURFACE_WG, this.pos.getX() + 8, this.pos.getZ() + 8);
-//            this.pos = this.pos.add(0, yHeight - 4, 0);
-        pos = serverWorldAccess.getTopPosition(Heightmap.Type.WORLD_SURFACE_WG, pos).down(4);
-//            if(serverWorldAccess.getBiome(pos) == Biomes.PEAR_FOREST)
-//                serverWorldAccess.setBlockState(pos.add(6,8,8), Blocks.HOLY_PEAR_ALTAR_BLOCK.getDefaultState(),3);
-        return super.generate(serverWorldAccess, structureAccessor, chunkGenerator, random, boundingBox, chunkPos, blockPos);
+    protected void handleMetadata(String metadata, BlockPos pos, ServerWorldAccess serverWorldAccess, Random random, BlockBox boundingBox) {
+        if ("leaves_chest".equals(metadata)) {
+            LootableContainerBlockEntity.setLootTable(serverWorldAccess, random, pos.down(), this.data.getLeavesChest());
+        }else if("root_chest".equals(metadata)) {
+            LootableContainerBlockEntity.setLootTable(serverWorldAccess, random, pos.down(), this.data.getRootChest());
+        }
     }
 
     @Override
-    protected void handleMetadata(String metadata, BlockPos pos, WorldAccess world, Random random, BlockBox boundingBox) {
-        if ("leaves_chest".equals(metadata)) {
-            LootableContainerBlockEntity.setLootTable(world, random, pos.down(), this.data.getLeavesChest());
-        }else if("root_chest".equals(metadata)) {
-            LootableContainerBlockEntity.setLootTable(world, random, pos.down(), this.data.getRootChest());
-        }
+    public boolean generate(StructureWorldAccess structureWorldAccess, StructureAccessor structureAccessor, ChunkGenerator chunkGenerator, Random random, BlockBox boundingBox, ChunkPos chunkPos, BlockPos blockPos) {
+        //            int yHeight = serverWorldAccess.getTopY(Heightmap.Type.WORLD_SURFACE_WG, this.pos.getX() + 8, this.pos.getZ() + 8);
+//            this.pos = this.pos.add(0, yHeight - 4, 0);
+        pos = structureWorldAccess.getTopPosition(Heightmap.Type.WORLD_SURFACE_WG, pos).down(4);
+//            if(serverWorldAccess.getBiome(pos) == Biomes.PEAR_FOREST)
+//                serverWorldAccess.setBlockState(pos.add(6,8,8), Blocks.HOLY_PEAR_ALTAR_BLOCK.getDefaultState(),3);
+        return super.generate(structureWorldAccess, structureAccessor, chunkGenerator, random, boundingBox, chunkPos, blockPos);
     }
 
     private void initializeStructureData(StructureManager manager) {
