@@ -10,7 +10,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import xyz.shurlin.Shurlin;
 
-@Deprecated
 public class FeatureKeys {
     public static final RegistryKey<ConfiguredFeature<?,?>> ANCIENT_OAK_TREE_KEY;
     public static final RegistryKey<ConfiguredFeature<?,?>> ANCIENT_BIRCH_TREE_KEY;
@@ -24,16 +23,16 @@ public class FeatureKeys {
         return RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(Shurlin.MODID, registryName));
     }
 
-    private static void registerAll(){
-        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_OAK_TREE_KEY.getValue(), StructureFeatures.ANCIENT_OAK_TREE);
-        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_BIRCH_TREE_KEY.getValue(), StructureFeatures.ANCIENT_BIRCH_TREE);
-        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_DARK_OAK_TREE_KEY.getValue(), StructureFeatures.ANCIENT_DARK_OAK_TREE);
-        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_ACACIA_TREE_KEY.getValue(), StructureFeatures.ANCIENT_ACACIA_TREE);
-        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_SPRUCE_TREE_KEY.getValue(), StructureFeatures.ANCIENT_SPRUCE_TREE);
-        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_JUNGLE_TREE_KEY.getValue(), StructureFeatures.ANCIENT_JUNGLE_TREE);
-        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_PEAR_TREE_KEY.getValue(), StructureFeatures.ANCIENT_PEAR_TREE);
-
-    }
+//    public static void registerAll(){
+//        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_OAK_TREE_KEY.getValue(), StructureFeatures.ANCIENT_OAK_TREE);
+//        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_BIRCH_TREE_KEY.getValue(), StructureFeatures.ANCIENT_BIRCH_TREE);
+//        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_DARK_OAK_TREE_KEY.getValue(), StructureFeatures.ANCIENT_DARK_OAK_TREE);
+//        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_ACACIA_TREE_KEY.getValue(), StructureFeatures.ANCIENT_ACACIA_TREE);
+//        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_SPRUCE_TREE_KEY.getValue(), StructureFeatures.ANCIENT_SPRUCE_TREE);
+//        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_JUNGLE_TREE_KEY.getValue(), StructureFeatures.ANCIENT_JUNGLE_TREE);
+//        BuiltinRegistries.add(Registry.STRUCTURE_FEATURE, ANCIENT_PEAR_TREE_KEY.getValue(), StructureFeatures.ANCIENT_PEAR_TREE);
+//
+//    }
 
     static {
         ANCIENT_OAK_TREE_KEY = register("ancient_oak_tree");

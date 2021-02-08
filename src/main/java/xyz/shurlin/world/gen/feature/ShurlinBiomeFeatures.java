@@ -24,7 +24,11 @@ import java.util.OptionalInt;
 public class ShurlinBiomeFeatures {
 
     public static void addPearTrees(Builder builder) {
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.PEAR_TREE);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.TREES_PEAR);
+    }
+
+    public static void addAncientPearTrees(Builder builder) {
+//        builder.feature(GenerationStep.Feature.SURFACE_STRUCTURES, ShurlinConfiguredFeatures.ANCIENT_PEAR_TREE);
     }
 
     public static void addMysteriousStonePillar(Builder builder){
@@ -44,21 +48,19 @@ public class ShurlinBiomeFeatures {
     }
 
     public static void addPhoenixTrees(Builder builder){
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.PHOENIX_TREE
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.TREES_PHOENIX
 //                .createDecoratedFeature(Decorator.COUNT_EXTRA_HEIGHTMAP.configure(new CountExtraChanceDecoratorConfig(8, 0.1F, 1)))
         );
     }
 
     public static void addSmallBud(Builder builder){
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.SMALL_BUD
-                        .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6,0.1f, 1)))
+
         );
     }
 
     public static void addPlatycodonGrandiflorus(Builder builder){
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.PLATYCODON_GRANDIFLORUS
-                        .decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6,0.1f, 1)))
-        );
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.PLATYCODON_GRANDIFLORUS);
     }
 
     public static void addBlock(GenerationSettings.Builder builder, Block block, int tries){

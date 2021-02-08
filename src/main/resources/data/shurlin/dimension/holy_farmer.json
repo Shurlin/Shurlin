@@ -7,10 +7,7 @@
     "biome_source": {
       "seed": 7830,
       "type": "minecraft:fixed",
-      "biomes": [
-        "shurlin:pear_forest",
-        "shurlin:fire_land"
-      ]
+      "biome": "shurlin:pear_forest"
     }
   }
 

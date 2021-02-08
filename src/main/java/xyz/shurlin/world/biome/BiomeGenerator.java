@@ -37,20 +37,20 @@ public class BiomeGenerator {
     }
 
     private static void handleBiome(Biome biome){
-        RegistryKey<Biome> key = BuiltinRegistries.BIOME.getKey(biome).get();
-        if(key.equals(BiomeKeys.FOREST)){
-            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_OAK_TREE);
-        } else if(key.equals(BiomeKeys.BIRCH_FOREST)){
-            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_BIRCH_TREE);
-        }else if(key.equals(BiomeKeys.DARK_FOREST)){
-            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_DARK_OAK_TREE);
-        }else if(key.equals(BiomeKeys.SAVANNA_PLATEAU)){
-            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_ACACIA_TREE);
-        } else if(key.equals(BiomeKeys.MOUNTAINS)){
-            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_SPRUCE_TREE);
-        } else if(key.equals(BiomeKeys.JUNGLE)){
-            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_JUNGLE_TREE);
-        }
+//        RegistryKey<Biome> key = BuiltinRegistries.BIOME.getKey(biome).get();
+//        if(key.equals(BiomeKeys.FOREST)){
+//            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_OAK_TREE);
+//        } else if(key.equals(BiomeKeys.BIRCH_FOREST)){
+//            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_BIRCH_TREE);
+//        }else if(key.equals(BiomeKeys.DARK_FOREST)){
+//            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_DARK_OAK_TREE);
+//        }else if(key.equals(BiomeKeys.SAVANNA_PLATEAU)){
+//            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_ACACIA_TREE);
+//        } else if(key.equals(BiomeKeys.MOUNTAINS)){
+//            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_SPRUCE_TREE);
+//        } else if(key.equals(BiomeKeys.JUNGLE)){
+//            biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_JUNGLE_TREE);
+//        }
 //        biome.getGenerationSettings().getStructureFeatures().add(()->ShurlinConfiguredFeatures.ANCIENT_OAK_TREE);
 //        if(biome.getCategory() != Biome.Category.NETHER && biome.getCategory() != Biome.Category.THEEND) {
 //            addOres(biome, Blocks.PLANT_IRON_ORE_BLOCK, 6, 6, 32);

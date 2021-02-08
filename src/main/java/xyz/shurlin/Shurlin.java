@@ -1,22 +1,22 @@
 package xyz.shurlin;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.client.gui.screen.TickableElement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.client.options.KeyBindings;
-import xyz.shurlin.commend.Commands;
+import xyz.shurlin.command.Commands;
 import xyz.shurlin.item.Items;
 import xyz.shurlin.linkage.Linkage;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.screen.ScreenHandlerTypes;
+import xyz.shurlin.structure.StructureKeys;
 import xyz.shurlin.util.ServerReceiver;
 import xyz.shurlin.world.biome.BiomeGenerator;
 import xyz.shurlin.world.biome.Biomes;
 import xyz.shurlin.world.dimension.DimensionTypes;
-import xyz.shurlin.world.dimension.Dimensions;
 import xyz.shurlin.world.gen.chunk.ChunkGeneratorTypes;
+import xyz.shurlin.world.gen.feature.FeatureKeys;
 
 import java.util.Random;
 
@@ -42,6 +42,8 @@ public class Shurlin implements ModInitializer {
         Commands.registerAll();
 //        new Reflector();
 //        new DimensionOptions();
+        StructureKeys.registerAll();
+//        FeatureKeys.registerAll();
         Linkage.init();
     }
 }

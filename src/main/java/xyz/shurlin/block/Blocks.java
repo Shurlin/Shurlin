@@ -124,9 +124,6 @@ public class Blocks {
         )));
         LLANDUDNO = register("llandudno_block",BlockSettings.LLANDUDNO);
 
-        PEAR_SAPLING = register("pear_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PEAR_TREE, BlockSettings.PLANT));
-        PHOENIX_SAPLING = register("phoenix_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PHOENIX_TREE, BlockSettings.PLANT));
-
         DEAD_LEAVE_CORAL = register("dead_leave_coral",new DeadLeaveCoralBlock(BlockSettings.DEAD_CORAL));
         LEAVE_CORAL = register("leave_coral",new LeaveCoralBlock(DEAD_LEAVE_CORAL, BlockSettings.CORAL));
         DEAD_LEAVE_CORAL_FAN = register("dead_leave_coral_fan",new DeadLeaveCoralFanBlock(BlockSettings.DEAD_CORAL));
@@ -151,6 +148,9 @@ public class Blocks {
         TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_lightning_spirit_ore_block");
         TENUOUS_ICE_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_ice_spirit_ore_block", Material.ICE);
         TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_time_space_spirit_ore_block");
+
+        PEAR_SAPLING = register("pear_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PEAR_TREE, BlockSettings.PLANT));
+        PHOENIX_SAPLING = register("phoenix_sapling", new BasicSaplingBlock(ShurlinConfiguredFeatures.PHOENIX_TREE, BlockSettings.PLANT));
 
     }
 

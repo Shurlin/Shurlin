@@ -3,9 +3,11 @@ package xyz.shurlin.world.gen.feature;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.structure.rule.RuleTest;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.UniformIntDistribution;
+import net.minecraft.world.gen.decorator.CountExtraDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.*;
@@ -18,6 +20,7 @@ import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
+import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.Blocks;
 
 import java.util.OptionalInt;
@@ -25,8 +28,10 @@ import java.util.OptionalInt;
 public class ShurlinConfiguredFeatures {
     public static final ConfiguredFeature<TreeFeatureConfig, ?> PEAR_TREE;
     public static final ConfiguredFeature<TreeFeatureConfig, ?> PHOENIX_TREE;
-    public static final ConfiguredFeature<RandomPatchFeatureConfig, ?> SMALL_BUD;
-    public static final ConfiguredFeature<RandomPatchFeatureConfig, ?> PLATYCODON_GRANDIFLORUS;
+    public static final ConfiguredFeature<?, ?> TREES_PEAR;
+    public static final ConfiguredFeature<?, ?> TREES_PHOENIX;
+    public static final ConfiguredFeature<?, ?> SMALL_BUD;
+    public static final ConfiguredFeature<?, ?> PLATYCODON_GRANDIFLORUS;
     public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_OAK_TREE;
     public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_BIRCH_TREE;
     public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_DARK_OAK_TREE;
@@ -36,8 +41,13 @@ public class ShurlinConfiguredFeatures {
     public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_PEAR_TREE;
     public static final ConfiguredFeature<?,?> ORE_PLANT_IRON;
     public static final ConfiguredFeature<?,?> ORE_PLANT_GOLD;
+    public static final ConfiguredFeature<?,?> ORE_PLANT_JADE;
 
     private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(String id, ConfiguredFeature<FC, ?> configuredFeature) {
+        return register(new Identifier(Shurlin.MODID, id), configuredFeature);
+    }
+
+    private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(Identifier id, ConfiguredFeature<FC, ?> configuredFeature) {
         return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, id, configuredFeature);
     }
 
@@ -51,10 +61,12 @@ public class ShurlinConfiguredFeatures {
     }
 
     static {
-        PEAR_TREE = Feature.TREE.configure(Configs.PEAR_TREE_CONFIG);
-        PHOENIX_TREE = Feature.TREE.configure(Configs.PHOENIX_TREE_CONFIG);
-        SMALL_BUD = Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG);
-        PLATYCODON_GRANDIFLORUS = Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG);
+        PEAR_TREE = register("pear_tree", Feature.TREE.configure(Configs.PEAR_TREE_CONFIG));
+        PHOENIX_TREE = register("phoenix_tree", Feature.TREE.configure(Configs.PHOENIX_TREE_CONFIG));
+        TREES_PEAR = register("trees_pear", PEAR_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(10, 0.1F, 1))));
+        TREES_PHOENIX = register("trees_phoenix", PHOENIX_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1F, 1))));
+        SMALL_BUD = register("small_bud", Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6,0.1f, 1))));
+        PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6,0.1f, 1))));
         ANCIENT_OAK_TREE = StructureFeatures.ANCIENT_OAK_TREE.configure(DefaultFeatureConfig.INSTANCE);
         ANCIENT_BIRCH_TREE = StructureFeatures.ANCIENT_BIRCH_TREE.configure(DefaultFeatureConfig.INSTANCE);
         ANCIENT_DARK_OAK_TREE = StructureFeatures.ANCIENT_DARK_OAK_TREE.configure(DefaultFeatureConfig.INSTANCE);
@@ -63,7 +75,8 @@ public class ShurlinConfiguredFeatures {
         ANCIENT_JUNGLE_TREE = StructureFeatures.ANCIENT_JUNGLE_TREE.configure(DefaultFeatureConfig.INSTANCE);
         ANCIENT_PEAR_TREE = StructureFeatures.ANCIENT_PEAR_TREE.configure(DefaultFeatureConfig.INSTANCE);
         ORE_PLANT_IRON = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK,6, 6, 32);
-        ORE_PLANT_GOLD = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK,6, 6, 32);
+        ORE_PLANT_GOLD = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK,6, 4, 32);
+        ORE_PLANT_JADE = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_JADE_ORE_BLOCK,2, 2, 16);
     }
 
     private static final class Configs{
