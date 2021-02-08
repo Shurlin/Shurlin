@@ -33,13 +33,13 @@ public class StructureKeys {
 //        BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, ANCIENT_SPRUCE_TREE.getValue(), ShurlinConfiguredFeatures.ANCIENT_SPRUCE_TREE);
 //        BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, ANCIENT_JUNGLE_TREE.getValue(), ShurlinConfiguredFeatures.ANCIENT_JUNGLE_TREE);
 //        BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, ANCIENT_PEAR_TREE.getValue(), ShurlinConfiguredFeatures.ANCIENT_PEAR_TREE);
-        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.FOREST), ANCIENT_OAK_TREE);
-        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.BIRCH_FOREST), ANCIENT_BIRCH_TREE);
-        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.DARK_FOREST), ANCIENT_DARK_OAK_TREE);
-        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.SAVANNA), ANCIENT_ACACIA_TREE);
-        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.TAIGA_MOUNTAINS), ANCIENT_SPRUCE_TREE);
-        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.JUNGLE), ANCIENT_JUNGLE_TREE);
-        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(xyz.shurlin.world.biome.BiomeKeys.PEAR_FOREST_KEY), ANCIENT_PEAR_TREE);
+//        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.FOREST), ANCIENT_OAK_TREE);
+//        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.BIRCH_FOREST), ANCIENT_BIRCH_TREE);
+//        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.DARK_FOREST), ANCIENT_DARK_OAK_TREE);
+//        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.SAVANNA), ANCIENT_ACACIA_TREE);
+//        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.TAIGA_MOUNTAINS), ANCIENT_SPRUCE_TREE);
+//        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.JUNGLE), ANCIENT_JUNGLE_TREE);
+//        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(xyz.shurlin.world.biome.BiomeKeys.PEAR_FOREST_KEY), ANCIENT_PEAR_TREE);
     }
 
     private static RegistryKey<ConfiguredStructureFeature<?, ?>> register(String registryName){

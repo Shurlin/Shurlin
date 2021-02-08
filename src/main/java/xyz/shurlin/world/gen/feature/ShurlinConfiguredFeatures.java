@@ -32,13 +32,6 @@ public class ShurlinConfiguredFeatures {
     public static final ConfiguredFeature<?, ?> TREES_PHOENIX;
     public static final ConfiguredFeature<?, ?> SMALL_BUD;
     public static final ConfiguredFeature<?, ?> PLATYCODON_GRANDIFLORUS;
-    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_OAK_TREE;
-    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_BIRCH_TREE;
-    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_DARK_OAK_TREE;
-    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_ACACIA_TREE;
-    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_SPRUCE_TREE;
-    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_JUNGLE_TREE;
-    public static final ConfiguredStructureFeature<DefaultFeatureConfig, ? extends StructureFeature<DefaultFeatureConfig>> ANCIENT_PEAR_TREE;
     public static final ConfiguredFeature<?,?> ORE_PLANT_IRON;
     public static final ConfiguredFeature<?,?> ORE_PLANT_GOLD;
     public static final ConfiguredFeature<?,?> ORE_PLANT_JADE;
@@ -67,13 +60,6 @@ public class ShurlinConfiguredFeatures {
         TREES_PHOENIX = register("trees_phoenix", PHOENIX_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1F, 1))));
         SMALL_BUD = register("small_bud", Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6,0.1f, 1))));
         PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6,0.1f, 1))));
-        ANCIENT_OAK_TREE = StructureFeatures.ANCIENT_OAK_TREE.configure(DefaultFeatureConfig.INSTANCE);
-        ANCIENT_BIRCH_TREE = StructureFeatures.ANCIENT_BIRCH_TREE.configure(DefaultFeatureConfig.INSTANCE);
-        ANCIENT_DARK_OAK_TREE = StructureFeatures.ANCIENT_DARK_OAK_TREE.configure(DefaultFeatureConfig.INSTANCE);
-        ANCIENT_ACACIA_TREE = StructureFeatures.ANCIENT_ACACIA_TREE.configure(DefaultFeatureConfig.INSTANCE);
-        ANCIENT_SPRUCE_TREE = StructureFeatures.ANCIENT_SPRUCE_TREE.configure(DefaultFeatureConfig.INSTANCE);
-        ANCIENT_JUNGLE_TREE = StructureFeatures.ANCIENT_JUNGLE_TREE.configure(DefaultFeatureConfig.INSTANCE);
-        ANCIENT_PEAR_TREE = StructureFeatures.ANCIENT_PEAR_TREE.configure(DefaultFeatureConfig.INSTANCE);
         ORE_PLANT_IRON = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK,6, 6, 32);
         ORE_PLANT_GOLD = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK,6, 4, 32);
         ORE_PLANT_JADE = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_JADE_ORE_BLOCK,2, 2, 16);

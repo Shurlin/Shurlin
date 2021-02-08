@@ -9,6 +9,8 @@ import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilder.ConfiguredSurfaceBuilders;
 import xyz.shurlin.world.gen.feature.ShurlinBiomeFeatures;
+import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
+import xyz.shurlin.world.gen.feature.ShurlinConfiguredStructureFeatures;
 import xyz.shurlin.world.gen.surfacebuilder.ShurlinConfiguredSurfaceBuilder;
 
 public class ShurlinBiomeCreator {
@@ -26,6 +28,7 @@ public class ShurlinBiomeCreator {
         GenerationSettings.Builder builder2 = new GenerationSettings.Builder().surfaceBuilder(ConfiguredSurfaceBuilders.GRASS);
         DefaultBiomeFeatures.addDefaultUndergroundStructures(builder2);
         builder2.structureFeature(ConfiguredStructureFeatures.RUINED_PORTAL);
+        builder2.structureFeature(ShurlinConfiguredStructureFeatures.ANCIENT_PEAR_TREE);
         DefaultBiomeFeatures.addLandCarvers(builder2);
         DefaultBiomeFeatures.addDefaultLakes(builder2);
         DefaultBiomeFeatures.addDungeons(builder2);

@@ -42,7 +42,7 @@ public class Shurlin implements ModInitializer {
         Commands.registerAll();
 //        new Reflector();
 //        new DimensionOptions();
-        StructureKeys.registerAll();
+//        StructureKeys.registerAll();
 //        FeatureKeys.registerAll();
         Linkage.init();
     }
