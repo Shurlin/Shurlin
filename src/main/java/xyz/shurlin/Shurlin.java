@@ -46,7 +46,6 @@ public class Shurlin implements ModInitializer {
 }
 
 //entity
-//structure
 //command
 //recipe(container)
 //crater

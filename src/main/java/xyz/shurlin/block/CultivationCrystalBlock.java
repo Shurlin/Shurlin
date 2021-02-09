@@ -14,15 +14,15 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import xyz.shurlin.block.entity.CultivationCrystalBlockEntity;
-import xyz.shurlin.cultivation.CultivationManager;
 import xyz.shurlin.cultivation.CultivationRealm;
 
+import static xyz.shurlin.cultivation.CultivationManager.appendCultivationEntity;
+import static xyz.shurlin.cultivation.CultivationManager.getCultivationRealmByEntity;
+
 public class CultivationCrystalBlock extends BlockWithEntity {
-    private static final CultivationManager manager = CultivationManager.INSTANCE;
-    private static final VoxelShape SHAPE = Block.createCuboidShape(4, 4, 4, 12,12, 12);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(4, 4, 4, 12, 12, 12);
 
-
-    protected CultivationCrystalBlock(Settings settings) {
+    CultivationCrystalBlock(Settings settings) {
         super(settings);
     }
 
@@ -38,9 +38,9 @@ public class CultivationCrystalBlock extends BlockWithEntity {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        CultivationRealm realm = manager.getCultivationRealmByEntity(player);
-        if(realm==null){
-            realm = manager.appendCultivationEntity(player);
+        CultivationRealm realm = getCultivationRealmByEntity(player);
+        if (realm == null) {
+            realm = appendCultivationEntity(player);
         }
         player.sendMessage(realm.getDescribeText(), false);
         return ActionResult.FAIL;

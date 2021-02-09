@@ -7,15 +7,13 @@ import net.minecraft.nbt.CompoundTag;
 import java.util.UUID;
 import java.util.Vector;
 
+//@Environment(EnvType.SERVER)
 public class CultivationManager {
-    public static CultivationManager INSTANCE = new CultivationManager();
-    private final Vector<UUID> id_map = new Vector<>();
-    private final Vector<CultivationRealm> cul_map = new Vector<>();
-            
-    private CultivationManager() {
-    }
+    private static final Vector<UUID> id_map = new Vector<>();
+    private static final Vector<CultivationRealm> cul_map = new Vector<>();
 
-    public CompoundTag toTag(UUID uuid){
+
+    public static CompoundTag toTag(UUID uuid) {
         CompoundTag tag = new CompoundTag();
         if(!id_map.contains(uuid)){
             tag.putBoolean("isCultivated", false);
@@ -33,8 +31,8 @@ public class CultivationManager {
         tag.put("sm", sm_tag);
         return tag;
     }
-    
-    public void fromTag(CompoundTag tags, UUID uuid){
+
+    public static void fromTag(CompoundTag tags, UUID uuid) {
         CompoundTag tag = tags.getCompound("cul");
         if(!tag.getBoolean("isCultivated"))
             return;
@@ -53,18 +51,18 @@ public class CultivationManager {
     }
 
     @Nullable
-    public CultivationRealm getCultivationRealmByEntity(Entity entity){
+    public static CultivationRealm getCultivationRealmByEntity(Entity entity) {
         UUID uuid = entity.getUuid();
         if(!isCultivated(entity))
             return null;
         return cul_map.get(id_map.indexOf(uuid));
     }
 
-    public boolean isCultivated(Entity entity){
+    public static boolean isCultivated(Entity entity) {
         return id_map.contains(entity.getUuid());
     }
 
-    public CultivationRealm appendCultivationEntity(Entity entity){
+    public static CultivationRealm appendCultivationEntity(Entity entity) {
         UUID uuid = entity.getUuid();
         id_map.add(uuid);
         CultivationRealm realm = new CultivationRealm();
