@@ -1,37 +1,17 @@
 package xyz.shurlin.world.biome;
 
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.block.Block;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.decorator.Decorator;
-import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
-import xyz.shurlin.block.Blocks;
-import xyz.shurlin.world.gen.feature.ShurlinBiomeFeatures;
-import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
-import xyz.shurlin.world.gen.feature.StructureFeatures;
-
-import java.util.List;
-
-import static net.minecraft.world.gen.feature.StructureFeature.STRUCTURES;
 
 public class BiomeGenerator {
     public static void registerAll() {
-        STRUCTURES.put("ancient_oak_tree", StructureFeatures.ANCIENT_OAK_TREE);
-        STRUCTURES.put("ancient_birch_tree",  StructureFeatures.ANCIENT_BIRCH_TREE);
-        STRUCTURES.put("ancient_dark_oak_tree",  StructureFeatures.ANCIENT_DARK_OAK_TREE);
-        STRUCTURES.put("ancient_acacia_tree",  StructureFeatures.ANCIENT_ACACIA_TREE);
-        STRUCTURES.put("ancient_spruce_tree",  StructureFeatures.ANCIENT_SPRUCE_TREE);
-        STRUCTURES.put("ancient_jungle_tree",  StructureFeatures.ANCIENT_JUNGLE_TREE);
-        STRUCTURES.put("ancient_pear_tree", StructureFeatures.ANCIENT_PEAR_TREE);
+//        STRUCTURES.put("ancient_oak_tree", StructureFeatures.ANCIENT_OAK_TREE);
+//        STRUCTURES.put("ancient_birch_tree",  StructureFeatures.ANCIENT_BIRCH_TREE);
+//        STRUCTURES.put("ancient_dark_oak_tree",  StructureFeatures.ANCIENT_DARK_OAK_TREE);
+//        STRUCTURES.put("ancient_acacia_tree",  StructureFeatures.ANCIENT_ACACIA_TREE);
+//        STRUCTURES.put("ancient_spruce_tree",  StructureFeatures.ANCIENT_SPRUCE_TREE);
+//        STRUCTURES.put("ancient_jungle_tree",  StructureFeatures.ANCIENT_JUNGLE_TREE);
+//        STRUCTURES.put("ancient_pear_tree", StructureFeatures.ANCIENT_PEAR_TREE);
         BuiltinRegistries.BIOME.forEach(BiomeGenerator::handleBiome);
 
     }

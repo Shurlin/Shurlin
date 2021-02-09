@@ -5,11 +5,12 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.minecraft.world.gen.feature.ConfiguredStructureFeatures;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilder.ConfiguredSurfaceBuilders;
 import xyz.shurlin.world.gen.feature.ShurlinBiomeFeatures;
-import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredStructureFeatures;
 import xyz.shurlin.world.gen.surfacebuilder.ShurlinConfiguredSurfaceBuilder;
 
@@ -39,7 +40,7 @@ public class ShurlinBiomeCreator {
         DefaultBiomeFeatures.addDefaultFlowers(builder2);
         DefaultBiomeFeatures.addForestGrass(builder2);
         DefaultBiomeFeatures.addDefaultVegetation(builder2);
-        DefaultBiomeFeatures.addSprings(builder2);
+        builder2.feature(GenerationStep.Feature.VEGETAL_DECORATION, ConfiguredFeatures.SPRING_WATER);
 
         ShurlinBiomeFeatures.addPearTrees(builder2);
         ShurlinBiomeFeatures.addSmallBud(builder2);

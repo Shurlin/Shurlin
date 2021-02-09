@@ -32,9 +32,9 @@ public class ShurlinConfiguredFeatures {
     public static final ConfiguredFeature<?, ?> TREES_PHOENIX;
     public static final ConfiguredFeature<?, ?> SMALL_BUD;
     public static final ConfiguredFeature<?, ?> PLATYCODON_GRANDIFLORUS;
-    public static final ConfiguredFeature<?,?> ORE_PLANT_IRON;
-    public static final ConfiguredFeature<?,?> ORE_PLANT_GOLD;
-    public static final ConfiguredFeature<?,?> ORE_PLANT_JADE;
+    public static final ConfiguredFeature<?, ?> ORE_PLANT_IRON;
+    public static final ConfiguredFeature<?, ?> ORE_PLANT_GOLD;
+    public static final ConfiguredFeature<?, ?> ORE_PLANT_JADE;
 
     private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(String id, ConfiguredFeature<FC, ?> configuredFeature) {
         return register(new Identifier(Shurlin.MODID, id), configuredFeature);
@@ -46,11 +46,11 @@ public class ShurlinConfiguredFeatures {
 
     private static ConfiguredFeature<?, ?> createOre(RuleTest ruleTest, BlockState state, int size, int numPerChunk, int maxy) {
         return Feature.ORE.configure(new OreFeatureConfig(ruleTest, state, size)) // vein size
-                        .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
-                                0, // bottom offset
-                                0, // min y level
-                                maxy))) // max y level
-                        .repeat(numPerChunk); // number of veins per chunk
+                .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(
+                        0, // bottom offset
+                        0, // min y level
+                        maxy))) // max y level
+                .repeat(numPerChunk); // number of veins per chunk
     }
 
     static {
@@ -58,14 +58,14 @@ public class ShurlinConfiguredFeatures {
         PHOENIX_TREE = register("phoenix_tree", Feature.TREE.configure(Configs.PHOENIX_TREE_CONFIG));
         TREES_PEAR = register("trees_pear", PEAR_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(10, 0.1F, 1))));
         TREES_PHOENIX = register("trees_phoenix", PHOENIX_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1F, 1))));
-        SMALL_BUD = register("small_bud", Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6,0.1f, 1))));
-        PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6,0.1f, 1))));
-        ORE_PLANT_IRON = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK,6, 6, 32);
-        ORE_PLANT_GOLD = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK,6, 4, 32);
-        ORE_PLANT_JADE = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_JADE_ORE_BLOCK,2, 2, 16);
+        SMALL_BUD = register("small_bud", Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
+        PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
+        ORE_PLANT_IRON = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK, 6, 6, 32);
+        ORE_PLANT_GOLD = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK, 6, 4, 32);
+        ORE_PLANT_JADE = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_JADE_ORE_BLOCK, 2, 2, 16);
     }
 
-    private static final class Configs{
+    private static final class Configs {
         private static final TreeFeatureConfig PEAR_TREE_CONFIG;
         private static final TreeFeatureConfig PHOENIX_TREE_CONFIG;
         private static final RandomPatchFeatureConfig SMALL_BUD_CONFIG;
@@ -78,7 +78,7 @@ public class ShurlinConfiguredFeatures {
                     new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
                     new StraightTrunkPlacer(5, 2, 0),
                     new TwoLayersFeatureSize(1, 0, 1)).build();
-            PHOENIX_TREE_CONFIG =  new TreeFeatureConfig.Builder(
+            PHOENIX_TREE_CONFIG = new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(States.PHOENIX_LOG),
                     new SimpleBlockStateProvider(States.PHOENIX_LEAVES),
                     new DarkOakFoliagePlacer(UniformIntDistribution.of(0), UniformIntDistribution.of(0)),
@@ -89,7 +89,7 @@ public class ShurlinConfiguredFeatures {
         }
     }
 
-    private static final class States{
+    private static final class States {
         private static final BlockState PEAR_LOG;
         private static final BlockState PEAR_LEAVES;
         private static final BlockState PEAR_RIPE_LEAVES;
@@ -139,7 +139,7 @@ public class ShurlinConfiguredFeatures {
         }
     }
 
-    public static class OreGenerators{
+    public static class OreGenerators {
 
     }
 }

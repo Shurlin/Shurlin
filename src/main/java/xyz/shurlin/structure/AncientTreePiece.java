@@ -13,7 +13,6 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.StructureWorldAccess;
-import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.StructureAccessor;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 
@@ -21,11 +20,11 @@ import java.util.List;
 import java.util.Random;
 
 public class AncientTreePiece extends SimpleStructurePiece {
-    private final AncientTreeData data;
+    private final AncientTreeFeatureConfig.TreeKind data;
     private final Identifier template;
     private final BlockRotation rotation;
 
-    private AncientTreePiece(StructurePieceType type, StructureManager manager, BlockPos pos, AncientTreeData data) {
+    private AncientTreePiece(StructurePieceType type, StructureManager manager, BlockPos pos, AncientTreeFeatureConfig.TreeKind data) {
         super(type, 0);
         this.data = data;
         this.template = data.getTemplate();
@@ -39,7 +38,7 @@ public class AncientTreePiece extends SimpleStructurePiece {
         super(type, tag);
         this.template = new Identifier(tag.getString("Template"));
         this.rotation = BlockRotation.NONE;
-        this.data = AncientTreeData.findData(tag.getString("Type"));
+        this.data = AncientTreeFeatureConfig.TreeKind.findData(tag.getString("Type"));
         this.initializeStructureData(manager);
     }
 
@@ -76,7 +75,7 @@ public class AncientTreePiece extends SimpleStructurePiece {
         this.setStructureData(structure, this.pos, structurePlacementData);
     }
 
-    public static void addPieces(StructureManager manager, BlockPos pos, List<StructurePiece> pieces, AncientTreeData data){
+    public static void addPieces(StructureManager manager, BlockPos pos, List<StructurePiece> pieces, AncientTreeFeatureConfig.TreeKind data) {
         pieces.add(new AncientTreePiece(data.getType(), manager, pos, data));
     }
 }
