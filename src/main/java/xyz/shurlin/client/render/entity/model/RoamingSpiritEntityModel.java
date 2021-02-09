@@ -1,11 +1,14 @@
 package xyz.shurlin.client.render.entity.model;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import xyz.shurlin.entity.passive.RoamingSpiritEntity;
 
+@Environment(EnvType.CLIENT)
 public class RoamingSpiritEntityModel extends EntityModel<RoamingSpiritEntity> {
 
     private final ModelPart base;

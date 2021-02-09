@@ -4,7 +4,6 @@ import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import xyz.shurlin.block.entity.BlockEntityTypes;
-import xyz.shurlin.client.options.KeyBindings;
 import xyz.shurlin.command.Commands;
 import xyz.shurlin.item.Items;
 import xyz.shurlin.linkage.Linkage;
@@ -34,7 +33,7 @@ public class Shurlin implements ModInitializer {
         ChunkGeneratorTypes.registerAll();
 //        Dimensions.registerAll();
         new DimensionTypes();
-        KeyBindings.registerAll();
+//        KeyBindings.registerAll();
         Commands.registerAll();
         Biomes.registerAll();
         BiomeGenerator.registerAll();
