@@ -68,6 +68,8 @@ public class ShurlinBiomeCreator {
         DefaultBiomeFeatures.addDefaultVegetation(builder2);
         DefaultBiomeFeatures.addSprings(builder2);
 
+        ShurlinBiomeFeatures.addMysteriousStonePillar(builder2);
+        ShurlinBiomeFeatures.addPlantObsidianHeap(builder2);
         ShurlinBiomeFeatures.addPhoenixTrees(builder2);
 
         return (new Biome.Builder()).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.FOREST).depth(0.1f).scale(0.2f).temperature(0.7F).downfall(0.1F).effects((new net.minecraft.world.biome.BiomeEffects.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(getSkyColor(0.6F)).moodSound(BiomeMoodSound.CAVE).build()).spawnSettings(builder.build()).generationSettings(builder2.build()).build();

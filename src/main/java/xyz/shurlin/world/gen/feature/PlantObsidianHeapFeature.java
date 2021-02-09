@@ -33,7 +33,7 @@ public class PlantObsidianHeapFeature extends Feature<DefaultFeatureConfig> {
         for (int i = -r; i <= r; i++) {
             for (int j = 0; j <= r; j++) {
                 for (int k = -r; k <= r; k++) {
-                    if (Utils.getAllABS(i, j, k) <= r && random.nextFloat() < 0.5) {
+                    if (Utils.getAllABS(i, j, k) <= r && random.nextFloat() < 0.75) {
                         serverWorldAccess.setBlockState(pos.south(i).up(j).east(k), state, 3);
                     }
                 }

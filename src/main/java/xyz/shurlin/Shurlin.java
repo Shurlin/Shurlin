@@ -10,13 +10,11 @@ import xyz.shurlin.item.Items;
 import xyz.shurlin.linkage.Linkage;
 import xyz.shurlin.recipe.RecipeSerializers;
 import xyz.shurlin.screen.ScreenHandlerTypes;
-import xyz.shurlin.structure.StructureKeys;
 import xyz.shurlin.util.ServerReceiver;
 import xyz.shurlin.world.biome.BiomeGenerator;
 import xyz.shurlin.world.biome.Biomes;
 import xyz.shurlin.world.dimension.DimensionTypes;
 import xyz.shurlin.world.gen.chunk.ChunkGeneratorTypes;
-import xyz.shurlin.world.gen.feature.FeatureKeys;
 
 import java.util.Random;
 
@@ -31,8 +29,6 @@ public class Shurlin implements ModInitializer {
         new Items();
 //        new Features();
         RecipeSerializers.registerAll();
-        Biomes.registerAll();
-        BiomeGenerator.registerAll();
         ServerReceiver.registerAll();
         new ScreenHandlerTypes();
         ChunkGeneratorTypes.registerAll();
@@ -40,6 +36,8 @@ public class Shurlin implements ModInitializer {
         new DimensionTypes();
         KeyBindings.registerAll();
         Commands.registerAll();
+        Biomes.registerAll();
+        BiomeGenerator.registerAll();
 //        new Reflector();
 //        new DimensionOptions();
 //        StructureKeys.registerAll();
@@ -47,3 +45,9 @@ public class Shurlin implements ModInitializer {
         Linkage.init();
     }
 }
+
+//entity
+//structure
+//command
+//recipe(container)
+//crater

@@ -5,7 +5,6 @@ import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -43,7 +42,7 @@ public class CultivationCrystalBlock extends BlockWithEntity {
         if(realm==null){
             realm = manager.appendCultivationEntity(player);
         }
-        player.sendMessage(new TranslatableText("realm.shurlin." + realm.getRealm().getName() + ".rank", realm.getRank()), false);
+        player.sendMessage(realm.getDescribeText(), false);
         return ActionResult.FAIL;
     }
 

@@ -60,9 +60,9 @@ public class ShurlinConfiguredFeatures {
         TREES_PHOENIX = register("trees_phoenix", PHOENIX_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1F, 1))));
         SMALL_BUD = register("small_bud", Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
         PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
-        ORE_PLANT_IRON = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK, 6, 6, 32);
-        ORE_PLANT_GOLD = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK, 6, 4, 32);
-        ORE_PLANT_JADE = createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_JADE_ORE_BLOCK, 2, 2, 16);
+        ORE_PLANT_IRON = register("ore_plant_iron", createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK, 6, 6, 48));
+        ORE_PLANT_GOLD = register("ore_plant_gold", createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK, 6, 4, 32));
+        ORE_PLANT_JADE = register("ore_plant_jade", createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_JADE_ORE_BLOCK, 2, 2, 16));
     }
 
     private static final class Configs {
@@ -84,7 +84,7 @@ public class ShurlinConfiguredFeatures {
                     new DarkOakFoliagePlacer(UniformIntDistribution.of(0), UniformIntDistribution.of(0)),
                     new DarkOakTrunkPlacer(6, 2, 1),
                     new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())).build();
-            SMALL_BUD_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.SMALL_BUD), SimpleBlockPlacer.INSTANCE)).tries(32).build();
+            SMALL_BUD_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.SMALL_BUD), SimpleBlockPlacer.INSTANCE)).tries(12).build();
             PLATYCODON_GRANDIFLORUS_CONFIG = (new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.PLATYCODON_GRANDIFLORUS), SimpleBlockPlacer.INSTANCE)).tries(4).build();
         }
     }

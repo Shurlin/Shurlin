@@ -5,11 +5,8 @@ import net.minecraft.structure.StructureManager;
 import net.minecraft.structure.StructureStart;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.registry.DynamicRegistryManager;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.source.BiomeSource;
-import net.minecraft.world.gen.ChunkRandom;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.feature.StructureFeature;
@@ -27,10 +24,10 @@ public class AncientTreeStructureFeature extends StructureFeature<AncientTreeFea
         return GenerationStep.Feature.SURFACE_STRUCTURES;
     }
 
-    @Override
-    protected boolean shouldStartAt(ChunkGenerator chunkGenerator, BiomeSource biomeSource, long l, ChunkRandom chunkRandom, int i, int j, Biome biome, ChunkPos chunkPos, AncientTreeFeatureConfig featureConfig) {
-        return chunkRandom.nextInt(100) == 0;
-    }
+//    @Override
+//    protected boolean shouldStartAt(ChunkGenerator chunkGenerator, BiomeSource biomeSource, long l, ChunkRandom chunkRandom, int i, int j, Biome biome, ChunkPos chunkPos, AncientTreeFeatureConfig featureConfig) {
+//        return chunkRandom.nextInt(100) == 0;
+//    }
 
     @Override
     public StructureStartFactory<AncientTreeFeatureConfig> getStructureStartFactory() {

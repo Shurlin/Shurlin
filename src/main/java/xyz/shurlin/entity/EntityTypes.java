@@ -8,8 +8,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.entity.passive.RoamingSpiritEntity;
-import xyz.shurlin.entity.projectile.BeanEntity;
-import xyz.shurlin.entity.projectile.HolyPearArrowEntity;
 
 public class EntityTypes {
 //    public static final EntityType<HolyPearArrowEntity> HOLY_PEAR_ARROW_ENTITY_TYPE =
@@ -36,6 +34,5 @@ public class EntityTypes {
 
     public static void registerAll(){
         FabricDefaultAttributeRegistry.register(ROAMING_SPIRIT_ENTITY_TYPE, RoamingSpiritEntity.createMobAttributes());
-
     }
 }

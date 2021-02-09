@@ -1,6 +1,7 @@
 package xyz.shurlin.cultivation;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
+import net.minecraft.text.TranslatableText;
 
 import java.util.Random;
 
@@ -65,6 +66,10 @@ public class CultivationRealm {
 
     public String getDescribe(){
         return realm.getName() + ' ' + rank;
+    }
+
+    public TranslatableText getDescribeText() {
+        return new TranslatableText("realm.shurlin." + this.realm.getName() + ".rank", this.rank);
     }
 
     public boolean best(){

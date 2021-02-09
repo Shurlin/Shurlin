@@ -1,7 +1,13 @@
 package xyz.shurlin.world.biome;
 
-import net.minecraft.util.registry.BuiltinRegistries;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
+import net.minecraft.world.gen.GenerationStep;
+
+import static xyz.shurlin.structure.StructureKeys.*;
+import static xyz.shurlin.world.gen.feature.FeatureKeys.*;
 
 public class BiomeGenerator {
     public static void registerAll() {
@@ -12,8 +18,16 @@ public class BiomeGenerator {
 //        STRUCTURES.put("ancient_spruce_tree",  StructureFeatures.ANCIENT_SPRUCE_TREE);
 //        STRUCTURES.put("ancient_jungle_tree",  StructureFeatures.ANCIENT_JUNGLE_TREE);
 //        STRUCTURES.put("ancient_pear_tree", StructureFeatures.ANCIENT_PEAR_TREE);
-        BuiltinRegistries.BIOME.forEach(BiomeGenerator::handleBiome);
-
+//        BuiltinRegistries.BIOME.forEach(BiomeGenerator::handleBiome);
+        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.FOREST), ANCIENT_OAK_TREE);
+        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.BIRCH_FOREST), ANCIENT_BIRCH_TREE);
+        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.DARK_FOREST), ANCIENT_DARK_OAK_TREE);
+        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.SAVANNA), ANCIENT_ACACIA_TREE);
+        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.MOUNTAINS), ANCIENT_SPRUCE_TREE);
+        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.JUNGLE), ANCIENT_JUNGLE_TREE);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_PLANT_IRON);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_PLANT_GOLD);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_PLANT_JADE);
     }
 
     private static void handleBiome(Biome biome){

@@ -4,14 +4,10 @@ import net.fabricmc.fabric.impl.dimension.FabricDimensionInternals;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.RenderPhase;
-import net.minecraft.client.render.VertexFormats;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LightningEntity;
-import net.minecraft.entity.projectile.TridentEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
@@ -19,7 +15,6 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.TeleportTarget;
@@ -139,12 +134,12 @@ public class Utils {
     public static void joinHolyFarmerDimension(ServerWorld world, Entity entity){
         MinecraftServer minecraftServer = world.getServer();
         RegistryKey<World> key = world.getRegistryKey() == World.OVERWORLD ? Dimensions.HOLY_FARMER : World.OVERWORLD;
-        ServerWorld serverWorld = minecraftServer.getWorld(key);
-        if(serverWorld != null && !entity.hasVehicle()){
-            BlockPos pos = serverWorld.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, entity.getBlockPos());
-            FabricDimensionInternals.changeDimension(entity, serverWorld,
+        ServerWorld destination = minecraftServer.getWorld(key);
+        if (destination != null && !entity.hasVehicle()) {
+            BlockPos pos = destination.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, entity.getBlockPos());
+            FabricDimensionInternals.changeDimension(entity, destination,
                     new TeleportTarget(Vec3d.of(pos), Vec3d.ZERO, 0,0));
-            entity.setPos(pos.getX(), pos.getY(), pos.getZ());
+//            entity.setPos(pos.getX(), pos.getY(), pos.getZ());
         }
     }
 
