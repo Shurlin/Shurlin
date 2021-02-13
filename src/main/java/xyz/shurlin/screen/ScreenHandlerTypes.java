@@ -12,6 +12,8 @@ import xyz.shurlin.screen.worker.ConcentratorScreenHandler;
 import xyz.shurlin.screen.worker.ExtractorScreenHandler;
 
 public class ScreenHandlerTypes {
+    public static void load() {
+    }
 
     public static final ScreenHandlerType<BreakerScreenHandler> BREAKER_SCREEN_HANDLER_TYPE = register("breaker",
             BreakerScreenHandler::new);

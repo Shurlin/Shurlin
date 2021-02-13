@@ -14,10 +14,8 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import xyz.shurlin.block.entity.CultivationCrystalBlockEntity;
+import xyz.shurlin.cultivation.CultivatedPlayerAccessor;
 import xyz.shurlin.cultivation.CultivationRealm;
-
-import static xyz.shurlin.cultivation.CultivationManager.appendCultivationEntity;
-import static xyz.shurlin.cultivation.CultivationManager.getCultivationRealmByEntity;
 
 public class CultivationCrystalBlock extends BlockWithEntity {
     private static final VoxelShape SHAPE = Block.createCuboidShape(4, 4, 4, 12, 12, 12);
@@ -38,9 +36,10 @@ public class CultivationCrystalBlock extends BlockWithEntity {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        CultivationRealm realm = getCultivationRealmByEntity(player);
+        CultivationRealm realm = ((CultivatedPlayerAccessor) player).getter();
         if (realm == null) {
-            realm = appendCultivationEntity(player);
+            realm = CultivationRealm.of();
+            ((CultivatedPlayerAccessor) player).setter(realm);
         }
         player.sendMessage(realm.getDescribeText(), false);
         return ActionResult.FAIL;

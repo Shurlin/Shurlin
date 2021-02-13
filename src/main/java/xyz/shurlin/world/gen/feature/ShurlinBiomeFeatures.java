@@ -2,24 +2,16 @@ package xyz.shurlin.world.gen.feature;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.GenerationSettings.Builder;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.decorator.*;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.feature.size.ThreeLayersFeatureSize;
-import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
-import net.minecraft.world.gen.foliage.DarkOakFoliagePlacer;
+import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
+import net.minecraft.world.gen.decorator.Decorator;
+import net.minecraft.world.gen.feature.ConfiguredFeatures;
+import net.minecraft.world.gen.feature.DefaultFeatureConfig;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.RandomPatchFeatureConfig;
 import net.minecraft.world.gen.placer.SimpleBlockPlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
-import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
-import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
-import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
-import xyz.shurlin.block.Blocks;
-
-import java.util.OptionalInt;
 
 public class ShurlinBiomeFeatures {
 
@@ -63,9 +55,9 @@ public class ShurlinBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ShurlinConfiguredFeatures.PLATYCODON_GRANDIFLORUS);
     }
 
-    public static void addBlock(GenerationSettings.Builder builder, Block block, int tries){
+    public static void addBlock(Builder builder, Block block, int tries) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                Feature.RANDOM_PATCH.configure(getConfig(block.getDefaultState(), tries)).decorate(net.minecraft.world.gen.feature.ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP));
+                Feature.RANDOM_PATCH.configure(getConfig(block.getDefaultState(), tries)).decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP));
     }
 
     private static RandomPatchFeatureConfig getConfig(BlockState state, int tries){

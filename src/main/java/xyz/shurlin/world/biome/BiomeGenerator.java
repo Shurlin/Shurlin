@@ -10,7 +10,7 @@ import static xyz.shurlin.structure.StructureKeys.*;
 import static xyz.shurlin.world.gen.feature.FeatureKeys.*;
 
 public class BiomeGenerator {
-    public static void registerAll() {
+    public static void load() {
 //        STRUCTURES.put("ancient_oak_tree", StructureFeatures.ANCIENT_OAK_TREE);
 //        STRUCTURES.put("ancient_birch_tree",  StructureFeatures.ANCIENT_BIRCH_TREE);
 //        STRUCTURES.put("ancient_dark_oak_tree",  StructureFeatures.ANCIENT_DARK_OAK_TREE);
@@ -23,7 +23,7 @@ public class BiomeGenerator {
         BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.BIRCH_FOREST), ANCIENT_BIRCH_TREE);
         BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.DARK_FOREST), ANCIENT_DARK_OAK_TREE);
         BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.SAVANNA), ANCIENT_ACACIA_TREE);
-        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.MOUNTAINS), ANCIENT_SPRUCE_TREE);
+        BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.SNOWY_MOUNTAINS), ANCIENT_SPRUCE_TREE);
         BiomeModifications.addStructure(BiomeSelectors.excludeByKey(BiomeKeys.JUNGLE), ANCIENT_JUNGLE_TREE);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_PLANT_IRON);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_PLANT_GOLD);

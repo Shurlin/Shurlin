@@ -1,8 +1,0 @@
-{
-  "type": "shurlin:breaking",
-  "ingredient": {
-    "item": "minecraft:grass"
-  },
-  "result": "shurlin:plant_mixture",
-  "workingTime": 20
-}

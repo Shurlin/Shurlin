@@ -13,6 +13,7 @@ import xyz.shurlin.util.ServerReceiver;
 import xyz.shurlin.world.biome.BiomeGenerator;
 import xyz.shurlin.world.biome.Biomes;
 import xyz.shurlin.world.dimension.DimensionTypes;
+import xyz.shurlin.world.dimension.Dimensions;
 import xyz.shurlin.world.gen.chunk.ChunkGeneratorTypes;
 
 import java.util.Random;
@@ -24,19 +25,19 @@ public class Shurlin implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        new BlockEntityTypes();
-        new Items();
+        BlockEntityTypes.load();
+        Items.load();
 //        new Features();
-        RecipeSerializers.registerAll();
-        ServerReceiver.registerAll();
-        new ScreenHandlerTypes();
-        ChunkGeneratorTypes.registerAll();
-//        Dimensions.registerAll();
-        new DimensionTypes();
-//        KeyBindings.registerAll();
-        Commands.registerAll();
-        Biomes.registerAll();
-        BiomeGenerator.registerAll();
+        RecipeSerializers.load();
+        ServerReceiver.load();
+        ScreenHandlerTypes.load();
+        ChunkGeneratorTypes.load();
+        Dimensions.load();
+        DimensionTypes.load();
+//        KeyBindings.load();
+        Commands.load();
+        Biomes.load();
+        BiomeGenerator.load();
 //        new Reflector();
 //        new DimensionOptions();
 //        StructureKeys.registerAll();
@@ -49,3 +50,5 @@ public class Shurlin implements ModInitializer {
 //command
 //recipe(container)
 //crater
+
+//holy_pear_altar

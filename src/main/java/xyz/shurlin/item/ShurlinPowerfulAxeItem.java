@@ -11,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.UseAction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import xyz.shurlin.entity.projectile.LightningArrowEntity;
 
 public class ShurlinPowerfulAxeItem extends Item {
     private static final float miningSpeed = (float) 1e8;
@@ -33,12 +32,12 @@ public class ShurlinPowerfulAxeItem extends Item {
         return true;
     }
 
-    @Override
-    public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        LightningArrowEntity entity = new LightningArrowEntity(world, user);
-        entity.setProperties(user, user.pitch, user.yaw, 0.0f, 3.0f, 1.0f);
-
-    }
+//    @Override
+//    public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
+//        LightningArrowEntity entity = new LightningArrowEntity(world, user);
+//        entity.setProperties(user, user.pitch, user.yaw, 0.0f, 3.0f, 1.0f);
+//
+//    }
 
     @Override
     public int getMaxUseTime(ItemStack stack) {

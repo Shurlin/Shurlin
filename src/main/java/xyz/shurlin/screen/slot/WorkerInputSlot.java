@@ -1,7 +1,6 @@
 package xyz.shurlin.screen.slot;
 
 import net.minecraft.inventory.Inventory;
-import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.Slot;
 import xyz.shurlin.util.ShurlinLevel;
 

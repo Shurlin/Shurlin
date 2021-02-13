@@ -3,10 +3,7 @@ package xyz.shurlin.structure;
 import net.minecraft.structure.StructurePieceType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.SimpleRegistry;
 import xyz.shurlin.Shurlin;
-
-import java.util.Locale;
 
 public class StructurePieceTypes {
     public static final StructurePieceType ANCIENT_OAK_TREE;

@@ -1,5 +1,7 @@
 package xyz.shurlin.recipe;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
@@ -7,6 +9,7 @@ import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
+import xyz.shurlin.item.Items;
 import xyz.shurlin.util.ShurlinLevel;
 import xyz.shurlin.util.Utils;
 
@@ -40,6 +43,7 @@ public abstract class AbstractWorkerRecipe implements Recipe<Inventory> {
     }
 
     @Override
+    @Environment(EnvType.CLIENT)
     public boolean fits(int width, int height) {
         return true;
     }
@@ -61,5 +65,17 @@ public abstract class AbstractWorkerRecipe implements Recipe<Inventory> {
 
     public int getWorkTime(){
         return this.workTime;
+    }
+
+    @Override
+    @Environment(EnvType.CLIENT)
+    public ItemStack getRecipeKindIcon() {
+        return new ItemStack(Items.MYSTERIOUS_SPIRIT_OF_PLANT);
+    }
+
+    @Override
+    @Environment(EnvType.CLIENT)
+    public String getGroup() {
+        return this.group;
     }
 }

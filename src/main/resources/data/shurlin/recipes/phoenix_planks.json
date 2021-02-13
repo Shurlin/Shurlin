@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "phoenix_planks",
+  "ingredients": [
+    {
+      "item": "shurlin:phoenix_log"
+    }
+  ],
+  "result": {
+    "item": "shurlin:phoenix_planks",
+    "count": 4
+  }
+}

@@ -62,7 +62,7 @@ public class ShurlinConfiguredFeatures {
         PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
         ORE_PLANT_IRON = register("ore_plant_iron", createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK, 6, 6, 48));
         ORE_PLANT_GOLD = register("ore_plant_gold", createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK, 6, 4, 32));
-        ORE_PLANT_JADE = register("ore_plant_jade", createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_JADE_ORE_BLOCK, 2, 2, 16));
+        ORE_PLANT_JADE = register("ore_plant_jade", createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_JADE_ORE_BLOCK, 4, 2, 16));
     }
 
     private static final class Configs {

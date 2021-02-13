@@ -38,7 +38,7 @@ public class WorkerRecipeSerializer<T extends AbstractWorkerRecipe> implements R
         ItemStack itemStack = new ItemStack(Registry.ITEM.getOrEmpty(result_id).orElseThrow(() ->
                 new IllegalStateException("Item: " + result + " does not exist")), count);
         int workingTime = JsonHelper.getInt(jsonObject, "workingTime", this.workingTime);
-        int shurlinLevel = JsonHelper.getInt(jsonObject, "shurlinLevel", 0);
+        float shurlinLevel = JsonHelper.getInt(jsonObject, "shurlinLevel", 0);
         return this.recipeFactory.create(id, group, ingredient, itemStack, workingTime, ()->shurlinLevel);
     }
 
@@ -48,7 +48,7 @@ public class WorkerRecipeSerializer<T extends AbstractWorkerRecipe> implements R
         Ingredient ingredient = Ingredient.fromPacket(buf);
         ItemStack itemStack = buf.readItemStack();
         int workingTime = buf.readVarInt();
-        int shurlinLevel = buf.readVarInt();
+        float shurlinLevel = buf.readFloat();
         return this.recipeFactory.create(id, group, ingredient, itemStack, workingTime, ()->shurlinLevel);
     }
 
@@ -58,6 +58,7 @@ public class WorkerRecipeSerializer<T extends AbstractWorkerRecipe> implements R
         recipe.input.write(buf);
         buf.writeItemStack(recipe.output);
         buf.writeVarInt(recipe.workTime);
+        buf.writeFloat(recipe.shurlinLevel.getShurlinLevel());
     }
 
     interface RecipeFactory<T extends AbstractWorkerRecipe> {

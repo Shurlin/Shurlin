@@ -1,9 +1,8 @@
 package xyz.shurlin.cultivation;
 
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.util.Tickable;
 
-public class SpiritMeridians implements Tickable {
+public class SpiritMeridians {
     private final SpiritPropertyType type;
     private short level;
     private double maxSpirit;
@@ -30,7 +29,7 @@ public class SpiritMeridians implements Tickable {
 
     }
 
-    public void upgrade(){
+    public void upgrade() {
         this.curEx = 0;
         this.level++;
         this.maxSpirit = getMaxSpirits(level);
@@ -38,36 +37,36 @@ public class SpiritMeridians implements Tickable {
         this.curSpirit = this.maxSpirit;
     }
 
-    static double getMaxSpirits(int level){
+    static double getMaxSpirits(int level) {
         return ratios[level] * 1e3;
     }
 
-    static double getMaxExs(int level){
+    static double getMaxExs(int level) {
         return ratios[level] * 100d;
     }
 
-    public void heal(){
-        if(this.curSpirit < this.maxSpirit)
-            this.curSpirit += ratios[this.level];
+    public void heal(int times) {
+        if (this.curSpirit < this.maxSpirit)
+            this.curSpirit += ratios[this.level] * times;
         this.check();
     }
 
-    public void increase(double d){
+    public void increase(double d) {
         this.curSpirit += d;
         this.check();
     }
 
-    public void decrease(double d){
+    public void decrease(double d) {
         this.curSpirit -= d;
         this.check();
     }
 
-    private void check(){
-        if(this.level < 9 && this.curEx >= this.maxEx)
+    private void check() {
+        if (this.level < 9 && this.curEx >= this.maxEx)
             this.upgrade();
-        if(this.curSpirit>this.maxSpirit)
+        if (this.curSpirit > this.maxSpirit)
             this.curSpirit = this.maxSpirit;
-        else if(this.curSpirit < 0)
+        else if (this.curSpirit < 0)
             this.curSpirit = 0;
     }
 
@@ -95,23 +94,18 @@ public class SpiritMeridians implements Tickable {
         return maxEx;
     }
 
-    CompoundTag toTag(){
+    public CompoundTag toTag() {
         CompoundTag tag = new CompoundTag();
         tag.putShort("level", this.level);
-        tag.putDouble("cur_spirit",this.curSpirit);
+        tag.putDouble("cur_spirit", this.curSpirit);
         tag.putDouble("cur_ex", this.curEx);
         return tag;
     }
 
-    static SpiritMeridians fromTag(SpiritPropertyType type, CompoundTag tag){
+    public static SpiritMeridians fromTag(SpiritPropertyType type, CompoundTag tag) {
         return new SpiritMeridians(type,
                 tag.getShort("level"),
                 tag.getDouble("cur_spirit"),
                 tag.getDouble("cur_ex"));
-    }
-
-    @Override
-    public void tick() {
-        this.heal();
     }
 }

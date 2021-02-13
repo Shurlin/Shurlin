@@ -6,7 +6,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
-import xyz.shurlin.Shurlin;
 
 public class Biomes {
     public static final Biome PEAR_FOREST;
@@ -17,7 +16,7 @@ public class Biomes {
         return Registry.register(BuiltinRegistries.BIOME, id, biome);
     }
 
-    public static void registerAll() {
+    public static void load() {
         OverworldBiomes.addContinentalBiome(BiomeKeys.PEAR_FOREST_KEY, OverworldClimate.TEMPERATE, 1D);
 //        OverworldBiomes.setRiverBiome(Biomes.PEAR_FOREST, net.minecraft.world.biome.Biomes.RIVER);
         OverworldBiomes.addContinentalBiome(BiomeKeys.PARASOL_ANCIENT_FOREST_KEY, OverworldClimate.TEMPERATE, 0.6D);

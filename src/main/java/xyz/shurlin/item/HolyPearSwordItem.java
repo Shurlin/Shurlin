@@ -8,9 +8,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.world.Heightmap;
-import net.minecraft.world.World;
 
 public class HolyPearSwordItem extends BasicItem {
 
@@ -27,17 +24,17 @@ public class HolyPearSwordItem extends BasicItem {
         return ActionResult.SUCCESS;
     }
 
-    @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack stack = user.getStackInHand(hand);
-        PlayerEntity player = world.getClosestPlayer(user, 16d);
-        if(player == null)
-            return TypedActionResult.fail(stack);
-        double x = player.getX();
-        double z = player.getZ();
-        player.setPos(x, world.getTopY(Heightmap.Type.WORLD_SURFACE_WG, (int) x, (int) z), z);
-        return TypedActionResult.success(stack);
-    }
+//    @Override
+//    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+//        ItemStack stack = user.getStackInHand(hand);
+//        PlayerEntity player = world.getClosestPlayer(user, 16d);
+//        if(player == null)
+//            return TypedActionResult.fail(stack);
+//        double x = player.getX();
+//        double z = player.getZ();
+//        player.setPos(x, world.getTopY(Heightmap.Type.WORLD_SURFACE_WG, (int) x, (int) z), z);
+//        return TypedActionResult.success(stack);
+//    }
 
     @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {

@@ -1,15 +1,9 @@
 package xyz.shurlin.item;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import xyz.shurlin.cultivation.CultivationRealm;
 import xyz.shurlin.cultivation.SpiritPropertyType;
-
-import static xyz.shurlin.cultivation.CultivationManager.getCultivationRealmByEntity;
 
 public class SpiritItem extends BasicItem{
     private final SpiritPropertyType spiritPropertyType;
@@ -33,13 +27,13 @@ public class SpiritItem extends BasicItem{
         super.usageTick(world, user, stack, remainingUseTicks);
     }
 
-    @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack stack = user.getStackInHand(hand);
-        CultivationRealm realm = getCultivationRealmByEntity(user);
-        if(realm!=null){
-            realm.upgrade();
-        }
-        return TypedActionResult.success(stack);
-    }
+//    @Override
+//    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+//        ItemStack stack = user.getStackInHand(hand);
+//        CultivationRealm realm = getCultivationRealmByEntity(user);
+//        if(realm!=null){
+//            realm.upgrade();
+//        }
+//        return TypedActionResult.success(stack);
+//    }
 }

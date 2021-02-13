@@ -5,7 +5,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import xyz.shurlin.Shurlin;
 import xyz.shurlin.block.entity.BlockEntityTypes;
 import xyz.shurlin.recipe.RecipeTypes;
 import xyz.shurlin.screen.worker.CollectorScreenHandler;

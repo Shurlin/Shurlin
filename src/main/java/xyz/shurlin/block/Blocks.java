@@ -14,7 +14,6 @@ import xyz.shurlin.block.worker.BreakerBlock;
 import xyz.shurlin.block.worker.CollectorBlock;
 import xyz.shurlin.block.worker.ConcentratorBlock;
 import xyz.shurlin.block.worker.ExtractorBlock;
-import xyz.shurlin.world.gen.feature.ShurlinBiomeFeatures;
 import xyz.shurlin.world.gen.feature.ShurlinConfiguredFeatures;
 
 public class Blocks {

@@ -4,12 +4,10 @@ import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.event.client.ClientTickCallback;
 import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.minecraft.client.options.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.text.ClickEvent;
 import org.lwjgl.glfw.GLFW;
 import xyz.shurlin.util.Utils;
 
@@ -20,7 +18,7 @@ public class KeyBindings {
     public static KeyBinding inject_spirit;
 
 
-    public static void registerAll() {
+    public static void load() {
         ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
             if(open_cul.isPressed()) {
                 PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());

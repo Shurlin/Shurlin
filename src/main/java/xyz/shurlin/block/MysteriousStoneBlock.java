@@ -12,7 +12,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import xyz.shurlin.Shurlin;
 import xyz.shurlin.item.Items;
 import xyz.shurlin.util.Utils;
 

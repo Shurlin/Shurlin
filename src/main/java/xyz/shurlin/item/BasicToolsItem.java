@@ -7,7 +7,6 @@ import net.minecraft.util.registry.Registry;
 import xyz.shurlin.Shurlin;
 import xyz.shurlin.util.ShurlinLevel;
 
-
 import static xyz.shurlin.item.ItemGroups.SHURLIN;
 
 

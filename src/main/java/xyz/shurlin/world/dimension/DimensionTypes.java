@@ -14,6 +14,9 @@ public class DimensionTypes {
         return RegistryKey.of(Registry.DIMENSION_TYPE_KEY, new Identifier(Shurlin.MODID, name));
     }
 
+    public static void load() {
+    }
+
     static {
         HOLY_FARMER = register("holy_farmer_type");
 //        SHURLIN = register("shurlin");

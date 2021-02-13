@@ -22,7 +22,13 @@ public class CultivationRealm {
 
     }
 
-    public CultivationRealm of() {
+    public void healSpiritMeridians(int times) {
+        for (SpiritPropertyType type : SpiritPropertyType.GROUPS) {
+            this.meridians.get(type).heal(times);
+        }
+    }
+
+    public static CultivationRealm of() {
         return new CultivationRealm();
     }
 

@@ -1,18 +1,5 @@
 package xyz.shurlin.mixin;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.item.ItemRenderer;
-import net.minecraft.item.ItemStack;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
-import xyz.shurlin.client.render.ShurlinRenderLayer;
-import xyz.shurlin.item.BasicWeaponItem;
-
 //@Mixin(ItemRenderer.class)
 //@Environment(EnvType.CLIENT)
 //public abstract class SpiritGlintMixin {

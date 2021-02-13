@@ -32,7 +32,7 @@ public class Utils {
         if (world instanceof ServerWorld) {
             LightningEntity lightningEntity = EntityType.LIGHTNING_BOLT.create(world);
             assert lightningEntity != null;
-            lightningEntity.setVelocity(Vec3d.ofBottomCenter(pos));//TODO
+            lightningEntity.setPos(pos.getX(), pos.getY(), pos.getZ());//TODO
             world.spawnEntity(lightningEntity);
         }
     }

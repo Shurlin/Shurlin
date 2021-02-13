@@ -5,7 +5,6 @@ import net.minecraft.block.OreBlock;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.Hand;
@@ -22,7 +21,7 @@ public class ChainMinerItem extends PickaxeItem {
     private final ArrayList<BlockPos> poses1 = new ArrayList<>();
 
     public ChainMinerItem() {
-        super(ToolMaterials.PLANT_JADE, 1, 5f, new Item.Settings().group(ItemGroups.SHURLIN));
+        super(ToolMaterials.PLANT_JADE, 1, 5f, new Settings().group(ItemGroups.SHURLIN));
     }
 
     private int mine_deep(BlockPos pos, BlockState state) {
