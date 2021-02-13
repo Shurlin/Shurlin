@@ -82,7 +82,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             ConcentrationIngredientVector concentrationIngredients = ConcentrationIngredientVector.fromPacket(buf);
             ItemStack output = buf.readItemStack();
             int workingTime = buf.readVarInt();
-            int shurlinLevel = buf.readVarInt();
+            float shurlinLevel = buf.readFloat();
             return this.recipeFactory.create(id, group, concentrationIngredients, output, workingTime, () -> shurlinLevel);
         }
 
@@ -92,6 +92,7 @@ public class ConcentratorRecipe extends AbstractWorkerRecipe {
             recipe.concentrationIngredients.write(buf);
             buf.writeItemStack(recipe.output);
             buf.writeVarInt(recipe.workTime);
+            buf.writeFloat(recipe.shurlinLevel.getShurlinLevel());
         }
 
         interface RecipeFactory<ConcentratorRecipe>{

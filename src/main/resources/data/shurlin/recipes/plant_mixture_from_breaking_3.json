@@ -1,0 +1,9 @@
+{
+  "type": "shurlin:breaking",
+  "ingredient": {
+    "tag": "minecraft:saplings"
+  },
+  "result": "shurlin:plant_mixture",
+  "count": 2,
+  "workingTime": 20
+}

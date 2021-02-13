@@ -28,6 +28,7 @@ public class Shurlin implements ModInitializer {
         BlockEntityTypes.load();
         Items.load();
 //        new Features();
+
         RecipeSerializers.load();
         ServerReceiver.load();
         ScreenHandlerTypes.load();

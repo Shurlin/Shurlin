@@ -1,0 +1,8 @@
+{
+  "type": "shurlin:extracting",
+  "ingredient": {
+    "item": "shurlin:plant_mixture_heap"
+  },
+  "result": "shurlin:plant_essence_particle",
+  "workingTime": 200
+}

@@ -26,10 +26,10 @@ public class CultivatedPlayerMixin implements CultivatedPlayerAccessor {
         tag.put("cul", toTag());
     }
 
-    @Inject(at = @At("TAIL"), method = "tick()V")
-    private void tick(CallbackInfo callbackInfo) {
-        this.realm.healSpiritMeridians(1);
-    }
+//    @Inject(at = @At("TAIL"), method = "tick()V")
+//    private void tick(CallbackInfo callbackInfo) {
+//        this.realm.healSpiritMeridians(1);
+//    }
 
     @Override
     public void setter(CultivationRealm realm) {
