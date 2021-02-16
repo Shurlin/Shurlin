@@ -26,6 +26,8 @@ import xyz.shurlin.Shurlin;
 import java.util.function.Predicate;
 
 public class ShurlinOreFeatures {
+    public static void load() {
+    }
 
     public static final ConfiguredFeature<?, ?> ORE_PLANT_IRON;
     public static final ConfiguredFeature<?, ?> ORE_PLANT_GOLD;
@@ -56,7 +58,7 @@ public class ShurlinOreFeatures {
     }
 
     private static ConfiguredFeature<?, ?> createOre(String registryName, RuleTest ruleTest, BlockState state, int size, int numPerChunk, int maxy, Predicate<BiomeSelectionContext> selectors) {
-        return createOre(registryName, OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, state, size, numPerChunk, 0, maxy, selectors);
+        return createOre(registryName, ruleTest, state, size, numPerChunk, 0, maxy, selectors);
     }
 
     private static ConfiguredFeature<?, ?> createOre(String registryName, RuleTest ruleTest, BlockState state, int size, int numPerChunk, int topOffset, int maxy, Predicate<BiomeSelectionContext> selectors) {
@@ -67,8 +69,9 @@ public class ShurlinOreFeatures {
                         topOffset, // min y level
                         maxy))) // max y level
                 .repeat(numPerChunk); // number of veins per chunk
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, key.getValue(), ore);
         BiomeModifications.addFeature(selectors, GenerationStep.Feature.UNDERGROUND_ORES, key);
-        return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, key.getValue(), ore);
+        return ore;
     }
 
     static {

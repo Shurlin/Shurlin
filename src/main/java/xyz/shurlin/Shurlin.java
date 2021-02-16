@@ -15,6 +15,7 @@ import xyz.shurlin.world.biome.Biomes;
 import xyz.shurlin.world.dimension.DimensionTypes;
 import xyz.shurlin.world.dimension.Dimensions;
 import xyz.shurlin.world.gen.chunk.ChunkGeneratorTypes;
+import xyz.shurlin.world.gen.feature.ShurlinOreFeatures;
 
 import java.util.Random;
 
@@ -39,6 +40,7 @@ public class Shurlin implements ModInitializer {
         Commands.load();
         Biomes.load();
         BiomeGenerator.load();
+        ShurlinOreFeatures.load();
 //        new Reflector();
 //        new DimensionOptions();
 //        StructureKeys.registerAll();
