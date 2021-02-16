@@ -9,9 +9,9 @@ import xyz.shurlin.Shurlin;
 public class FeatureKeys {
     public static final RegistryKey<ConfiguredFeature<?, ?>> ANCIENT_TREE_KEY;
     //ore
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_PLANT_IRON;
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_PLANT_GOLD;
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_PLANT_JADE;
+//    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_PLANT_IRON;
+//    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_PLANT_GOLD;
+//    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_PLANT_JADE;
 
 
     private static RegistryKey<ConfiguredFeature<?,?>> register(String registryName){
@@ -31,8 +31,8 @@ public class FeatureKeys {
 
     static {
         ANCIENT_TREE_KEY = register("ancient_tree");
-        ORE_PLANT_IRON = register("ore_plant_iron");
-        ORE_PLANT_GOLD = register("ore_plant_gold");
-        ORE_PLANT_JADE = register("ore_plant_jade");
+//        ORE_PLANT_IRON = register("ore_plant_iron");
+//        ORE_PLANT_GOLD = register("ore_plant_gold");
+//        ORE_PLANT_JADE = register("ore_plant_jade");
     }
 }

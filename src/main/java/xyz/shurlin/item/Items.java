@@ -123,6 +123,8 @@ public class Items {
     public static final Item STARRY_ALTAR;
     public static final Item MYSTERIOUS_STONE;
     public static final Item PLANT_OBSIDIAN;
+    public static final Item HOT_FIRE_DIRT;
+    public static final Item HOT_FIRE_STONE;
 
     public static final Item PEAR_SAPLING;
     public static final Item PHOENIX_SAPLING;
@@ -286,6 +288,8 @@ public class Items {
         STARRY_ALTAR = register(Blocks.STARRY_ALTAR);
         MYSTERIOUS_STONE = register(Blocks.MYSTERIOUS_STONE);
         PLANT_OBSIDIAN = register(Blocks.PLANT_OBSIDIAN);
+        HOT_FIRE_DIRT = register(Blocks.HOT_FIRE_DIRT);
+        HOT_FIRE_STONE = register(Blocks.HOT_FIRE_STONE);
 
         PEAR_SAPLING = register(Blocks.PEAR_SAPLING);
         PHOENIX_SAPLING = register(Blocks.PHOENIX_SAPLING);

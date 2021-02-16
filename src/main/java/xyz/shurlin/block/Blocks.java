@@ -132,7 +132,7 @@ public class Blocks {
         DEAD_LEAVE_CORAL_BLOCK = register("dead_leave_coral_block",new Block(BlockSettings.DEAD_CORAL_BLOCK));
         LEAVE_CORAL_BLOCK = register("leave_coral_block", new LeaveCoralBlockBlock(DEAD_LEAVE_CORAL_BLOCK, BlockSettings.CORAL_BLOCK));
 
-        HOT_FIRE_STONE = register("hot_fire_block", BlockSettings.STONE);
+        HOT_FIRE_STONE = register("hot_fire_stone", BlockSettings.STONE);
         HOT_FIRE_DIRT = register("hot_fire_dirt", BlockSettings.DIRT);
 
         TENUOUS_METAL_SPIRIT_ORE_BLOCK = registerOreBlock("tenuous_metal_spirit_ore_block");

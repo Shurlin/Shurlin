@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "shurlin:block/hot_fire_dirt"
+  }
+}

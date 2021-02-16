@@ -126,6 +126,8 @@
   "block.shurlin.extractor_block" : "Extractor Block",
   "block.shurlin.starry_altar" : "Starry Altar",
   "block.shurlin.mysterious_stone" : "Mysterious Stone",
+  "block.shurlin.hot_fire_dirt": "Hot Fire Dirt",
+  "block.shurlin.hot_fire_stone": "Hot Fire Stone",
   "block.shurlin.plant_obsidian" : "Plant Obsidian",
   "block.shurlin.phoenix_sapling" : "Phoenix Sapling",
   "block.shurlin.dead_leave_coral" : "Dead Leave Coral",

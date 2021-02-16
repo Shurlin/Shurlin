@@ -21,7 +21,7 @@ public class ShurlinSurfaceBuilder {
     static {
         HOT_FIRE_DIRT = Blocks.HOT_FIRE_DIRT.getDefaultState();
         HOT_FIRE_STONE = Blocks.HOT_FIRE_STONE.getDefaultState();
-        FIRE_LAND_CONFIG = new TernarySurfaceConfig(HOT_FIRE_DIRT, HOT_FIRE_DIRT , HOT_FIRE_STONE);
+        FIRE_LAND_CONFIG = new TernarySurfaceConfig(HOT_FIRE_DIRT, HOT_FIRE_STONE, HOT_FIRE_STONE);
     }
 
 }

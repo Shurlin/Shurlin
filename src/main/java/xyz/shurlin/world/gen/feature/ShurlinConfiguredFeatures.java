@@ -1,5 +1,6 @@
 package xyz.shurlin.world.gen.feature;
 
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.structure.rule.RuleTest;
@@ -32,9 +33,7 @@ public class ShurlinConfiguredFeatures {
     public static final ConfiguredFeature<?, ?> TREES_PHOENIX;
     public static final ConfiguredFeature<?, ?> SMALL_BUD;
     public static final ConfiguredFeature<?, ?> PLATYCODON_GRANDIFLORUS;
-    public static final ConfiguredFeature<?, ?> ORE_PLANT_IRON;
-    public static final ConfiguredFeature<?, ?> ORE_PLANT_GOLD;
-    public static final ConfiguredFeature<?, ?> ORE_PLANT_JADE;
+    public static final ConfiguredFeature<?, ?> PATCH_FIRE;
 
     private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(String id, ConfiguredFeature<FC, ?> configuredFeature) {
         return register(new Identifier(Shurlin.MODID, id), configuredFeature);
@@ -60,9 +59,8 @@ public class ShurlinConfiguredFeatures {
         TREES_PHOENIX = register("trees_phoenix", PHOENIX_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1F, 1))));
         SMALL_BUD = register("small_bud", Feature.RANDOM_PATCH.configure(Configs.SMALL_BUD_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
         PLATYCODON_GRANDIFLORUS = register("platycodon_grandiflorus", Feature.RANDOM_PATCH.configure(Configs.PLATYCODON_GRANDIFLORUS_CONFIG).decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(6, 0.1f, 1))));
-        ORE_PLANT_IRON = register("ore_plant_iron", createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK, 6, 6, 48));
-        ORE_PLANT_GOLD = register("ore_plant_gold", createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_IRON_ORE_BLOCK, 6, 4, 32));
-        ORE_PLANT_JADE = register("ore_plant_jade", createOre(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, States.PLANT_JADE_ORE_BLOCK, 4, 2, 16));
+        PATCH_FIRE = register("patch_fire", Feature.RANDOM_PATCH.configure((new RandomPatchFeatureConfig.Builder(new SimpleBlockStateProvider(States.FIRE), SimpleBlockPlacer.INSTANCE)).tries(64).whitelist(ImmutableSet.of(States.HOT_FIRE_DIRT.getBlock())).cannotProject().build()).decorate(ConfiguredFeatures.Decorators.FIRE));
+
     }
 
     private static final class Configs {
@@ -89,7 +87,7 @@ public class ShurlinConfiguredFeatures {
         }
     }
 
-    private static final class States {
+    static final class States {
         private static final BlockState PEAR_LOG;
         private static final BlockState PEAR_LEAVES;
         private static final BlockState PEAR_RIPE_LEAVES;
@@ -97,21 +95,23 @@ public class ShurlinConfiguredFeatures {
         private static final BlockState PHOENIX_LEAVES;
         private static final BlockState SMALL_BUD;
         private static final BlockState PLATYCODON_GRANDIFLORUS;
-        private static final BlockState PLANT_IRON_ORE_BLOCK;
-        private static final BlockState PLANT_GOLD_ORE_BLOCK;
-        private static final BlockState PLANT_JADE_ORE_BLOCK;
-        private static final BlockState TENUOUS_METAL_SPIRIT_ORE_BLOCK;
-        private static final BlockState TENUOUS_WOOD_SPIRIT_ORE_BLOCK;
-        private static final BlockState TENUOUS_WATER_SPIRIT_ORE_BLOCK;
-        private static final BlockState TENUOUS_FIRE_SPIRIT_ORE_BLOCK;
-        private static final BlockState TENUOUS_EARTH_SPIRIT_ORE_BLOCK;
-        private static final BlockState TENUOUS_WIND_SPIRIT_ORE_BLOCK;
-        private static final BlockState TENUOUS_LIGHT_SPIRIT_ORE_BLOCK;
-        private static final BlockState TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK;
-        private static final BlockState TENUOUS_POISON_SPIRIT_ORE_BLOCK;
-        private static final BlockState TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK;
-        private static final BlockState TENUOUS_ICE_SPIRIT_ORE_BLOCK;
-        private static final BlockState TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
+        private static final BlockState FIRE;
+        private static final BlockState HOT_FIRE_DIRT;
+        static final BlockState PLANT_IRON_ORE_BLOCK;
+        static final BlockState PLANT_GOLD_ORE_BLOCK;
+        static final BlockState PLANT_JADE_ORE_BLOCK;
+        static final BlockState TENUOUS_METAL_SPIRIT_ORE_BLOCK;
+        static final BlockState TENUOUS_WOOD_SPIRIT_ORE_BLOCK;
+        static final BlockState TENUOUS_WATER_SPIRIT_ORE_BLOCK;
+        static final BlockState TENUOUS_FIRE_SPIRIT_ORE_BLOCK;
+        static final BlockState TENUOUS_EARTH_SPIRIT_ORE_BLOCK;
+        static final BlockState TENUOUS_WIND_SPIRIT_ORE_BLOCK;
+        static final BlockState TENUOUS_LIGHT_SPIRIT_ORE_BLOCK;
+        static final BlockState TENUOUS_DARKNESS_SPIRIT_ORE_BLOCK;
+        static final BlockState TENUOUS_POISON_SPIRIT_ORE_BLOCK;
+        static final BlockState TENUOUS_LIGHTNING_SPIRIT_ORE_BLOCK;
+        static final BlockState TENUOUS_ICE_SPIRIT_ORE_BLOCK;
+        static final BlockState TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK;
 
         static {
             PEAR_LOG = Blocks.PEAR_LOG.getDefaultState();
@@ -124,6 +124,8 @@ public class ShurlinConfiguredFeatures {
             PLANT_IRON_ORE_BLOCK = Blocks.PLANT_IRON_ORE_BLOCK.getDefaultState();
             PLANT_GOLD_ORE_BLOCK = Blocks.PLANT_GOLD_ORE_BLOCK.getDefaultState();
             PLANT_JADE_ORE_BLOCK = Blocks.PLANT_JADE_ORE_BLOCK.getDefaultState();
+            FIRE = net.minecraft.block.Blocks.FIRE.getDefaultState();
+            HOT_FIRE_DIRT = Blocks.HOT_FIRE_DIRT.getDefaultState();
             TENUOUS_METAL_SPIRIT_ORE_BLOCK = Blocks.TENUOUS_METAL_SPIRIT_ORE_BLOCK.getDefaultState();
             TENUOUS_WOOD_SPIRIT_ORE_BLOCK = Blocks.TENUOUS_WOOD_SPIRIT_ORE_BLOCK.getDefaultState();
             TENUOUS_WATER_SPIRIT_ORE_BLOCK = Blocks.TENUOUS_WATER_SPIRIT_ORE_BLOCK.getDefaultState();
