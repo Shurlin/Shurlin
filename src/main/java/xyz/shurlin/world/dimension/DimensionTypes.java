@@ -18,4 +18,6 @@ public class DimensionTypes {
         HOLY_FARMER = register("holy_farmer_type");
 //        SHURLIN = register("shurlin");
     }
+
+    public static void load() {}
 }

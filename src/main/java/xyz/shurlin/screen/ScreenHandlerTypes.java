@@ -34,4 +34,6 @@ public class ScreenHandlerTypes {
     private static <T extends ScreenHandler> ScreenHandlerType<T> register(String registryName, ScreenHandlerRegistry.SimpleClientHandlerFactory<T> entry){
             return ScreenHandlerRegistry.registerSimple(new Identifier(Shurlin.MODID, registryName), entry);
     }
+
+    public static void load() {}
 }

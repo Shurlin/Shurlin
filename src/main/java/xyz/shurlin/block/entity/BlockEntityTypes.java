@@ -36,4 +36,6 @@ public class BlockEntityTypes {
                 new Identifier(Shurlin.MODID, registryName),
                 entry);
     }
+
+    public static void load() {}
 }

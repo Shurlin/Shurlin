@@ -307,4 +307,5 @@ public class Items {
         TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK = register(Blocks.TENUOUS_TIME_SPACE_SPIRIT_ORE_BLOCK);
     }
 
+    public static void load() {}
 }
